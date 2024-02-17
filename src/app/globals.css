@@ -1,0 +1,73 @@
+:root {
+  --color-background: #333;
+  --color-text: #fff;
+}
+
+/* Set default font family and size */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+/* Reset box-sizing to border-box */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles (bullets, indentation) */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Remove default hyperlink styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Remove default outline styles */
+button,
+input,
+textarea,
+select {
+  outline: none;
+}
+
+/* Set default line height */
+body,
+input,
+textarea,
+select,
+button {
+  line-height: 1.5;
+}
+
+/* Remove default button styles */
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* Remove default form styles */
+input,
+textarea,
+select {
+  appearance: none;
+  border: none;
+  background: none;
+  resize: none;
+}
+
+/* Remove default table styles */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
