@@ -27,6 +27,7 @@ yarn-error.log*
 
 # production env files
 .env.prod
+.env*
 
 # vercel
 .vercel
@@ -37,3 +38,5 @@ next-env.d.ts
 
 # vscode
 /.vscode/
+run.bat
+run.sh

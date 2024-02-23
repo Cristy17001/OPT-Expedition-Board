@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   client-dev:
-    container_name: Expedition_Board_Development
+    container_name: Expedition_Board
     build:
       context: .
       dockerfile: Dockerfile
@@ -19,19 +19,3 @@ services:
       - /app/.next
     env_file:
       - .env
-
-  postgres_db:
-      image: postgres:13.5
-      container_name: Postgres
-      restart: always
-      environment:
-          - POSTGRES_USER=postgres
-          - POSTGRES_PASSWORD=postgres
-          - POSTGRES_DB=postgres
-      volumes:
-          - postgres_db:/var/lib/postgresql/data
-      ports:
-          - '5432:5432'
-volumes:
-    postgres_db:
-        driver: local
