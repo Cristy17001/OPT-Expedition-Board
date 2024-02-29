@@ -14,3 +14,19 @@
 .table th {
     background-color: #f2f2f2;
 }
+
+.landing {
+    display: 'flex';
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.navigation {
+    background-color: black;
+    color: #ddd;
+    padding: 0.8rem;
+    margin: 0.5rem;
+    border-radius: 10%;
+}
