@@ -1,6 +1,8 @@
 .table {
     width: 100%;
     border-collapse: collapse;
+    overflow: 'auto';
+    height: '50rem' 
 }
 
 .table th,
@@ -29,4 +31,12 @@
     padding: 0.8rem;
     margin: 0.5rem;
     border-radius: 10%;
+}
+
+.late {
+    background-color: rgb(255, 87, 87);
+}
+
+.late td {
+    color: white;
 }
