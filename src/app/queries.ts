@@ -3,7 +3,7 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 export async function getEntradas() {
-    return await prisma.$queryRaw`
+    const data = await prisma.$queryRaw`
     SELECT 
     * 
     FROM 
@@ -48,10 +48,11 @@ export async function getEntradas() {
     ) foo 
   order by foo.DutyEndTimeSeconds
   `;
+  return JSON.parse(JSON.stringify(data));
 }
 
 export async function getSaidas() {
-    return await prisma.$queryRaw`
+    const data = await prisma.$queryRaw`
     SELECT 
         * 
       FROM 
@@ -96,4 +97,5 @@ export async function getSaidas() {
         ) foo 
       order by foo.DutyStartTimeSeconds
     `;
+  return JSON.parse(JSON.stringify(data));
 }

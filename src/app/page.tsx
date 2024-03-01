@@ -9,12 +9,14 @@ export default async function Home() {
   return (
     <main style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
       <h1>Selecione a sua opção</h1>
-      <button className= {styles.navigation}><Link href="/saidas">
+      <Link href="/saidas"><button className= {styles.navigation}>
           Saídas
-        </Link></button>
-      <button className= {styles.navigation}><Link href="/entradas">
+        </button>
+      </Link>
+      <Link href="/entradas"><button className= {styles.navigation}>
           Entradas
-        </Link></button>
+        </button>
+      </Link>
     </main>
   );
             

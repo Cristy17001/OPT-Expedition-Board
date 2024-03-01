@@ -1,47 +1,49 @@
-import { PrismaClient } from '@prisma/client'
+
+
 import styles from '../page.module.css';
 import Link from 'next/link';
-import { getEntradas } from '../queries';
+import {  getSaidas } from '../queries';
 
-const prisma = new PrismaClient()
 
 export default async function Home() {
-  const result = await getEntradas();
-  console.log(result);
+  const result = await getSaidas();
   return (
     <main>
-      <button className= {styles.navigation}><Link href="../">Inicio </Link></button>
+      <Link href="../"><button className= {styles.navigation}>Inicio </button></Link>
       <table className={styles.table}>
         <thead>
           <tr>
-            <th>Is_Driver_Present</th>
-            <th>Vehicle_Number</th>
-            <th>Vehicle_License_Plate</th>
-            <th>Daily_Roster_Date</th>
-            <th>Duty_Name</th>
-            <th>Duty_End_Time</th>
-            <th>Duty_End_Node</th>
-            <th>End_Lines</th>
-            <th>End_DriverIDs</th>
+            {result[0] && result[0].DutyStartTimeSeconds && <th>DutyStartTimeSeconds</th>}
+            {result[0] && result[0].DutyEndTimeSeconds && <th>DutyEndTimeSeconds</th>}
+            {result[0] && result[0].IsDriverPresent && <th>IsDriverPresent</th>}
+            {result[0] && result[0].VehicleNr && <th>VehicleNr</th>}
+            {result[0] && result[0].VehicleLicensePlate && <th>VehicleLicensePlate</th>}
+            {result[0] && result[0].DailyRosterDate && <th>DailyRosterDate</th>}
+            {result[0] && result[0].DutyName && <th>DutyName</th>}
+            {result[0] && result[0].DutyEndTime && <th>DutyEndTime</th>}
+            {result[0] && result[0].DutyEndNode && <th>DutyEndNode</th>}
+            {result[0] && result[0].EndLines && <th>EndLines</th>}
+            {result[0] && result[0].EndDriverId1 && <th>EndDriverId1</th>}
           </tr>
         </thead>
         <tbody>
           {(result as Array<any>).map((row) => (
-            <tr key={row.VehicleNr}>
-              <td>{row.IsDriverPresent}</td>
-              <td>{row.VehicleNr}</td>
-              <td>{row.VehicleLicensePlate}</td>
-              <td>{(row.DailyRosterDate.toLocaleString('pt-PT', {day: 'numeric', month: 'numeric', year: 'numeric'}))}</td>
-              <td>{row.DutyName}</td>
-              <td>{row.DutyEndTime}</td>
-              <td>{row.DutyEndNode}</td>
-              <td>{row.EndLines}</td>
-              <td>{row.EndDriverId1}</td>
+            <tr>
+              {row.DutyStartTimeSeconds && <td>{new Date(row.DutyStartTimeSeconds * 1000).toISOString().substring(11, 16)}</td>}
+              {row.DutyEndTimeSeconds && <td>{new Date(row.DutyEndTimeSeconds * 1000).toISOString().substring(11, 16)}</td>}
+              {row.IsDriverPresent && <td>{row.IsDriverPresent}</td>}
+              {row.VehicleNr && <td>{row.VehicleNr}</td>}
+              {row.VehicleLicensePlate && <td>{row.VehicleLicensePlate}</td>}
+              {row.DailyRosterDate && <td>{new Date(row.DailyRosterDate).toLocaleDateString('pt-PT')}</td>}
+              {row.DutyName && <td>{row.DutyName}</td>}
+              {row.DutyEndTime && <td>{row.DutyEndTime}</td>}
+              {row.DutyEndNode && <td>{row.DutyEndNode}</td>}
+              {row.EndLines && <td>{row.EndLines}</td>}
+              {row.EndDriverId1 && <td>{row.EndDriverId1}</td>}
             </tr>
           ))}
         </tbody>
       </table>
-      <h2>HOME</h2>
     </main>
   );
 }
