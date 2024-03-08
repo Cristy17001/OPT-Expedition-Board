@@ -2,16 +2,18 @@ import React from 'react';
 import styles from '../page.module.css'
 
 interface TableProps {
+    type: string;
     result: any[];
     secondsPassed: number;
     secondsPassed2: number;
 }
 
-const TableComponent: React.FC<TableProps> = ({ result, secondsPassed, secondsPassed2 }) => (
+const TableComponent: React.FC<TableProps> = ({type, result, secondsPassed, secondsPassed2 }) => (
     <div style={{ overflow: 'auto', height: '50rem' }}>
         <table className={styles.table}>
         <thead>
           <tr>
+            {result[0] && result[0].DutyStartTimeSeconds && <th>DutyStartTime</th>}
             {result[0] && result[0].DutyEndTimeSeconds && <th>DutyEndTimeSeconds</th>}
             {result[0] && result[0].IsDriverPresent && <th>IsDriverPresent</th>}
             {result[0] && result[0].VehicleNr && <th>VehicleNr</th>}
@@ -25,10 +27,11 @@ const TableComponent: React.FC<TableProps> = ({ result, secondsPassed, secondsPa
           </tr>
         </thead>
         <tbody>
-            {(result as Array<any>).map((row) => {
-              if (row.DutyEndTimeSeconds && row.DutyEndTimeSeconds > secondsPassed) {
+            {(result as Array<any>).map((row, index) => {
+              if ((type == "entradas" && row.DutyEndTimeSeconds && row.DutyEndTimeSeconds > secondsPassed) || (type == "saidas" && row.DutyStartTimeSeconds && row.DutyStartTimeSeconds > secondsPassed)) {
                 return (
-                  <tr>
+                  <tr key={index}>
+                    {row.DutyStartTimeSeconds && <td>{new Date(row.DutyStartTimeSeconds * 1000).toISOString().substring(11, 16)}</td>}
                     {row.DutyEndTimeSeconds && <td>{new Date(row.DutyEndTimeSeconds * 1000).toISOString().substring(11, 16)}</td>}
                     {row.IsDriverPresent && <td>{row.IsDriverPresent}</td>}
                     {row.VehicleNr && <td>{row.VehicleNr}</td>}
@@ -42,9 +45,10 @@ const TableComponent: React.FC<TableProps> = ({ result, secondsPassed, secondsPa
                   </tr>
                 );
               }
-              else if  (row.DutyEndTimeSeconds && row.DutyEndTimeSeconds > secondsPassed2) {
+              else if  ((type == "entradas" && row.DutyEndTimeSeconds && row.DutyEndTimeSeconds > secondsPassed2) || (type == "saidas" && row.DutyStartTimeSeconds && row.DutyStartTimeSeconds > secondsPassed2)) {
                 return (
-                <tr className={styles.late}>
+                <tr key={index} className={styles.late}>
+                  {row.DutyStartTimeSeconds && <td>{new Date(row.DutyStartTimeSeconds * 1000).toISOString().substring(11, 16)}</td>}
                   {row.DutyEndTimeSeconds && <td>{new Date(row.DutyEndTimeSeconds * 1000).toISOString().substring(11, 16)}</td>}
                   {row.IsDriverPresent && <td>{row.IsDriverPresent}</td>}
                   {row.VehicleNr && <td>{row.VehicleNr}</td>}
