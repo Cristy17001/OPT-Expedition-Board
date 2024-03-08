@@ -7,6 +7,7 @@ import TableComponent from './table';
 
 export default function Home() {
   const [data, setData] = useState({ result: [], secondsPassed: 0, secondsPassed2: 0 });
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchData();
@@ -25,14 +26,19 @@ export default function Home() {
     const secondsPassed = Math.floor((now.getTime() - startOfDay) / 1000); 
     const secondsPassed2 = secondsPassed - 600;
     setData({ result, secondsPassed, secondsPassed2 });
+    setLoading(false);
   }
 
   return (
     <main>
-      <button className={styles.navigation}>
-        <Link href="../">Início</Link>
-      </button>
-      <TableComponent result={data.result} secondsPassed={data.secondsPassed} secondsPassed2={data.secondsPassed2} />
+      <Link href="../"><button className= {styles.navigation}>Inicio </button></Link>
+      {data.result.length !== 0 ? (
+        <TableComponent
+          result={data.result}
+          secondsPassed={data.secondsPassed}
+          secondsPassed2={data.secondsPassed2}
+        />
+      ) : null}      {loading ? <div className = {styles.loader}></div>: null}
     </main>
   );
 }
