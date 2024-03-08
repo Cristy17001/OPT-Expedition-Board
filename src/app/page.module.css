@@ -2,19 +2,18 @@
     width: 100%;
     border-collapse: collapse;
     overflow: 'auto';
-    height: '50rem' 
 }
 
 .table th,
 .table td {
-    color: red;
-    padding: 8px;
+    padding: 1rem;
     text-align: center;
     border-bottom: 1px solid #ddd;
 }
 
 .table th {
     background-color: #f2f2f2;
+    color: #666;
 }
 
 .landing {
@@ -31,6 +30,7 @@
     padding: 0.8rem;
     margin: 0.5rem;
     border-radius: 10%;
+    font-family: inherit;
 }
 
 .late {
@@ -63,3 +63,20 @@
     }
 }
 
+
+
+h1.infoheader{
+    display: flex;
+    justify-content: center;
+}
+
+
+p.info{
+    max-width: 100%;
+    position: absolute;
+    top: 90%;
+    font-size: 1rem;
+    padding: 2rem;
+    overflow: hidden;
+    white-space: nowrap;
+}
