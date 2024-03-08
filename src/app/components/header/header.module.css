@@ -11,17 +11,25 @@
     font-size: 45px;
     font-weight: bold;
     text-transform: capitalize;
+    /* Add responsiveness */
+    @media (max-width: 768px) {
+        font-size: 30px;
+    }
 }
 
-.header > img {
+.header img {
     width: 55px;
     height: 55px;
+    /* Add responsiveness */
+    @media (max-width: 768px) {
+        width: 40px;
+        height: 40px;
+    }
 }
 
-.header > div {
-    font-size: 24px;
-    font-weight: 700;
+.btn_container {
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 1rem;
 }

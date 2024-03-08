@@ -1,0 +1,40 @@
+.table {
+    margin-top: 4.5rem;
+    margin-inline: auto;
+    margin-bottom: 10rem;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    background-color: var(--color-secundary-background);
+    overflow-x: scroll;
+}
+
+.table th,
+.table td {
+    padding: 1rem;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    max-width: 10vw;
+    width: 8vw;
+    min-width: 60px;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+}
+
+.table th {
+    font-size: 1.25rem;
+    background-color: var(--color-secundary-background);
+    color: var(--color-secundary-text);
+}
+
+.table td {
+    font-size: 1.1rem;
+}
+
+.late {
+    background-color: #FE0000;
+}
+
+.late td {
+    color: white;
+}
