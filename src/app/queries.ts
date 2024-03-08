@@ -1,3 +1,4 @@
+'use server';
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
@@ -99,3 +100,4 @@ export async function getSaidas() {
     `;
   return JSON.parse(JSON.stringify(data));
 }
+
