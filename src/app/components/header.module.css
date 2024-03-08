@@ -1,0 +1,27 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 20px;
+    padding-block: 25px;
+    background-color: var(--color-secundary-background);
+}
+
+.title {
+    font-size: 45px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.header > img {
+    width: 55px;
+    height: 55px;
+}
+
+.header > div {
+    font-size: 24px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
