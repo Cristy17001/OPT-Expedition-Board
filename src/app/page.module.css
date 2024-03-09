@@ -5,6 +5,7 @@
     height: 100dvh;
     background-color: var(--color-primary-background);
     font-size: 1.75rem;
+    text-align: center;
 }
 
 .card {
@@ -22,6 +23,9 @@
     justify-content: center;
     width: 100%;
     margin-top: 2rem;
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
 }
 
 .btn_nav {
