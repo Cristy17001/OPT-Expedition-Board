@@ -8,8 +8,7 @@ import '../globals.css';
 import  useUserPrefs from '../user_prefs';
 import Download from '../images/download.svg';
 import Upload from '../images/upload.svg';
-import Logo from '../images/switchLogo.png';
-import { pages } from 'next/dist/build/templates/app-page';
+import Logo from '../images/switchLogo.svg';
 
 type ColorPickerProps = {
     title: string;
@@ -23,9 +22,11 @@ type ColorPickerProps = {
     };
 
     return (
-      <div className={styles['color-picker']}>
-        <h1>{title}</h1>
-        <input type="color" value={rgb} onChange={handleColorChange} />
+      <div className={styles.color_picker}>
+        <p>{title}</p>
+        <div style={{ backgroundColor: rgb }}>
+            <input type="color" onChange={handleColorChange} />
+        </div>
       </div>
     );
   };
@@ -38,7 +39,7 @@ const PageSelector: React.FC<{ title: string }> = ({ title }) => {
             <button>
                 <Image src={ArrowLeftSvg} alt="arrow left" />
             </button>
-            <span>{title}</span>
+            <h2>{title}</h2>
             <button>
                 <Image src={ArrowRightSvg} alt="arrow right" />
             </button>
@@ -48,9 +49,9 @@ const PageSelector: React.FC<{ title: string }> = ({ title }) => {
 
 const ColorSelector: React.FC<{ colors: string[], onColorChange: (colorIndex: number, newColor: string) => void }> = ({ colors, onColorChange }) => {
     return (
-        <div className={styles['color-selector-container']}>
-            <h1>Seleção de cores:</h1>
-            <ColorPicker title="destaque" rgb={colors[2]} onColorChange={(newColor) => onColorChange(2, newColor)} />
+        <div className={styles.color_selector_container}>
+            <h2>Seleção de cores:</h2>
+            <ColorPicker title="Destaque" rgb={colors[2]} onColorChange={(newColor) => onColorChange(2, newColor)} />
             <ColorPicker title="Fundo Primário" rgb={colors[0]} onColorChange={(newColor) => onColorChange(0, newColor)} />
             <ColorPicker title="Fundo Secundário" rgb={colors[1]} onColorChange={(newColor) => onColorChange(1, newColor)} />
             <ColorPicker title="Texto Primário" rgb={colors[3]} onColorChange={(newColor) => onColorChange(3, newColor)} />
@@ -63,8 +64,10 @@ const ColorSelector: React.FC<{ colors: string[], onColorChange: (colorIndex: nu
 const AppearanceButton: React.FC<{ type: string, title: string, icon: string }> = ({ type, title, icon }) => {
     return (
         <button className={styles['basic-button']}>
-            {title}
-            <Image src={icon} alt={title} style={{ width: '10%', height: '60%', margin: '0 40px' }} /> 
+            <div>
+                <h2>{title}</h2>
+                <Image src={icon} alt={title} style={{ maxWidth: '50px', maxHeight: '60px', aspectRatio: '1/1' }} />
+            </div>
         </button>
     );
 };
@@ -134,13 +137,15 @@ const SettingsPage: React.FC = () => {
       }, [userPrefs]);
 
     return (
-        <form onSubmit={handleSubmit}>
-      <Header type='settings' title='Definições' logo={userPrefs.logo} prefstyles={rootStyle as React.CSSProperties}/>
-      <PageSelector title="Aparência"/>
-      <ColorSelector colors={colors} onColorChange={handleColorChange} />
-      <AppearanceSettingsManager/>
-      <button type="submit">Guardar</button>
-    </form>
+        <>
+            <Header type='settings' title='Definições' logo={userPrefs.logo} prefstyles={rootStyle as React.CSSProperties}/>
+            <form className={styles.settings_container} onSubmit={handleSubmit}>
+                <PageSelector title="Aparência"/>
+                <ColorSelector colors={colors} onColorChange={handleColorChange} />
+                <AppearanceSettingsManager/>
+                <button className={styles.save_btn} type="submit">Guardar</button>
+            </form>
+        </>
     );
 };
 
