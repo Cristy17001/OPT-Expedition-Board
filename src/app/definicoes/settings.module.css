@@ -74,7 +74,7 @@
   margin: 0;
 }
 
-.color-picker button{
+.color-picker input{
   width: 100px;
   height: 80px;
   margin-top: 10px;
@@ -104,8 +104,11 @@
 
 .basic-button{
   margin: 10px;
-  height: 150px;
-  width: 400px;
-  background-color: aqua;
-
+  height: 50%;
+  width: 33%;
+  background-color: white;
+  display: flex   ; 
+  font-size: 200%;
+  align-items: center;
+  justify-content: center;
 }

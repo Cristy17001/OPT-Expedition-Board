@@ -21,39 +21,38 @@ const defaultPrefs: UserPrefs = {
 }
 
 const getLocalPrefs = (key: string): UserPrefs => {
-    let currentPrefs: UserPrefs = defaultPrefs;
-    try {
-        currentPrefs = JSON.parse(localStorage.getItem(key) || JSON.stringify(defaultPrefs));
-    } catch (error) {
-        console.error("Error getting local prefs:", error);
-        return defaultPrefs;
+    const storedPrefs = localStorage.getItem(key);
+    if (storedPrefs) {
+      try {
+        return JSON.parse(storedPrefs);
+      } catch (error) {
+        console.error('Error parsing user preferences from local storage:', error);
+      }
     }
-    return currentPrefs;
-}
+    return defaultPrefs;
+  };
 
 const useUserPrefs = () => {
     const key = `userPrefs`;
 
-    const [userPrefs, setUserPrefs] = useState<UserPrefs>(defaultPrefs);
+    const [userPrefs, setUserPrefs] = useState<UserPrefs>(getLocalPrefs(key));
 
     useEffect(() => {
-        const currentPrefs = getLocalPrefs(key);
-        setUserPrefs(currentPrefs);
-    }, [])
+      const currentPrefs = getLocalPrefs(key);
+      setUserPrefs(currentPrefs);
+    }, [key]);
 
     useEffect(() => {
-        if(!userPrefs) return ;
-        localStorage.setItem(key, JSON.stringify(userPrefs))
-    }, [userPrefs])
+      if (!userPrefs) return;
+      localStorage.setItem(key, JSON.stringify(userPrefs));
+    }, [userPrefs, key]);
 
-    const updateUserPrefs = (newPrefs: Partial<UserPrefs>) => {
-        const currentPrefs = getLocalPrefs(key);
-        const updatedPrefs = {...currentPrefs, ...newPrefs};
-        setUserPrefs(updatedPrefs);
-    }
+    const updateUserPrefs = (newPrefs: UserPrefs) => {
+      console.log('updateUserPrefs called with:', newPrefs);
+      const updatedPrefs = { ...newPrefs };
+      setUserPrefs(updatedPrefs);
+    };
 
-    return {userPrefs: userPrefs, updateUserPrefs};
-
-};
-
+    return { userPrefs, updateUserPrefs };
+  };
 export default useUserPrefs;
