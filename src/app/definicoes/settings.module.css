@@ -1,0 +1,115 @@
+
+
+.page-selector-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px; /* Adjust margin as needed */
+  }
+  
+  .page-selector-container button {
+    display: flex; /* Use flexbox */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    background-color: transparent;
+    border: none;
+    height: 52.5px;
+    font-size: 20px;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  
+  .page-selector-container span {
+    font-size: 35px; /* Match the font size from Figma */
+    font-weight: 400; /* Regular weight */
+    margin: 0 10px;
+    background-color: var(--color-primary-background);
+    color: var(--color-primary-text);
+  }
+
+  .color-selector-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 15px;
+    height: 175px;
+    background-color: var(--color-secundary-background);
+    border-radius:10px ;
+    -webkit-border-radius:10px ;
+    -moz-border-radius:10px ;
+    -ms-border-radius:10px ;
+    -o-border-radius:10px ;
+}
+
+.color-selector-container h1{
+
+  text-align: center;
+  width: 20%; /* Width 30% of container */
+  margin: 0; /* Remove default margin */
+  margin-right: 10px;
+
+  font-size: 35px; /* Match the font size from Figma */
+  font-weight: 400; /* Regular weight */
+  color: var(--color-primary-text);
+
+}
+
+.color-picker {
+  display: flex; /* Add this line */
+  flex-direction: column; /* Change flex-direction to row */
+  align-items: center;
+  justify-content: flex-start;
+  height: 80%;
+  width: 150px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.color-picker h1 {
+  width: 100%;
+  font-size: 16px; 
+  font-weight: bold;
+  margin: 0;
+}
+
+.color-picker button{
+  width: 100px;
+  height: 80px;
+  margin-top: 10px;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}  
+
+.appearance-container{
+  display: flex;
+  margin-top: 60px;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.basic-settings {
+  flex: 1; /* This makes it take up 50% of the space */
+  flex-direction: column;
+}
+
+.preview {
+  flex: 1; /* This makes it take up 50% of the space */
+  background-color: green; /* Adjust background color as needed */
+}
+
+.basic-button{
+  margin: 10px;
+  height: 50%;
+  width: 33%;
+  background-color: white;
+  display: flex   ; 
+  font-size: 200%;
+  align-items: center;
+  justify-content: center;
+}
+
