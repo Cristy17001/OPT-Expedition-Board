@@ -13,6 +13,7 @@ body {
   background-color: var(--color-primary-background);
   color: var(--color-primary-text);
   overflow-x: hidden;
+  min-height: 100dvh;
 }
 
 /* Reset box-sizing to border-box */

@@ -6,7 +6,7 @@
 
 .table {
     width: 95%;
-    margin-top: 4.5rem;
+    margin-top: 2.5rem;
     margin-inline: auto;
     margin-bottom: 10rem;
     border-collapse: collapse;
@@ -16,7 +16,7 @@
 
 .table th,
 .table td {
-    padding: 1rem;
+    padding: 0.75rem;
     text-align: center;
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
@@ -25,10 +25,11 @@
     min-width: 130px;
     text-overflow: ellipsis;
     overflow-x: hidden;
+    white-space: nowrap;
 }
 
 .table th {
-    font-size: 1.25rem;
+    font-size: 140%;
     background-color: var(--color-primary-background);
     color: var(--color-secundary-text);
 }
@@ -38,7 +39,7 @@
 }
 
 .table td {
-    font-size: 1.1rem;
+    font-size: 120%;
 }
 
 .late {
