@@ -61,9 +61,33 @@ const ColorSelector: React.FC<{ colors: string[], onColorChange: (colorIndex: nu
 };
 
 
-const AppearanceButton: React.FC<{ type: string, title: string, icon: string }> = ({ type, title, icon }) => {
+const AppearanceButton: React.FC<{ type: string, title: string, icon: string, func: (newLogo: string) => void }> = ({ title, icon, func }) => {
+    const handleClick = () => {
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.accept = 'image/*'; // Accept only image files
+        input.onchange = () => {
+          const file = input.files?.[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = () => {
+              if (reader.result) {
+                func(reader.result.toString());
+              }
+            };
+            reader.onerror = () => {
+              console.error('Error reading file:', reader.error);
+            };
+            reader.readAsDataURL(file); // Read the file as a Data URL
+          }
+        };
+        input.click();
+      };
+
+
     return (
-        <button className={styles['basic-button']}>
+        <button className={styles['basic-button']} onClick={handleClick}>
+
             <div>
                 <h2>{title}</h2>
                 <Image src={icon} alt={title} style={{ maxWidth: '50px', maxHeight: '60px', aspectRatio: '1/1' }} />
@@ -72,13 +96,13 @@ const AppearanceButton: React.FC<{ type: string, title: string, icon: string }> 
     );
 };
 
-const AppearanceSettingsManager: React.FC = () => {
+const AppearanceSettingsManager: React.FC<{ setLogo: (newLogo: string) => void }> = ({ setLogo }) => {
     return (
         <div className={styles['appearance-container']}>
             <div className={styles['basic-settings']}>
-                <AppearanceButton title="Trocar Logo" type="test" icon={Logo} />
-                <AppearanceButton title="Exportar Configuração" type="test" icon={Download} />
-                <AppearanceButton title="Importar Configuração" type="test" icon={Upload} />
+                <AppearanceButton title="Trocar Logo" type="test" icon={Logo} func={setLogo}/>
+                <AppearanceButton title="Exportar Configuração" type="test" icon={Download}/>
+                <AppearanceButton title="Importar Configuração" type="test" icon={Upload}/>
             </div>
         </div>
     );
@@ -96,6 +120,8 @@ const SettingsPage: React.FC = () => {
         userPrefs.textColor2,
       ]);
 
+    const [logo, setLogo] = useState(userPrefs.logo);
+
     const handleColorChange = (colorIndex: number, newColor: string) => {
         setColors((prevColors) => {
             const newColors = [...prevColors];
@@ -103,6 +129,12 @@ const SettingsPage: React.FC = () => {
             return newColors;
         });
     };
+
+    const handleLogoChange = (newLogo: string) => {
+        setLogo(() => {
+            return newLogo;
+        });
+    }
 
 
     const rootStyle = {
@@ -124,17 +156,9 @@ const SettingsPage: React.FC = () => {
             highlightColor: colors[2],
             textColor1: colors[3],
             textColor2: colors[4],
-            logo: userPrefs.logo,
+            logo: logo,
         });
-
-
-
-        window.location.reload();
     };
-
-    useEffect(() => {
-        console.log(userPrefs);
-      }, [userPrefs]);
 
     return (
         <>
@@ -142,7 +166,7 @@ const SettingsPage: React.FC = () => {
             <form className={styles.settings_container} onSubmit={handleSubmit}>
                 <PageSelector title="Aparência"/>
                 <ColorSelector colors={colors} onColorChange={handleColorChange} />
-                <AppearanceSettingsManager/>
+                <AppearanceSettingsManager setLogo={handleLogoChange}/>
                 <button className={styles.save_btn} type="submit">Guardar</button>
             </form>
         </>
