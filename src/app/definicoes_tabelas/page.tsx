@@ -109,10 +109,16 @@ const TableContent: React.FC = () => {
 
 const SettingsPage: React.FC = () => {
     const { userPrefs } = useUserPrefs();
-
+    const rootStyle = {
+        '--color-highlight': userPrefs.highlightColor,
+        '--color-primary-background': userPrefs.color1,
+        '--color-secundary-background': userPrefs.color2,
+        '--color-primary-text': userPrefs.textColor1,
+        '--color-secundary-text': userPrefs.textColor2,
+    };
     return (
         <>
-            <Header type='settings' title='Definições' logo={userPrefs.logo}/>
+            <Header type='settings' title='Definições' logo={userPrefs.logo} prefstyles={rootStyle as React.CSSProperties}/>
             <div className={styles.settings_container}>
                 <PageSelector title="Tabelas"/>
                 <TableContent />
@@ -121,9 +127,6 @@ const SettingsPage: React.FC = () => {
         </>
     );
 };
-
-
-
 
 
 export default SettingsPage;
