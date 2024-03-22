@@ -1,8 +1,23 @@
+.settings_container {
+  height: 85dvh;
+}
+
+.settings_container h2 {
+  font-size: 25px;
+  font-weight: 400;
+  color: var(--color-primary-text);
+  text-align: center;
+
+  @media (max-width: 1100px) {
+    font-size: 20px;
+  }
+}
+
 .page-selector-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 15px;
+  margin-block: 1rem;
 }
 
 .page-selector-container button {
@@ -12,17 +27,41 @@
   background-color: transparent;
   border: none;
   height: 52.5px;
-  font-size: 20px;
   margin: 0 10px;
   cursor: pointer;
 }
 
-.page-selector-container span {
-  font-size: 35px;
-  font-weight: 400;
-  margin: 0 10px;
-  background-color: var(--color-primary-background);
-  color: var(--color-primary-text);
+.table-content-container {
+  width: 30%;
+  min-width: 400px;
+  margin-inline: auto;
+  background-color: var(--color-secundary-background);
+  padding: 5px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.table-content-container > div > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+
+.table-content-container > div > div img {
+  width: 25px;
+  height: 25px;
+}
+.action_container {
+  display: flex;
+  gap: 1rem;
+}
+
+.action_container button {
+  height: 25px;
 }
 
 .save_btn {
@@ -51,43 +90,4 @@
   -moz-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   -o-transform: translateX(-50%);
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 5%;
-  margin-left: -10%;
-}
-
-.container span {
-  font-size: 200%;
-}
-.container ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.container ul li {
-  position: relative; 
-  display: flex; 
-  align-items: center; 
-  padding: 5px; 
-}
-
-.container ul li button {
-  background-color: transparent; 
-  border: none; 
-  cursor: pointer; 
-  position: absolute;
-  right: -70%;
-  top: 50%;
-  transform: translate(50%, -50%); 
-}
-
-.container ul li img {
-  width: 12%;
-  height: 12%;
 }
