@@ -164,3 +164,37 @@
   -ms-transform: translateX(-50%);
   -o-transform: translateX(-50%);
 }
+
+.table-content-container {
+  width: 30%;
+  min-width: 400px;
+  margin-inline: auto;
+  background-color: var(--color-secundary-background);
+  padding: 5px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.table-content-container > div > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+
+.table-content-container > div > div img {
+  width: 25px;
+  height: 25px;
+}
+
+.action_container {
+  display: flex;
+  gap: 1rem;
+}
+
+.action_container button {
+  height: 25px;
+}

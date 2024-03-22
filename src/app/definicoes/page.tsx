@@ -9,6 +9,8 @@ import  useUserPrefs from '../user_prefs';
 import Download from '../images/download.svg';
 import Upload from '../images/upload.svg';
 import Logo from '../images/switchLogo.svg';
+import Switch from '../components/switch/switch';
+import Pencil from '../images/Pencil.svg';
 
 type ColorPickerProps = {
     title: string;
@@ -33,14 +35,14 @@ type ColorPickerProps = {
 
 
 
-const PageSelector: React.FC<{ title: string }> = ({ title }) => {
+const PageSelector: React.FC<{ title: string , buttonFunc: () => void }> = ({ title, buttonFunc }) => {
     return (
         <div className={styles['page-selector-container']}>
-            <button>
+            <button onClick={buttonFunc}>
                 <Image src={ArrowLeftSvg} alt="arrow left" />
             </button>
             <h2>{title}</h2>
-            <button>
+            <button onClick={buttonFunc}>
                 <Image src={ArrowRightSvg} alt="arrow right" />
             </button>
         </div>
@@ -135,9 +137,90 @@ const AppearanceSettingsManager: React.FC<{ setLogo: (newLogo: string) => void, 
     );
 };
 
+const TableContent: React.FC = () => {
+    return (
+        <div className={styles['table-content-container']}>
+            <div>
+                <div>
+                    <p>Carruagem</p>
+                    <div className={styles.action_container}>
+                        <Switch id={"1"} />
+                        <button type="button">
+                            <Image src={Pencil} alt="Edit Button" />
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <p>Chapa</p>
+                    <div className={styles.action_container}>
+                        <Switch id={"2"}/>
+                        <button type="button">
+                            <Image src={Pencil} alt="Edit Button" />
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <p>Altura</p>
+                    <div className={styles.action_container}>
+                        <Switch id={"3"}/>
+                        <button type="button">
+                            <Image src={Pencil} alt="Edit Button" />
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <p>Mot</p>
+                    <div className={styles.action_container}>
+                        <Switch id={"4"}/>
+                        <button type="button">
+                            <Image src={Pencil} alt="Edit Button" />
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <p>Hora</p>
+                    <div className={styles.action_container}>
+                        <Switch id={"5"}/>
+                        <button type="button">
+                            <Image src={Pencil} alt="Edit Button" />
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <p>AC</p>
+                    <div className={styles.action_container}>
+                        <Switch id={"6"}/>
+                        <button type="button">
+                            <Image src={Pencil} alt="Edit Button" />
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <p>Pressão</p>
+                    <div className={styles.action_container}>
+                        <Switch id={"7"}/>
+                        <button type="button">
+                            <Image src={Pencil} alt="Edit Button" />
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <p>Observações</p>
+                    <div className={styles.action_container}>
+                        <Switch id={"8"}/>
+                        <button type="button">
+                            <Image src={Pencil} alt="Edit Button" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
 
 
 const SettingsPage: React.FC = () => {
+    const [settingsState, setSettingsState ] = useState<string>('appearance');
     const { userPrefs, updateUserPrefs } = useUserPrefs();
     const [colors, setColors] = useState([
         userPrefs.color1,
@@ -238,13 +321,30 @@ const SettingsPage: React.FC = () => {
         });
     };
 
+    const pageSwitch = () => {
+        if (settingsState == 'appearance') {
+            setSettingsState('tables');
+        } else {
+            setSettingsState('appearance');
+        }
+    };
+
     return (
         <>
             <Header type='settings' title='Definições' logo={userPrefs.logo} prefstyles={rootStyle as React.CSSProperties}/>
             <form className={styles.settings_container} onSubmit={handleSubmit}>
-                <PageSelector title="Aparência"/>
-                <ColorSelector colors={colors} onColorChange={handleColorChange} />
-                <AppearanceSettingsManager setLogo={handleLogoChange} exportConfig={handleExportConfig} importConfig={handleImportConfig}/>
+                {settingsState == 'appearance' ? (
+                    <>
+                        <PageSelector title="Aparência" buttonFunc={pageSwitch}/>
+                        <ColorSelector colors={colors} onColorChange={handleColorChange} />
+                        <AppearanceSettingsManager setLogo={handleLogoChange} exportConfig={handleExportConfig} importConfig={handleImportConfig}/>
+                    </>
+                ) : (
+                    <>
+                        <PageSelector title="Tabelas" buttonFunc={pageSwitch}/>
+                        <TableContent />
+                    </>
+                )}
                 <button className={styles.save_btn} type="submit">Guardar</button>
             </form>
         </>
