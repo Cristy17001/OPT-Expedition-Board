@@ -198,3 +198,19 @@
 .action_container button {
   height: 25px;
 }
+
+
+
+.input_field{
+  width: 70%;
+  padding: 10px 12px;
+  border-radius: 5px;
+  background-color: var(--color-primary-background);
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--color-highlight);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}

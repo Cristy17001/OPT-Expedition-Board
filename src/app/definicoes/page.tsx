@@ -11,6 +11,7 @@ import Upload from '../images/upload.svg';
 import Logo from '../images/switchLogo.svg';
 import Switch from '../components/switch/switch';
 import Pencil from '../images/Pencil.svg';
+import CheckMark from '../images/checkMark.svg';
 
 type ColorPickerProps = {
     title: string;
@@ -138,81 +139,65 @@ const AppearanceSettingsManager: React.FC<{ setLogo: (newLogo: string) => void, 
 };
 
 const TableContent: React.FC = () => {
+
+    const initialElementsState = [
+        { isEditing: false, editedText: "Carruagem" },
+        { isEditing: false, editedText: "Chapa" },
+        { isEditing: false, editedText: "Altura" },
+        { isEditing: false, editedText: "Mot" },
+        { isEditing: false, editedText: "Hora" },
+        { isEditing: false, editedText: "AC" },
+        { isEditing: false, editedText: "Pressão" },
+        { isEditing: false, editedText: "Observações" }
+    ];
+
+    const [elementsState, setElementsState] = useState(initialElementsState);
+
+    const handleEditClick = (index: number) => {
+        const newElementsState = [...elementsState];
+        newElementsState[index].isEditing = true;
+        setElementsState(newElementsState);
+    };
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
+        const newElementsState = [...elementsState];
+        newElementsState[index].editedText = e.target.value;
+        setElementsState(newElementsState);
+    };
+
+    const handleInputBlur = (index: number) => {
+        const newElementsState = [...elementsState];
+        newElementsState[index].isEditing = false;
+
+        // save changes
+        setElementsState(newElementsState);
+    };
+
+
     return (
         <div className={styles['table-content-container']}>
             <div>
-                <div>
-                    <p>Carruagem</p>
-                    <div className={styles.action_container}>
-                        <Switch id={"1"} />
-                        <button type="button">
-                            <Image src={Pencil} alt="Edit Button" />
-                        </button>
+                {elementsState.map((element, index) => (
+                    <div key={index}>
+                        {element.isEditing ? (
+                            <input
+                                type="text"
+                                value={element.editedText}
+                                onChange={(e) => handleInputChange(e, index)}
+                                className={styles.input_field}
+                                //onBlur={() => handleInputBlur(index)}
+                            />
+                        ) : (
+                            <p>{element.editedText}</p>
+                        )}
+                        <div className={styles.action_container}>
+                            <Switch id={String(index + 1)} />
+                            <button type="button" onClick={() => element.isEditing ? handleInputBlur(index) : handleEditClick(index)}>
+                                <Image src={element.isEditing ? CheckMark : Pencil} alt={element.isEditing ? "Check Button" : "Edit Button"} />
+                            </button>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <p>Chapa</p>
-                    <div className={styles.action_container}>
-                        <Switch id={"2"}/>
-                        <button type="button">
-                            <Image src={Pencil} alt="Edit Button" />
-                        </button>
-                    </div>
-                </div>
-                <div>
-                    <p>Altura</p>
-                    <div className={styles.action_container}>
-                        <Switch id={"3"}/>
-                        <button type="button">
-                            <Image src={Pencil} alt="Edit Button" />
-                        </button>
-                    </div>
-                </div>
-                <div>
-                    <p>Mot</p>
-                    <div className={styles.action_container}>
-                        <Switch id={"4"}/>
-                        <button type="button">
-                            <Image src={Pencil} alt="Edit Button" />
-                        </button>
-                    </div>
-                </div>
-                <div>
-                    <p>Hora</p>
-                    <div className={styles.action_container}>
-                        <Switch id={"5"}/>
-                        <button type="button">
-                            <Image src={Pencil} alt="Edit Button" />
-                        </button>
-                    </div>
-                </div>
-                <div>
-                    <p>AC</p>
-                    <div className={styles.action_container}>
-                        <Switch id={"6"}/>
-                        <button type="button">
-                            <Image src={Pencil} alt="Edit Button" />
-                        </button>
-                    </div>
-                </div>
-                <div>
-                    <p>Pressão</p>
-                    <div className={styles.action_container}>
-                        <Switch id={"7"}/>
-                        <button type="button">
-                            <Image src={Pencil} alt="Edit Button" />
-                        </button>
-                    </div>
-                </div>
-                <div>
-                    <p>Observações</p>
-                    <div className={styles.action_container}>
-                        <Switch id={"8"}/>
-                        <button type="button">
-                            <Image src={Pencil} alt="Edit Button" />
-                        </button>
-                    </div>
-                </div>
+                ))}
             </div>
         </div>
     );
