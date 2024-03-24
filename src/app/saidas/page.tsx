@@ -54,7 +54,7 @@ export default function Home() {
   }
 
   return (
-    <>
+    <div style={rootStyle as React.CSSProperties}>
       <Header type="saidas" title="Quadro De Saídas" logo = {userPrefs.logo} prefstyles={rootStyle as React.CSSProperties}/>
       <main className={styles.flex_center} style={rootStyle as React.CSSProperties}>        {data.result.length !== 0 ? (
           <TableComponent
@@ -67,6 +67,6 @@ export default function Home() {
         {loading ? <LoadingComponent /> : null}
         <BottomInfo />
       </main>
-    </>
+    </div>
   );
 }

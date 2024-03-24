@@ -13,12 +13,14 @@
   font-size: 1.5rem;
   font-weight: bold;
   text-transform: capitalize;
+  color: var(--color-primary-text);
 }
 
 .header img, .header svg {
   width: 30px;
   height: 30px;
 }
+
 
 .header a {
   display: flex;
@@ -44,7 +46,7 @@
   margin-inline: auto;
   margin-bottom: 10rem;
   border-collapse: collapse;
-  border: 1px solid #ddd;
+  color: var(--color-primary-text);
   background-color: var(--color-secundary-background);
 }
 
@@ -52,8 +54,6 @@
 .table td {
   padding: 0.275rem;
   text-align: center;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
   max-width: 10vw;
   width: 8vw;
   min-width: 130px;
@@ -65,11 +65,18 @@
 .table th {
   font-size: 1rem;
   background-color: var(--color-primary-background);
-  color: var(--color-secundary-text);
+  background-color: var(--color-highlight);
+  color: var(--color-secundary-background);
+}
+
+.table tr {
+  background-color: var(--color-secundary-background);
 }
 
 .table tr:nth-child(2n) {
-  background-color: var(--color-primary-background);
+  background-color: var(--color-secundary-background);
+  filter: brightness(90%);
+  -webkit-filter: brightness(90%);
 }
 
 .table td {

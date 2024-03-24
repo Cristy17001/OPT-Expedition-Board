@@ -1,5 +1,6 @@
 .settings_container {
   height: 85dvh;
+  background-color: var(--color-primary-background);
 }
 
 .settings_container h2 {
@@ -121,7 +122,7 @@
 }
 
 .basic-button {
-  background-color: white;
+  background-color: var(--color-secundary-background);
   padding: 0.5rem 1rem;
   height: 11dvh;
   max-height: 150px;

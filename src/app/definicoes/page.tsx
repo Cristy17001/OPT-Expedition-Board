@@ -326,9 +326,9 @@ const SettingsPage: React.FC = () => {
     };
 
     return (
-        <>
+        <main style={rootStyle as React.CSSProperties}>
             <Header type='settings' title='Definições' logo={userPrefs.logo} prefstyles={rootStyle as React.CSSProperties}/>
-            <form className={styles.settings_container} onSubmit={handleSubmit}>
+            <form className={styles.settings_container} onSubmit={handleSubmit} style={rootStyle as React.CSSProperties}>
                 {settingsState == 'appearance' ? (
                     <>
                         <PageSelector title="Aparência" buttonFunc={pageSwitch}/>
@@ -343,7 +343,7 @@ const SettingsPage: React.FC = () => {
                 )}
                 <button className={styles.save_btn} type="submit">Guardar</button>
             </form>
-        </>
+        </main>
     );
 };
 
