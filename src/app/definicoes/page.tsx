@@ -1,17 +1,18 @@
 "use client";
 import Image from 'next/image';
 import React, { useState, useEffect } from 'react';import Header from '../components/header/header';
-import ArrowLeftSvg from '../images/arrowleft.svg';
-import ArrowRightSvg from '../images/arrowright.svg';
+import ArrowLeft from '../images/svgs/arrowleft';
+import ArrowRight from '../images/svgs/arrowright';
 import styles from './settings.module.css';
 import '../globals.css';
-import  useUserPrefs from '../user_prefs';
-import Download from '../images/download.svg';
-import Upload from '../images/upload.svg';
-import Logo from '../images/switchLogo.svg';
+import  useUserPrefs, { UserPrefs } from '../user_prefs';
+import Download from '../images/svgs/download';
+import Upload from '../images/svgs/upload';
+import SwitchLogo from '../images/svgs/switchLogo';
 import Switch from '../components/switch/switch';
-import Pencil from '../images/Pencil.svg';
-import CheckMark from '../images/checkMark.svg';
+import Pencil from '../images/svgs/pencil';
+import CheckMark from '../images/svgs/checkMark';
+import PreviewComponent from '../components/Preview/Preview';
 
 type ColorPickerProps = {
     title: string;
@@ -40,11 +41,11 @@ const PageSelector: React.FC<{ title: string , buttonFunc: () => void }> = ({ ti
     return (
         <div className={styles['page-selector-container']}>
             <button onClick={buttonFunc}>
-                <Image src={ArrowLeftSvg} alt="arrow left" />
+                <ArrowLeft />
             </button>
             <h2>{title}</h2>
             <button onClick={buttonFunc}>
-                <Image src={ArrowRightSvg} alt="arrow right" />
+                <ArrowRight />
             </button>
         </div>
     );
@@ -64,7 +65,7 @@ const ColorSelector: React.FC<{ colors: string[], onColorChange: (colorIndex: nu
 };
 
 
-const AppearanceButton: React.FC<{ type: string, title: string, icon: string, func: (newLogo: string) => void }> = ({ title, icon, func }) => {
+const AppearanceButton: React.FC<{ title: string, func: (newLogo: string) => void }> = ({ title, func }) => {
     const handleClick = () => {
         const input = document.createElement('input');
         input.type = 'file';
@@ -93,46 +94,57 @@ const AppearanceButton: React.FC<{ type: string, title: string, icon: string, fu
 
             <div>
                 <h2>{title}</h2>
-                <Image src={icon} alt={title} style={{ maxWidth: '50px', maxHeight: '60px', aspectRatio: '1/1' }} />
+                <SwitchLogo />
             </div>
         </button>
     );
 };
 
 
-const ExportConfigButton: React.FC<{ type: string, title: string, icon: string, func: () => void }> = ({ title, icon, func }) => {
+const ExportConfigButton: React.FC<{ title: string, func: () => void }> = ({ title, func }) => {
 
     return (
         <button className={styles['basic-button']} onClick={func}>
 
             <div>
                 <h2>{title}</h2>
-                <Image src={icon} alt={title} style={{ maxWidth: '50px', maxHeight: '60px', aspectRatio: '1/1' }} />
+                <Upload />
             </div>
         </button>
     );
 };
 
-const ImportConfigButton: React.FC<{ type: string, title: string, icon: string, func: () => void }> = ({ title, icon, func }) => {
+const ImportConfigButton: React.FC<{ title: string, func: () => void }> = ({ title, func }) => {
 
     return (
         <button className={styles['basic-button']} onClick={func}>
 
             <div>
                 <h2>{title}</h2>
-                <Image src={icon} alt={title} style={{ maxWidth: '50px', maxHeight: '60px', aspectRatio: '1/1' }} />
+                <Download />
             </div>
         </button>
     );
 };
 
-const AppearanceSettingsManager: React.FC<{ setLogo: (newLogo: string) => void, exportConfig: () => void, importConfig: () => void }> = ({ setLogo, exportConfig, importConfig }) => {
+const AppearanceSettingsManager: React.FC<{colors: string[],  userPrefs: UserPrefs, setLogo: (newLogo: string) => void, exportConfig: () => void, importConfig: () => void }> = ({ colors, userPrefs, setLogo, exportConfig, importConfig }) => {
+    const rootStyle = {
+        '--color-highlight': colors[2],
+        '--color-primary-background': colors[0],
+        '--color-secundary-background': colors[1],
+        '--color-primary-text': colors[3],
+        '--color-secundary-text': colors[4],
+    };
+
     return (
         <div className={styles['appearance-container']}>
             <div className={styles['basic-settings']}>
-                <AppearanceButton title="Trocar Logo" type="test" icon={Logo} func={setLogo}/>
-                <ExportConfigButton title="Exportar Configuração" type="test" icon={Download} func={exportConfig}/>
-                <ImportConfigButton title="Importar Configuração" type="test" icon={Upload} func={importConfig}/>
+                <AppearanceButton title="Trocar Logo" func={setLogo}/>
+                <ExportConfigButton title="Exportar Configuração" func={exportConfig}/>
+                <ImportConfigButton title="Importar Configuração" func={importConfig}/>
+            </div>
+            <div className={styles['preview-container']} style={rootStyle as React.CSSProperties}>
+                <PreviewComponent type='' title='Quadro De Entradas' userPrefs={userPrefs}/>
             </div>
         </div>
     );
@@ -185,7 +197,6 @@ const TableContent: React.FC = () => {
                                 value={element.editedText}
                                 onChange={(e) => handleInputChange(e, index)}
                                 className={styles.input_field}
-                                //onBlur={() => handleInputBlur(index)}
                             />
                         ) : (
                             <p>{element.editedText}</p>
@@ -193,7 +204,7 @@ const TableContent: React.FC = () => {
                         <div className={styles.action_container}>
                             <Switch id={String(index + 1)} />
                             <button type="button" onClick={() => element.isEditing ? handleInputBlur(index) : handleEditClick(index)}>
-                                <Image src={element.isEditing ? CheckMark : Pencil} alt={element.isEditing ? "Check Button" : "Edit Button"} />
+                                {element.isEditing ? <CheckMark /> : <Pencil />}
                             </button>
                         </div>
                     </div>
@@ -322,7 +333,7 @@ const SettingsPage: React.FC = () => {
                     <>
                         <PageSelector title="Aparência" buttonFunc={pageSwitch}/>
                         <ColorSelector colors={colors} onColorChange={handleColorChange} />
-                        <AppearanceSettingsManager setLogo={handleLogoChange} exportConfig={handleExportConfig} importConfig={handleImportConfig}/>
+                        <AppearanceSettingsManager setLogo={handleLogoChange} exportConfig={handleExportConfig} importConfig={handleImportConfig} colors={colors} userPrefs={userPrefs}/>
                     </>
                 ) : (
                     <>
