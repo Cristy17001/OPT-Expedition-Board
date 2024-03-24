@@ -54,19 +54,16 @@ export default function Home() {
   }
 
   return (
-    <div style={rootStyle as React.CSSProperties}>
-      <Header type="saidas" title="Quadro De Saídas" logo = {userPrefs.logo} prefstyles={rootStyle as React.CSSProperties}/>
-      <main className={styles.flex_center} style={rootStyle as React.CSSProperties}>        {data.result.length !== 0 ? (
-          <TableComponent
-            type="saidas"
-            result={data.result}
-            secondsPassed={data.secondsPassed}
-            secondsPassed2={data.secondsPassed2}
-          />
-        ) : null}
-        {loading ? <LoadingComponent /> : null}
-        <BottomInfo />
-      </main>
-    </div>
+    <main style={rootStyle as React.CSSProperties}>
+      <Header type="saidas" title="Quadro De Saídas" logo={userPrefs.logo} prefstyles={rootStyle as React.CSSProperties} />
+      <TableComponent
+        type="saidas"
+        result={data.result}
+        secondsPassed={data.secondsPassed}
+        secondsPassed2={data.secondsPassed2}
+      />
+      {loading ? <LoadingComponent /> : null}
+      <BottomInfo />
+    </main>
   );
 }
