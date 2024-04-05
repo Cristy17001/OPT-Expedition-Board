@@ -36,7 +36,6 @@ type ColorPickerProps = {
   };
 
 
-
 const PageSelector: React.FC<{ title: string , buttonFunc: () => void }> = ({ title, buttonFunc }) => {
     return (
         <div className={styles['page-selector-container']}>
@@ -149,6 +148,19 @@ const AppearanceSettingsManager: React.FC<{colors: string[],  userPrefs: UserPre
         </div>
     );
 };
+
+
+const InfoBox: React.FC = () => {
+    return(
+        <div className={styles['InfoBox']}>
+            <input
+                value="Hardcoded"
+                type='text'
+            />
+        </div>
+    );
+}
+
 
 const TableContent: React.FC = () => {
 
@@ -339,6 +351,7 @@ const SettingsPage: React.FC = () => {
                     <>
                         <PageSelector title="Tabelas" buttonFunc={pageSwitch}/>
                         <TableContent />
+                        <InfoBox/>
                     </>
                 )}
                 <button className={styles.save_btn} type="submit">Guardar</button>
