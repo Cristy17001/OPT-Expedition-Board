@@ -33,6 +33,14 @@
   gap: 1rem;
 }
 
+.btn_container > * {
+  transition: filter 0.3s ease; /* Adding transition for smoother effect */
+}
+
+.btn_container > *:hover {
+  filter: brightness(80%); /* Adjust brightness for desired lighter color effect */
+}
+
 /* Table */
 .table_container {
   width: 100%;
