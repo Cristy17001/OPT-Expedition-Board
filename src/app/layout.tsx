@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import Logo from './images/logo.png';
 import "./globals.css";
+import useUserPrefs from "./user_prefs";
 
 
 const poppins = Poppins({ weight: ["400", "500", "100", "200", "300", "600", "700", "800", "900"], subsets: ["latin"]});
@@ -22,7 +23,8 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>)
+{
   return (
     <html lang="en">
       <body className={poppins.className}>

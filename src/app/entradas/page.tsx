@@ -6,6 +6,7 @@ import Header from "../components/header/header";
 import LoadingComponent from "../components/loading/loading";
 import BottomInfo from "../components/bottomInfo/bottomInfo";
 import styles from "../page.module.css";
+import useUserPrefs from "../user_prefs";
 
 export default function Home() {
   const [data, setData] = useState({
@@ -25,6 +26,18 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
+  const { userPrefs } = useUserPrefs();
+
+  const rootStyle = {
+    '--color-highlight': userPrefs.highlightColor,
+    '--color-primary-background': userPrefs.color1,
+    '--color-secundary-background': userPrefs.color2,
+    '--color-primary-text': userPrefs.textColor1,
+    '--color-secundary-text': userPrefs.textColor2,
+  };
+
+
+
   async function fetchData() {
     const result = await getEntradas();
     const now = new Date();
@@ -39,10 +52,10 @@ export default function Home() {
     setLoading(false);
   }
 
+
   return (
-    <>
-      <Header type="entradas" title="Quadro de entradas" />
-      <main className={styles.flex_center}>
+    <main style={rootStyle as React.CSSProperties}>
+      <Header type="entradas" title="Quadro de entradas" logo = {userPrefs.logo} prefstyles={rootStyle as React.CSSProperties}/>
         {data.result.length !== 0 ? (
           <TableComponent
             type="entradas"
@@ -52,8 +65,7 @@ export default function Home() {
           />
         ) : null}{" "}
         {loading ? <LoadingComponent /> : null}
-        <BottomInfo />
-      </main>
-    </>
+        <BottomInfo/>
+    </main>
   );
 }

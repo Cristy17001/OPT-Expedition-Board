@@ -1,115 +1,228 @@
+.settings_container {
+  height: 85dvh;
+  background-color: var(--color-primary-background);
+}
 
+.settings_container h2 {
+  font-size: 25px;
+  font-weight: 400;
+  color: var(--color-primary-text);
+  text-align: center;
+
+  @media (max-width: 1100px) {
+    font-size: 20px;
+  }
+}
 
 .page-selector-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 15px; /* Adjust margin as needed */
-  }
-  
-  .page-selector-container button {
-    display: flex; /* Use flexbox */
-    align-items: center; /* Center items vertically */
-    justify-content: center; /* Center items horizontally */
-    background-color: transparent;
-    border: none;
-    height: 52.5px;
-    font-size: 20px;
-    margin: 0 10px;
-    cursor: pointer;
-  }
-  
-  .page-selector-container span {
-    font-size: 35px; /* Match the font size from Figma */
-    font-weight: 400; /* Regular weight */
-    margin: 0 10px;
-    background-color: var(--color-primary-background);
-    color: var(--color-primary-text);
-  }
-
-  .color-selector-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-left: 2%;
-    margin-right: 2%;
-    margin-top: 15px;
-    height: 175px;
-    background-color: var(--color-secundary-background);
-    border-radius:10px ;
-    -webkit-border-radius:10px ;
-    -moz-border-radius:10px ;
-    -ms-border-radius:10px ;
-    -o-border-radius:10px ;
-}
-
-.color-selector-container h1{
-
-  text-align: center;
-  width: 20%; /* Width 30% of container */
-  margin: 0; /* Remove default margin */
-  margin-right: 10px;
-
-  font-size: 35px; /* Match the font size from Figma */
-  font-weight: 400; /* Regular weight */
-  color: var(--color-primary-text);
-
-}
-
-.color-picker {
-  display: flex; /* Add this line */
-  flex-direction: column; /* Change flex-direction to row */
+  display: flex;
   align-items: center;
-  justify-content: flex-start;
-  height: 80%;
-  width: 150px;
-  margin-left: 10px;
-  margin-right: 10px;
+  justify-content: center;
+  margin-block: 1rem;
 }
 
-.color-picker h1 {
+.page-selector-container button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  height: 52.5px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.color_selector_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 95%;
+  min-height: 140px;
+  height: 15dvh;
+  max-height: 175px;
+  gap: 0.5rem;
+  padding-inline: 2%;
+  margin-inline: auto;
+  background-color: var(--color-secundary-background);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.color_picker {
+  height: 85%;
+  width: 130px;
+  padding: 5px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.color_picker p {
   width: 100%;
-  font-size: 16px; 
-  font-weight: bold;
-  margin: 0;
+  min-height: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.color-picker button{
-  width: 100px;
-  height: 80px;
-  margin-top: 10px;
+.color_picker div {
+  min-width: 100px;
+  aspect-ratio: 16/12;
+  height: 90%;
   border-radius: 15px;
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
   -ms-border-radius: 15px;
   -o-border-radius: 15px;
-}  
+  border: 1px solid #dbdbdb;
+  text-align: center;
+  overflow: hidden;
+  margin-inline: auto;
+  cursor: pointer;
+}
 
-.appearance-container{
+.color_picker input {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.appearance-container {
+  width: 95%;
+  margin-inline: auto;
+  margin-top: 1rem;
   display: flex;
-  margin-top: 60px;
-  margin-left: 2%;
-  margin-right: 2%;
+  height: 50%;
+}
+
+.appearance-container .preview-container {
+  width: 65%;
+  max-width: 800px;
+  aspect-ratio: 16/9;
+  text-align: center;
+  margin-inline: auto;
+  position: relative;
+  background-color: var(--color-primary-background);
 }
 
 .basic-settings {
-  flex: 1; /* This makes it take up 50% of the space */
+  display: flex;
   flex-direction: column;
+  gap: 1rem;
+  width: 30%;
+  margin-block: auto;
 }
 
-.preview {
-  flex: 1; /* This makes it take up 50% of the space */
-  background-color: green; /* Adjust background color as needed */
+.basic-button {
+  background-color: var(--color-secundary-background);
+  padding: 0.5rem 1rem;
+  height: 11dvh;
+  max-height: 150px;
+  box-sizing: content-box;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 
-.basic-button{
-  margin: 10px;
-  height: 50%;
-  width: 33%;
-  background-color: white;
-  display: flex   ; 
-  font-size: 200%;
+.basic-button > div {
+  width: 80%;
+  margin-inline: auto;
+  display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
+.basic-button > div > img {
+  width: 50px;
+  @media (max-width: 1100px) {
+    width: 30px;
+  }
+}
+
+.save_btn {
+  display: block;
+  margin-inline: auto;
+  margin-top: auto;
+  width: 10%;
+  min-width: fit-content;
+  max-width: 20rem;
+  padding: 1rem 2rem;
+  color: var(--color-secundary-background);
+  background-color: var(--color-highlight);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  font-size: 120%;
+
+  font-weight: bold;
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+
+.table-content-container {
+  width: 30%;
+  min-width: 400px;
+  margin-inline: auto;
+  background-color: var(--color-secundary-background);
+  padding: 5px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.table-content-container > div > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+
+.table-content-container > div > div img {
+  width: 25px;
+  height: 25px;
+}
+
+.action_container {
+  display: flex;
+  gap: 1rem;
+}
+
+.action_container button {
+  height: 25px;
+}
+
+.input_field{
+  width: 70%;
+  padding: 10px 12px;
+  border-radius: 5px;
+  background-color: var(--color-primary-background);
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--color-highlight);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}

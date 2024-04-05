@@ -7,12 +7,11 @@
 }
 
 /* Set default font family and size */
-body {
-  font-family: Arial, sans-serif;
-  font-size: 16px;
+body, main {
   background-color: var(--color-primary-background);
   color: var(--color-primary-text);
   overflow-x: hidden;
+  min-height: 100dvh;
 }
 
 /* Reset box-sizing to border-box */
@@ -74,4 +73,44 @@ select {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+/* Define the colors variables for each svg */
+
+/* header */
+.back-arrow-svg * {
+  stroke: var(--color-highlight) !important;
+}
+
+.settings-svg * {
+  fill: var(--color-secundary-text) !important;
+}
+
+.switch-table-svg * {
+  fill: var(--color-highlight) !important;
+}
+
+/* Appearance settings */
+.switch-logo-svg * {
+  fill: var(--color-highlight) !important;
+}
+
+.arrow-left-svg * {
+  fill: var(--color-primary-text) !important;
+}
+
+.arrow-right-svg * {
+  fill: var(--color-primary-text) !important;
+}
+
+.download-svg * {
+  fill: var(--color-primary-text) !important;
+}
+
+.upload-svg * {
+  stroke: var(--color-primary-text) !important;
+}
+
+.pencil-svg * {
+  fill: var(--color-primary-text) !important;
 }
