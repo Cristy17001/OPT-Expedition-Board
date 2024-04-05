@@ -152,6 +152,8 @@
 }
 
 .save_btn {
+  transition: filter 0.3s ease; /* Adding transition for smoother effect */
+
   display: block;
   margin-inline: auto;
   margin-top: auto;
@@ -177,6 +179,10 @@
   -moz-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   -o-transform: translateX(-50%);
+}
+
+.save_btn:hover{
+  filter: brightness(80%); /* Adjust brightness for desired lighter color effect */
 }
 
 .table-content-container {
