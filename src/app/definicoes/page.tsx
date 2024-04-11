@@ -150,6 +150,57 @@ const AppearanceSettingsManager: React.FC<{colors: string[],  userPrefs: UserPre
     );
 };
 
+const InfoBox: React.FC = () => {
+    const [isEditing, setIsEditing] = useState(false);
+    const [editedText, setEditedText] = useState("");
+    const [originalText, setOriginalText] = useState("Informação");
+
+    const handleEditClick = () => {
+        setIsEditing(true);
+        setEditedText("");
+    };
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setEditedText(e.target.value);
+    };
+
+    const handleInputBlur = () => {
+        setIsEditing(false);
+    };
+
+    const handleSaveClick = () => {
+        setOriginalText(editedText || originalText);
+        setIsEditing(false);
+    };
+
+    return (
+        <div className={styles['info-box-container']}>
+            <div>
+                {isEditing ? (
+                    <input
+                        type="text"
+                        value={editedText}
+                        onChange={handleInputChange}
+                        onBlur={handleInputBlur}
+                        placeholder="Escreva aqui"
+                    />
+                ) : (
+                    <>
+                        <p>{originalText}</p>
+                        <button onClick={handleEditClick}><Pencil/></button>
+                    </>
+                )}
+                {isEditing && (
+                    <button onClick={handleSaveClick}><CheckMark/> </button>
+                )}
+            </div>
+        </div>
+    );
+};
+
+
+
+
 const TableContent: React.FC = () => {
 
     const initialElementsState = [
@@ -181,7 +232,7 @@ const TableContent: React.FC = () => {
         const newElementsState = [...elementsState];
         newElementsState[index].isEditing = false;
 
-        // save changes
+        
         setElementsState(newElementsState);
     };
 
@@ -339,6 +390,7 @@ const SettingsPage: React.FC = () => {
                     <>
                         <PageSelector title="Tabelas" buttonFunc={pageSwitch}/>
                         <TableContent />
+                        <InfoBox />
                     </>
                 )}
                 <button className={styles.save_btn} type="submit">Guardar</button>
