@@ -232,7 +232,7 @@ const TableContent: React.FC = () => {
         const newElementsState = [...elementsState];
         newElementsState[index].isEditing = false;
 
-        // save changes
+        
         setElementsState(newElementsState);
     };
 
