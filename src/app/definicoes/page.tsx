@@ -203,18 +203,18 @@ const InfoBox: React.FC = () => {
 
 const TableContent: React.FC = () => {
 
-    const initialElementsState = [
-        { isEditing: false, editedText: "Carruagem" },
-        { isEditing: false, editedText: "Chapa" },
-        { isEditing: false, editedText: "Altura" },
-        { isEditing: false, editedText: "Mot" },
-        { isEditing: false, editedText: "Hora" },
-        { isEditing: false, editedText: "AC" },
-        { isEditing: false, editedText: "Pressão" },
-        { isEditing: false, editedText: "Observações" }
-    ];
+    let initialElementsState: { isEditing: boolean, editedText: string }[] = [];
+    const { userPrefs, updateUserPrefs } = useUserPrefs();
 
-    const [elementsState, setElementsState] = useState(initialElementsState);
+    userPrefs.column_order.forEach(element => {
+        userPrefs.table_map.forEach(column_name => {
+            if (element[1] == column_name[0]) {
+                initialElementsState.push({ isEditing: false, editedText: column_name[1] });
+            }
+        });
+    });
+
+    let [elementsState, setElementsState] = useState(initialElementsState);
 
     const handleEditClick = (index: number) => {
         const newElementsState = [...elementsState];
@@ -232,7 +232,7 @@ const TableContent: React.FC = () => {
         const newElementsState = [...elementsState];
         newElementsState[index].isEditing = false;
 
-        
+
         setElementsState(newElementsState);
     };
 
@@ -365,6 +365,32 @@ const SettingsPage: React.FC = () => {
             textColor1: colors[3],
             textColor2: colors[4],
             logo: logo,
+            table_map: [
+                ["DutyStartTime", "DutyStartTime"],
+                ["DutyEndTimeSeconds", "DutyEndTimeSeconds"],
+                ["IsDriverPresent", "IsDriverPresent"],
+                ["VehicleNr", "VehicleNr"],
+                ["VehicleLicensePlate", "VehicleLicensePlate"],
+                ["DailyRosterDate", "DailyRosterDate"],
+                ["DutyName", "DutyName"],
+                ["DutyEndTime", "DutyEndTime"],
+                ["DutyEndNode", "DutyEndNode"],
+                ["EndLines", "EndLines"],
+                ["EndDriverId1", "EndDriverId1"],
+            ],
+            column_order: [
+                [0, "DutyStartTime"],
+                [1, "DutyEndTimeSeconds"],
+                [2, "IsDriverPresent"],
+                [3, "VehicleNr"],
+                [4, "VehicleLicensePlate"],
+                [5, "DailyRosterDate"],
+                [6, "DutyName"],
+                [7, "DutyEndTime"],
+                [8, "DutyEndNode"],
+                [9, "EndLines"],
+                [10, "EndDriverId1"],
+            ],
         });
     };
 

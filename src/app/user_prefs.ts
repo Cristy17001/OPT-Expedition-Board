@@ -8,6 +8,8 @@ export type UserPrefs = {
     textColor1: string;
     textColor2: string;
     logo: string;
+    table_map: Array<[string, string]>;
+    column_order: Array<[number, string]>;
 }
 
 const defaultPrefs: UserPrefs = {
@@ -17,7 +19,33 @@ const defaultPrefs: UserPrefs = {
     highlightColor: "#EC6907",
     textColor1: "#56545D",
     textColor2: "#9390A6",
-    logo: "/logo.png"
+    logo: "/logo.png",
+    table_map: [
+        ["DutyStartTime", "DutyStartTime"],
+        ["DutyEndTimeSeconds", "DutyEndTimeSeconds"],
+        ["IsDriverPresent", "IsDriverPresent"],
+        ["VehicleNr", "VehicleNr"],
+        ["VehicleLicensePlate", "VehicleLicensePlate"],
+        ["DailyRosterDate", "DailyRosterDate"],
+        ["DutyName", "DutyName"],
+        ["DutyEndTime", "DutyEndTime"],
+        ["DutyEndNode", "DutyEndNode"],
+        ["EndLines", "EndLines"],
+        ["EndDriverId1", "EndDriverId1"],
+    ],
+    column_order: [
+        [0, "DutyStartTime"],
+        [1, "DutyEndTimeSeconds"],
+        [2, "IsDriverPresent"],
+        [3, "VehicleNr"],
+        [4, "VehicleLicensePlate"],
+        [5, "DailyRosterDate"],
+        [6, "DutyName"],
+        [7, "DutyEndTime"],
+        [8, "DutyEndNode"],
+        [9, "EndLines"],
+        [10, "EndDriverId1"],
+    ],
 }
 
 const getLocalPrefs = (key: string): UserPrefs => {
@@ -55,4 +83,5 @@ const useUserPrefs = () => {
 
     return { userPrefs, updateUserPrefs };
   };
+
 export default useUserPrefs;
