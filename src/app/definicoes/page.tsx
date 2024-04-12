@@ -172,8 +172,8 @@ const InfoBox: React.FC < ( {oldMessage: string, updateMessage: (updateMessage: 
 
     return (
         <div className={styles['info-box-container']}>
-            <h2>Informação: </h2>
-            <div className={styles['edit-info-container']}>
+            <div>
+                <p>Informação: </p>
                 {isEditing ? (
                     <input
                         type="text"
@@ -198,20 +198,20 @@ const InfoBox: React.FC < ( {oldMessage: string, updateMessage: (updateMessage: 
 
 
 
-const TableContent: React.FC = () => {
+const TableContent: React.FC < ( {updateColumnNamesAndOrder: (newNames: Array<[string, string]>, newOrder: String[]) => void })> = ({updateColumnNamesAndOrder}) => {
 
-    const initialElementsState = [
-        { isEditing: false, editedText: "Carruagem" },
-        { isEditing: false, editedText: "Chapa" },
-        { isEditing: false, editedText: "Altura" },
-        { isEditing: false, editedText: "Mot" },
-        { isEditing: false, editedText: "Hora" },
-        { isEditing: false, editedText: "AC" },
-        { isEditing: false, editedText: "Pressão" },
-        { isEditing: false, editedText: "Observações" }
-    ];
+    let initialElementsState: { isEditing: boolean, editedText: string }[] = [];
+    const { userPrefs, updateUserPrefs } = useUserPrefs();
 
-    const [elementsState, setElementsState] = useState(initialElementsState);
+    userPrefs.column_order.forEach(element => {
+        userPrefs.table_map.forEach(column_name => {
+            if (element == column_name[0]) {
+                initialElementsState.push({ isEditing: false, editedText: column_name[1] });
+            }
+        });
+    });
+
+    let [elementsState, setElementsState] = useState(initialElementsState);
 
     const handleEditClick = (index: number) => {
         const newElementsState = [...elementsState];
@@ -225,14 +225,39 @@ const TableContent: React.FC = () => {
         setElementsState(newElementsState);
     };
 
-    const handleInputBlur = (index: number) => {
+    const handleInputSave = (index: number) => {
         const newElementsState = [...elementsState];
         newElementsState[index].isEditing = false;
 
-        
+        console.log("Saved!");
         setElementsState(newElementsState);
+
+        let newNames: Array<[string, string]> = [];
+        for (let i = 0; i < newElementsState.length; i++) {
+            userPrefs.table_map.forEach(column_name => {
+                if (userPrefs.column_order[i] == column_name[0]) {
+                    newNames.push([column_name[0], newElementsState[i].editedText]);
+                }
+            });
+        }
+        updateColumnNamesAndOrder(newNames, userPrefs.column_order);
     };
 
+    const changeColumnOrder = () => {
+        let new_column_order = userPrefs.column_order;
+        let temp = new_column_order[0];
+        new_column_order[0] = new_column_order[1];
+        new_column_order[1] = temp;
+
+        let new_elemenetState = elementsState;
+        let temp2 = new_elemenetState[0];
+        new_elemenetState[0] = new_elemenetState[1];
+        new_elemenetState[1] = temp2;
+
+        setElementsState(new_elemenetState);
+        updateColumnNamesAndOrder(userPrefs.table_map, new_column_order);
+
+    };
 
     return (
         <div className={styles['table-content-container']}>
@@ -251,12 +276,14 @@ const TableContent: React.FC = () => {
                         )}
                         <div className={styles.action_container}>
                             <Switch id={String(index + 1)} />
-                            <button type="button" onClick={() => element.isEditing ? handleInputBlur(index) : handleEditClick(index)}>
+                            <button type="button" onClick={() => element.isEditing ? handleInputSave(index) : handleEditClick(index)}>
                                 {element.isEditing ? <CheckMark /> : <Pencil />}
                             </button>
                         </div>
                     </div>
                 ))}
+            <button onClick={changeColumnOrder}>Change First with second</button>
+
             </div>
         </div>
     );
@@ -362,6 +389,8 @@ const SettingsPage: React.FC = () => {
             textColor1: colors[3],
             textColor2: colors[4],
             logo: logo,
+            table_map: userPrefs.table_map,
+            column_order: userPrefs.column_order
         });
     };
 
@@ -374,6 +403,22 @@ const SettingsPage: React.FC = () => {
             textColor1: colors[3],
             textColor2: colors[4],
             logo: logo,
+            table_map: userPrefs.table_map,
+            column_order: userPrefs.column_order
+        });
+    }
+
+    const handleColumnNamesChangeAndOrder = (newNames: Array<[string, string]>, newOrder: String[]) => {
+        updateUserPrefs({
+            message: userPrefs.message,
+            color1: userPrefs.color1,
+            color2: userPrefs.color2,
+            highlightColor: userPrefs.highlightColor,
+            textColor1: userPrefs.textColor1,
+            textColor2: userPrefs.textColor2,
+            logo: logo,
+            table_map: newNames,
+            column_order: userPrefs.column_order
         });
     }
 
@@ -398,7 +443,7 @@ const SettingsPage: React.FC = () => {
                 ) : (
                     <>
                         <PageSelector title="Tabelas" buttonFunc={pageSwitch}/>
-                        <TableContent />
+                        <TableContent updateColumnNamesAndOrder={handleColumnNamesChangeAndOrder}/>
                         <InfoBox updateMessage={handleNewMessage} oldMessage={userPrefs.message}/>
                     </>
                 )}
