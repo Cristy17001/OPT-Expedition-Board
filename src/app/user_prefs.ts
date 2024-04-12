@@ -9,7 +9,7 @@ export type UserPrefs = {
     textColor2: string;
     logo: string;
     table_map: Array<[string, string]>;
-    column_order: Array<[number, string]>;
+    column_order: string[];
 }
 
 const defaultPrefs: UserPrefs = {
@@ -34,17 +34,17 @@ const defaultPrefs: UserPrefs = {
         ["EndDriverId1", "EndDriverId1"],
     ],
     column_order: [
-        [0, "DutyStartTime"],
-        [1, "DutyEndTimeSeconds"],
-        [2, "IsDriverPresent"],
-        [3, "VehicleNr"],
-        [4, "VehicleLicensePlate"],
-        [5, "DailyRosterDate"],
-        [6, "DutyName"],
-        [7, "DutyEndTime"],
-        [8, "DutyEndNode"],
-        [9, "EndLines"],
-        [10, "EndDriverId1"],
+        "DutyStartTime",
+        "DutyEndTimeSeconds",
+        "IsDriverPresent",
+        "VehicleNr",
+        "VehicleLicensePlate",
+        "DailyRosterDate",
+        "DutyName",
+        "DutyEndTime",
+        "DutyEndNode",
+        "EndLines",
+        "EndDriverId1",
     ],
 }
 
