@@ -172,8 +172,9 @@ const InfoBox: React.FC < ( {oldMessage: string, updateMessage: (updateMessage: 
 
     return (
         <div className={styles['info-box-container']}>
-            <div>
-                <p>Informação: </p>
+
+                <h2>Informação: </h2>
+                <div> 
                 {isEditing ? (
                     <input
                         type="text"
@@ -190,7 +191,7 @@ const InfoBox: React.FC < ( {oldMessage: string, updateMessage: (updateMessage: 
                 {isEditing && (
                     <button onClick={() => handleSaveClick()}><CheckMark/></button>
                 )}
-            </div>
+                </div>
         </div>
     );
 };

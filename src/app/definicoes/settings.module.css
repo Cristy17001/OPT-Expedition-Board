@@ -242,7 +242,7 @@
   margin-top: 20px;
 }
 
-.edit-info-container {
+.info-box-container > div {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -265,7 +265,6 @@
 }
 
 
-.info-box-container .edit-info-container {
-  text-align: center;
+.info-box-container button {
+  right: 0; 
 }
-
