@@ -150,25 +150,22 @@ const AppearanceSettingsManager: React.FC<{colors: string[],  userPrefs: UserPre
     );
 };
 
-const InfoBox: React.FC = () => {
+const InfoBox: React.FC < ( {oldMessage: string, updateMessage: (updateMessage: string) => void })> = ({oldMessage, updateMessage }) => {
     const [isEditing, setIsEditing] = useState(false);
     const [editedText, setEditedText] = useState("");
-    const [originalText, setOriginalText] = useState("Informação");
+    const [originalText, setOriginalText] = useState(oldMessage);
 
     const handleEditClick = () => {
         setIsEditing(true);
-        setEditedText("");
+        setEditedText(oldMessage);
     };
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setEditedText(e.target.value);
     };
 
-    const handleInputBlur = () => {
-        setIsEditing(false);
-    };
-
     const handleSaveClick = () => {
+        updateMessage(editedText);
         setOriginalText(editedText || originalText);
         setIsEditing(false);
     };
@@ -176,12 +173,12 @@ const InfoBox: React.FC = () => {
     return (
         <div className={styles['info-box-container']}>
             <div>
+                <p>Informação: </p>
                 {isEditing ? (
                     <input
                         type="text"
                         value={editedText}
                         onChange={handleInputChange}
-                        onBlur={handleInputBlur}
                         placeholder="Escreva aqui"
                     />
                 ) : (
@@ -191,7 +188,7 @@ const InfoBox: React.FC = () => {
                     </>
                 )}
                 {isEditing && (
-                    <button onClick={handleSaveClick}><CheckMark/> </button>
+                    <button onClick={() => handleSaveClick()}><CheckMark/></button>
                 )}
             </div>
         </div>
@@ -394,6 +391,18 @@ const SettingsPage: React.FC = () => {
         });
     };
 
+    const handleNewMessage = (newMessage: string) => {
+        updateUserPrefs({
+            message: newMessage,
+            color1: colors[0],
+            color2: colors[1],
+            highlightColor: colors[2],
+            textColor1: colors[3],
+            textColor2: colors[4],
+            logo: logo,
+        });
+    }
+
     const pageSwitch = () => {
         if (settingsState == 'appearance') {
             setSettingsState('tables');
@@ -416,7 +425,7 @@ const SettingsPage: React.FC = () => {
                     <>
                         <PageSelector title="Tabelas" buttonFunc={pageSwitch}/>
                         <TableContent />
-                        <InfoBox />
+                        <InfoBox updateMessage={handleNewMessage} oldMessage={userPrefs.message}/>
                     </>
                 )}
                 <button className={styles.save_btn} type="submit">Guardar</button>
