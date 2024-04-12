@@ -261,4 +261,10 @@
   margin-left: auto; 
 }
 
+.info-box-container input[type="text"] {
+  width: 100%; 
+  padding: 10px; 
+  box-sizing: border-box; 
+}
+
 
