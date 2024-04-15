@@ -12,6 +12,8 @@ import SwitchLogo from '../images/svgs/switchLogo';
 import Switch from '../components/switch/switch';
 import Pencil from '../images/svgs/pencil';
 import CheckMark from '../images/svgs/checkMark';
+import ArrowUp from '../images/svgs/arrowUp';
+import ArrowDown from '../images/svgs/arrowDown';
 import PreviewComponent from '../components/Preview/Preview';
 
 type ColorPickerProps = {
@@ -264,6 +266,10 @@ const TableContent: React.FC < ( {updateColumnNamesAndOrder: (newNames: Array<[s
             <div>
                 {elementsState.map((element, index) => (
                     <div key={index}>
+                        <div className={styles.orderButton}>
+                            <button onClick={changeColumnOrder}> <ArrowUp/>  </button>
+                            <button onClick={changeColumnOrder}> <ArrowDown/>  </button>
+                        <div/>
                         {element.isEditing ? (
                             <input
                                 type="text"
@@ -275,14 +281,15 @@ const TableContent: React.FC < ( {updateColumnNamesAndOrder: (newNames: Array<[s
                             <p>{element.editedText}</p>
                         )}
                         <div className={styles.action_container}>
+                            
                             <Switch id={String(index + 1)} />
                             <button type="button" onClick={() => element.isEditing ? handleInputSave(index) : handleEditClick(index)}>
+                            
                                 {element.isEditing ? <CheckMark /> : <Pencil />}
                             </button>
                         </div>
                     </div>
                 ))}
-            <button onClick={changeColumnOrder}>Change First with second</button>
 
             </div>
         </div>

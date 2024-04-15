@@ -114,3 +114,12 @@ table {
 .pencil-svg * {
   fill: var(--color-primary-text) !important;
 }
+
+.arrowUp-svg * {
+  fill: var(--color-primary-text) !important;
+}
+
+.arrowDown-svg * {
+  fill: var(--color-primary-text) !important;
+}
+
