@@ -200,20 +200,23 @@ const InfoBox: React.FC < ( {oldMessage: string, updateMessage: (updateMessage: 
 
 
 
-const TableContent: React.FC < ( {updateColumnNamesAndOrder: (newNames: Array<[string, string]>, newOrder: String[]) => void })> = ({updateColumnNamesAndOrder}) => {
+const TableContent: React.FC < ( {updateColumnNamesAndOrder: (newNames: Array<[string, string]>, newOrder: string[]) => void })> = ({updateColumnNamesAndOrder}) => {
 
-    let initialElementsState: { isEditing: boolean, editedText: string }[] = [];
+    let initialElementsState: { isEditing: boolean, editedText: string ,order: string }[] = [];
     const { userPrefs, updateUserPrefs } = useUserPrefs();
 
     userPrefs.column_order.forEach(element => {
         userPrefs.table_map.forEach(column_name => {
             if (element == column_name[0]) {
-                initialElementsState.push({ isEditing: false, editedText: column_name[1] });
+                initialElementsState.push({ isEditing: false, editedText: column_name[1], order: column_name[0]});
             }
         });
     });
 
+
     let [elementsState, setElementsState] = useState(initialElementsState);
+
+
 
     const handleEditClick = (index: number) => {
         const newElementsState = [...elementsState];
@@ -232,6 +235,7 @@ const TableContent: React.FC < ( {updateColumnNamesAndOrder: (newNames: Array<[s
         newElementsState[index].isEditing = false;
 
         console.log("Saved!");
+
         setElementsState(newElementsState);
 
         let newNames: Array<[string, string]> = [];
@@ -242,57 +246,66 @@ const TableContent: React.FC < ( {updateColumnNamesAndOrder: (newNames: Array<[s
                 }
             });
         }
+
+        
+
         updateColumnNamesAndOrder(newNames, userPrefs.column_order);
     };
 
-    const changeColumnOrder = () => {
-        let new_column_order = userPrefs.column_order;
-        let temp = new_column_order[0];
-        new_column_order[0] = new_column_order[1];
-        new_column_order[1] = temp;
+    const changeColumnOrder = (index: number, isUp: boolean) => {
 
-        let new_elemenetState = elementsState;
-        let temp2 = new_elemenetState[0];
-        new_elemenetState[0] = new_elemenetState[1];
-        new_elemenetState[1] = temp2;
 
-        setElementsState(new_elemenetState);
-        updateColumnNamesAndOrder(userPrefs.table_map, new_column_order);
+        if ((index === 0 && isUp) || (index === userPrefs.column_order.length - 1 && !isUp)) {
+            return;
+        }
+    
+        const newElementState = [...elementsState];
+    
+        const tempElement = newElementState[index];
+        newElementState[index] = newElementState[isUp ? index - 1 : index + 1];
+        newElementState[isUp ? index - 1 : index + 1] = tempElement;
 
+    
+        setElementsState(newElementState);
+
+        let newOrder: string[] = [];
+        for (let i = 0; i < newElementState.length; i++) {
+            newOrder.push(newElementState[i].order);
+        }
+
+
+        updateColumnNamesAndOrder(userPrefs.table_map, newOrder);
     };
 
     return (
         <div className={styles['table-content-container']}>
-            <div>
-                {elementsState.map((element, index) => (
-                    <div key={index}>
-                        <div className={styles.orderButton}>
-                            <button onClick={changeColumnOrder}> <ArrowUp/>  </button>
-                            <button onClick={changeColumnOrder}> <ArrowDown/>  </button>
-                        <div/>
-                        {element.isEditing ? (
-                            <input
-                                type="text"
-                                value={element.editedText}
-                                onChange={(e) => handleInputChange(e, index)}
-                                className={styles.input_field}
-                            />
-                        ) : (
-                            <p>{element.editedText}</p>
-                        )}
-                        <div className={styles.action_container}>
-                            
-                            <Switch id={String(index + 1)} />
-                            <button type="button" onClick={() => element.isEditing ? handleInputSave(index) : handleEditClick(index)}>
-                            
-                                {element.isEditing ? <CheckMark /> : <Pencil />}
-                            </button>
-                        </div>
+        <div>
+            {elementsState.map((element, index) => (
+                <div key={index}>
+                    <div className={styles['orderButton']}>
+                        <button onClick={() => changeColumnOrder(index,true)}><ArrowUp/></button>
+                        <button onClick={() => changeColumnOrder(index,false)}><ArrowDown/></button>
                     </div>
-                ))}
-
-            </div>
+                    {element.isEditing ? (
+                        <input
+                            type="text"
+                            value={element.editedText}
+                            onChange={(e) => handleInputChange(e, index)}
+                            className={styles.input_field}
+                        />
+                    ) : (
+                        <p>{element.editedText}</p>
+                    )}
+                    <div className={styles.action_container}>
+                        <Switch id={String(index + 1)} />
+                        <button type="button" onClick={() => element.isEditing ? handleInputSave(index) : handleEditClick(index)}>
+                            {element.isEditing ? <CheckMark /> : <Pencil />}
+                        </button>
+                    </div>
+                </div>
+            ))}
         </div>
+    </div>
     );
 };
 
@@ -415,7 +428,7 @@ const SettingsPage: React.FC = () => {
         });
     }
 
-    const handleColumnNamesChangeAndOrder = (newNames: Array<[string, string]>, newOrder: String[]) => {
+    const handleColumnNamesChangeAndOrder = (newNames: Array<[string, string]>, newOrder: string[]) => {
         updateUserPrefs({
             message: userPrefs.message,
             color1: userPrefs.color1,
@@ -425,7 +438,7 @@ const SettingsPage: React.FC = () => {
             textColor2: userPrefs.textColor2,
             logo: logo,
             table_map: newNames,
-            column_order: userPrefs.column_order
+            column_order: newOrder
         });
     }
 
