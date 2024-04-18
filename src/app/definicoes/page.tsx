@@ -1,6 +1,6 @@
 "use client";
 import Image from 'next/image';
-import React, { useState, useEffect } from 'react';import Header from '../components/header/header';
+import React, { useState, useEffect, use } from 'react';import Header from '../components/header/header';
 import ArrowLeft from '../images/svgs/arrowleft';
 import ArrowRight from '../images/svgs/arrowright';
 import styles from './settings.module.css';
@@ -202,7 +202,7 @@ const InfoBox: React.FC < ( {oldMessage: string, updateMessage: (updateMessage: 
 
 const TableContent: React.FC < ( {updateColumnNamesAndOrder: (newNames: Array<[string, string]>, newOrder: string[]) => void })> = ({updateColumnNamesAndOrder}) => {
 
-    let initialElementsState: { isEditing: boolean, editedText: string ,order: string }[] = [];
+    let initialElementsState: { isEditing: boolean, editedText: string ,order: string}[] = [];
     const { userPrefs, updateUserPrefs } = useUserPrefs();
 
     userPrefs.column_order.forEach(element => {
@@ -238,43 +238,50 @@ const TableContent: React.FC < ( {updateColumnNamesAndOrder: (newNames: Array<[s
 
         setElementsState(newElementsState);
 
+
         let newNames: Array<[string, string]> = [];
         for (let i = 0; i < newElementsState.length; i++) {
-            userPrefs.table_map.forEach(column_name => {
-                if (userPrefs.column_order[i] == column_name[0]) {
-                    newNames.push([column_name[0], newElementsState[i].editedText]);
-                }
-            });
+            newNames.push([newElementsState[i].order,newElementsState[i].editedText]);
         }
 
-        
+        let newOrder: string[] = [];
+        newNames.forEach(namesPair =>{
+            newOrder.push(namesPair[0]);
+        });
 
-        updateColumnNamesAndOrder(newNames, userPrefs.column_order);
+        updateColumnNamesAndOrder(newNames, newOrder);
+
     };
 
     const changeColumnOrder = (index: number, isUp: boolean) => {
-
 
         if ((index === 0 && isUp) || (index === userPrefs.column_order.length - 1 && !isUp)) {
             return;
         }
     
-        const newElementState = [...elementsState];
+        const newElementsState = [...elementsState];
     
-        const tempElement = newElementState[index];
-        newElementState[index] = newElementState[isUp ? index - 1 : index + 1];
-        newElementState[isUp ? index - 1 : index + 1] = tempElement;
+        const tempElement = newElementsState[index];
+        newElementsState[index] = newElementsState[isUp ? index - 1 : index + 1];
+        newElementsState[isUp ? index - 1 : index + 1] = tempElement;
 
-    
-        setElementsState(newElementState);
+        setElementsState(newElementsState);
 
-        let newOrder: string[] = [];
-        for (let i = 0; i < newElementState.length; i++) {
-            newOrder.push(newElementState[i].order);
+        
+
+        let newNames: Array<[string, string]> = [];
+        for (let i = 0; i < newElementsState.length; i++) {
+            newNames.push([newElementsState[i].order,newElementsState[i].editedText]);
         }
 
+        let newOrder: string[] = [];
+        newNames.forEach(namesPair =>{
+            newOrder.push(namesPair[0]);
+        });
 
-        updateColumnNamesAndOrder(userPrefs.table_map, newOrder);
+        updateColumnNamesAndOrder(newNames, newOrder);
+
+
     };
 
     return (
@@ -283,8 +290,12 @@ const TableContent: React.FC < ( {updateColumnNamesAndOrder: (newNames: Array<[s
             {elementsState.map((element, index) => (
                 <div key={index}>
                     <div className={styles['orderButton']}>
-                        <button onClick={() => changeColumnOrder(index,true)}><ArrowUp/></button>
-                        <button onClick={() => changeColumnOrder(index,false)}><ArrowDown/></button>
+                        {!element.isEditing && (
+                            <div className={styles['orderButton']}>
+                                <button onClick={() => changeColumnOrder(index,true)}><ArrowUp/></button>
+                                <button onClick={() => changeColumnOrder(index,false)}><ArrowDown/></button>
+                            </div>
+                        )}
                     </div>
                     {element.isEditing ? (
                         <input
@@ -322,6 +333,8 @@ const SettingsPage: React.FC = () => {
       ]);
 
     const [logo, setLogo] = useState(userPrefs.logo);
+    const [columnNames, setColumnNames] = useState<Array<[string, string]>>(userPrefs.table_map);
+    const [columnOrder, setColumnOrder] = useState<string[]>(userPrefs.column_order);
 
     const handleColorChange = (colorIndex: number, newColor: string) => {
         setColors((prevColors) => {
@@ -400,6 +413,8 @@ const SettingsPage: React.FC = () => {
     const handleSubmit = (event: React.FormEvent) => {
         console.log('Form submitted');
         console.log (colors[2])
+        console.log("local:",columnOrder);
+        console.log("userpref",userPrefs.column_order);
         event.preventDefault();
         updateUserPrefs({
             message: userPrefs.message,
@@ -409,8 +424,8 @@ const SettingsPage: React.FC = () => {
             textColor1: colors[3],
             textColor2: colors[4],
             logo: logo,
-            table_map: userPrefs.table_map,
-            column_order: userPrefs.column_order
+            table_map: columnNames,
+            column_order: columnOrder
         });
     };
 
@@ -429,17 +444,8 @@ const SettingsPage: React.FC = () => {
     }
 
     const handleColumnNamesChangeAndOrder = (newNames: Array<[string, string]>, newOrder: string[]) => {
-        updateUserPrefs({
-            message: userPrefs.message,
-            color1: userPrefs.color1,
-            color2: userPrefs.color2,
-            highlightColor: userPrefs.highlightColor,
-            textColor1: userPrefs.textColor1,
-            textColor2: userPrefs.textColor2,
-            logo: logo,
-            table_map: newNames,
-            column_order: newOrder
-        });
+        setColumnNames(newNames);
+        setColumnOrder(newOrder);
     }
 
     const pageSwitch = () => {
