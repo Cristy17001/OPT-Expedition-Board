@@ -335,6 +335,7 @@ const SettingsPage: React.FC = () => {
     const [logo, setLogo] = useState(userPrefs.logo);
     const [columnNames, setColumnNames] = useState<Array<[string, string]>>(userPrefs.table_map);
     const [columnOrder, setColumnOrder] = useState<string[]>(userPrefs.column_order);
+    const [informationMessage, setinformationMessage ] = useState<string>(userPrefs.message);
 
     const handleColorChange = (colorIndex: number, newColor: string) => {
         setColors((prevColors) => {
@@ -417,7 +418,7 @@ const SettingsPage: React.FC = () => {
         console.log("userpref",userPrefs.column_order);
         event.preventDefault();
         updateUserPrefs({
-            message: userPrefs.message,
+            message: informationMessage,
             color1: colors[0],
             color2: colors[1],
             highlightColor: colors[2],
@@ -430,17 +431,7 @@ const SettingsPage: React.FC = () => {
     };
 
     const handleNewMessage = (newMessage: string) => {
-        updateUserPrefs({
-            message: newMessage,
-            color1: colors[0],
-            color2: colors[1],
-            highlightColor: colors[2],
-            textColor1: colors[3],
-            textColor2: colors[4],
-            logo: logo,
-            table_map: userPrefs.table_map,
-            column_order: userPrefs.column_order
-        });
+        setinformationMessage(newMessage);
     }
 
     const handleColumnNamesChangeAndOrder = (newNames: Array<[string, string]>, newOrder: string[]) => {
