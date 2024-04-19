@@ -242,6 +242,12 @@
   gap: 5px; 
 }
 
+.info-box-container > div > p:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 
 .info-box-container {
   width: 30%;
@@ -262,12 +268,7 @@
 }
 
 .info-box-container input[type="text"] {
-  width: 100%; 
-  padding: 10px; 
-  box-sizing: border-box; 
-}
-
-
-.orderButton{
-  
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
 }
