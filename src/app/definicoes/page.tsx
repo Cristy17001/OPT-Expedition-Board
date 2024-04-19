@@ -411,12 +411,22 @@ const SettingsPage: React.FC = () => {
         '--color-secundary-text': userPrefs.textColor2,
     };
 
-    const handleSubmit = (event: React.FormEvent) => {
+    const handleSubmit = (event?: React.FormEvent) => {
         console.log('Form submitted');
         console.log (colors[2])
         console.log("local:",columnOrder);
         console.log("userpref",userPrefs.column_order);
-        event.preventDefault();
+        if (event) {
+            event.preventDefault();
+        } else {
+            const form = document.querySelector(".settings_container") as HTMLFormElement;
+            if (form) {
+                form.addEventListener("submit", (e) => {
+                    e.preventDefault();
+                });
+            }
+        }
+
         updateUserPrefs({
             message: informationMessage,
             color1: colors[0],
@@ -449,7 +459,7 @@ const SettingsPage: React.FC = () => {
 
     return (
         <main style={rootStyle as React.CSSProperties}>
-            <Header type='settings' title='Definições' logo={userPrefs.logo} prefstyles={rootStyle as React.CSSProperties}/>
+            <Header type='settings' title='Definições' logo={userPrefs.logo} prefstyles={rootStyle as React.CSSProperties} handleSubmit={handleSubmit}/>
             <form className={styles.settings_container} onSubmit={handleSubmit} style={rootStyle as React.CSSProperties}>
                 {settingsState == 'appearance' ? (
                     <>
