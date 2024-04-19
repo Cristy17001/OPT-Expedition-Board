@@ -10,6 +10,7 @@ export type UserPrefs = {
     logo: string;
     table_map: Array<[string, string]>;
     column_order: string[];
+    switch_map: Array<[string,boolean]>;
 }
 
 const defaultPrefs: UserPrefs = {
@@ -45,6 +46,19 @@ const defaultPrefs: UserPrefs = {
         "DutyEndNode",
         "EndLines",
         "EndDriverId1",
+    ],
+    switch_map: [
+      ["DutyStartTime",false],
+      ["DutyEndTimeSeconds",false],
+      ["IsDriverPresent",false],
+      ["VehicleNr",false],
+      ["VehicleLicensePlate",false],
+      ["DailyRosterDate",false],
+      ["DutyName",false],
+      ["DutyEndTime",false],
+      ["DutyEndNode",false],
+      ["EndLines",false],
+      ["EndDriverId1",false]
     ],
 }
 

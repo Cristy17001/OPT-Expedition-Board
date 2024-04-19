@@ -42,11 +42,11 @@ type ColorPickerProps = {
 const PageSelector: React.FC<{ title: string , buttonFunc: () => void }> = ({ title, buttonFunc }) => {
     return (
         <div className={styles['page-selector-container']}>
-            <button onClick={buttonFunc}>
+            <button type="button" onClick={buttonFunc}>
                 <ArrowLeft />
             </button>
             <h2>{title}</h2>
-            <button onClick={buttonFunc}>
+            <button type="button" onClick={buttonFunc}>
                 <ArrowRight />
             </button>
         </div>
@@ -92,7 +92,7 @@ const AppearanceButton: React.FC<{ title: string, func: (newLogo: string) => voi
 
 
     return (
-        <button className={styles['basic-button']} onClick={handleClick}>
+        <button type="button" className={styles['basic-button']} onClick={handleClick}>
 
             <div>
                 <h2>{title}</h2>
@@ -106,7 +106,7 @@ const AppearanceButton: React.FC<{ title: string, func: (newLogo: string) => voi
 const ExportConfigButton: React.FC<{ title: string, func: () => void }> = ({ title, func }) => {
 
     return (
-        <button className={styles['basic-button']} onClick={func}>
+        <button type="button" className={styles['basic-button']} onClick={func}>
 
             <div>
                 <h2>{title}</h2>
@@ -119,7 +119,7 @@ const ExportConfigButton: React.FC<{ title: string, func: () => void }> = ({ tit
 const ImportConfigButton: React.FC<{ title: string, func: () => void }> = ({ title, func }) => {
 
     return (
-        <button className={styles['basic-button']} onClick={func}>
+        <button type="button" className={styles['basic-button']} onClick={func}>
 
             <div>
                 <h2>{title}</h2>
@@ -159,7 +159,7 @@ const InfoBox: React.FC < ( {oldMessage: string, updateMessage: (updateMessage: 
 
     const handleEditClick = () => {
         setIsEditing(true);
-        setEditedText(oldMessage);
+        setEditedText(originalText);
     };
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -167,9 +167,9 @@ const InfoBox: React.FC < ( {oldMessage: string, updateMessage: (updateMessage: 
     };
 
     const handleSaveClick = () => {
-        updateMessage(editedText);
         setOriginalText(editedText || originalText);
         setIsEditing(false);
+        updateMessage(editedText);
     };
 
     return (
@@ -186,11 +186,11 @@ const InfoBox: React.FC < ( {oldMessage: string, updateMessage: (updateMessage: 
                 ) : (
                     <>
                         <p>{originalText}</p>
-                        <button onClick={handleEditClick}><Pencil/></button>
+                        <button type="button" onClick={handleEditClick}><Pencil/></button>
                     </>
                 )}
                 {isEditing && (
-                    <button onClick={() => handleSaveClick()}><CheckMark/></button>
+                    <button type="button" onClick={() => handleSaveClick()}><CheckMark/></button>
                 )}
             </div>
         </div>
@@ -200,19 +200,23 @@ const InfoBox: React.FC < ( {oldMessage: string, updateMessage: (updateMessage: 
 
 
 
-const TableContent: React.FC < ( {updateColumnNamesAndOrder: (newNames: Array<[string, string]>, newOrder: string[]) => void })> = ({updateColumnNamesAndOrder}) => {
+const TableContent: React.FC < ( {updateColumnNamesAndOrder: (newNames: Array<[string, string]>, newOrder: string[], newSwitchMap: Array<[string,boolean]>) => void })> = ({updateColumnNamesAndOrder}) => {
 
-    let initialElementsState: { isEditing: boolean, editedText: string ,order: string}[] = [];
+    let initialElementsState: { isEditing: boolean, editedText: string ,order: string, switchValue: boolean}[] = [];
     const { userPrefs, updateUserPrefs } = useUserPrefs();
 
     userPrefs.column_order.forEach(element => {
         userPrefs.table_map.forEach(column_name => {
             if (element == column_name[0]) {
-                initialElementsState.push({ isEditing: false, editedText: column_name[1], order: column_name[0]});
+                initialElementsState.push({ isEditing: false, editedText: column_name[1], order: column_name[0],switchValue:false});
             }
         });
     });
 
+    for(var i = 0;i < userPrefs.switch_map.length;i++){
+        const switchValue = userPrefs.switch_map[i][1];
+        initialElementsState[i].switchValue = switchValue;
+    }
 
     let [elementsState, setElementsState] = useState(initialElementsState);
 
@@ -249,10 +253,44 @@ const TableContent: React.FC < ( {updateColumnNamesAndOrder: (newNames: Array<[s
             newOrder.push(namesPair[0]);
         });
 
-        updateColumnNamesAndOrder(newNames, newOrder);
+        let newSwitchMap: Array<[string,boolean]> = [];
+        for (let i = 0; i < newElementsState.length; i++) {
+            newSwitchMap.push([newElementsState[i].order,newElementsState[i].switchValue]);
+        }
+
+        updateColumnNamesAndOrder(newNames, newOrder,newSwitchMap);
 
     };
 
+
+    const handleToggle = (index: number) => {
+
+        const newElementsState = [...elementsState];
+        newElementsState[index].switchValue = !newElementsState[index].switchValue;
+        setElementsState(newElementsState);
+
+
+        let newNames: Array<[string, string]> = [];
+        for (let i = 0; i < newElementsState.length; i++) {
+            newNames.push([newElementsState[i].order,newElementsState[i].editedText]);
+        }
+
+        let newOrder: string[] = [];
+        newNames.forEach(namesPair =>{
+            newOrder.push(namesPair[0]);
+        });
+
+
+        let newSwitchMap: Array<[string,boolean]> = [];
+        for (let i = 0; i < newElementsState.length; i++) {
+            newSwitchMap.push([newElementsState[i].order,newElementsState[i].switchValue]);
+        }
+
+        updateColumnNamesAndOrder(newNames, newOrder,newSwitchMap);
+
+    };
+
+    
     const changeColumnOrder = (index: number, isUp: boolean) => {
 
         if ((index === 0 && isUp) || (index === userPrefs.column_order.length - 1 && !isUp)) {
@@ -279,7 +317,12 @@ const TableContent: React.FC < ( {updateColumnNamesAndOrder: (newNames: Array<[s
             newOrder.push(namesPair[0]);
         });
 
-        updateColumnNamesAndOrder(newNames, newOrder);
+        let newSwitchMap: Array<[string,boolean]> = [];
+        for (let i = 0; i < newElementsState.length; i++) {
+            newSwitchMap.push([newElementsState[i].order,newElementsState[i].switchValue]);
+        }
+
+        updateColumnNamesAndOrder(newNames, newOrder,newSwitchMap);
 
 
     };
@@ -287,34 +330,41 @@ const TableContent: React.FC < ( {updateColumnNamesAndOrder: (newNames: Array<[s
     return (
         <div className={styles['table-content-container']}>
         <div>
-            {elementsState.map((element, index) => (
-                <div key={index}>
+        {elementsState.map((element, index) => {
+    return (
+        <div key={index}>
+            <div className={styles['orderButton']}>
+                {!element.isEditing && (
                     <div className={styles['orderButton']}>
-                        {!element.isEditing && (
-                            <div className={styles['orderButton']}>
-                                <button onClick={() => changeColumnOrder(index,true)}><ArrowUp/></button>
-                                <button onClick={() => changeColumnOrder(index,false)}><ArrowDown/></button>
-                            </div>
-                        )}
-                    </div>
-                    {element.isEditing ? (
-                        <input
-                            type="text"
-                            value={element.editedText}
-                            onChange={(e) => handleInputChange(e, index)}
-                            className={styles.input_field}
-                        />
-                    ) : (
-                        <p>{element.editedText}</p>
-                    )}
-                    <div className={styles.action_container}>
-                        <Switch id={String(index + 1)} />
-                        <button type="button" onClick={() => element.isEditing ? handleInputSave(index) : handleEditClick(index)}>
-                            {element.isEditing ? <CheckMark /> : <Pencil />}
+                        <button type="button" onClick={() => changeColumnOrder(index, true)}>
+                            <ArrowUp />
+                        </button>
+                        <button type="button" onClick={() => changeColumnOrder(index, false)}>
+                            <ArrowDown />
                         </button>
                     </div>
-                </div>
-            ))}
+                )}
+            </div>
+            {element.isEditing ? (
+                <input
+                    type="text"
+                    value={element.editedText}
+                    onChange={(e) => handleInputChange(e, index)}
+                    className={styles.input_field}
+                />
+            ) : (
+                <p>{element.editedText}</p>
+            )}
+            <div className={styles.action_container}>
+                <Switch id={index} switchState ={element.switchValue} handleToggle={() => handleToggle(index)}/>
+                <button type="button" onClick={() => element.isEditing ? handleInputSave(index) : handleEditClick(index)}>
+                    {element.isEditing ? <CheckMark /> : <Pencil />}
+                </button>
+            </div>
+        </div>
+    );
+})}
+
         </div>
     </div>
     );
@@ -336,6 +386,9 @@ const SettingsPage: React.FC = () => {
     const [columnNames, setColumnNames] = useState<Array<[string, string]>>(userPrefs.table_map);
     const [columnOrder, setColumnOrder] = useState<string[]>(userPrefs.column_order);
     const [informationMessage, setinformationMessage ] = useState<string>(userPrefs.message);
+    const [switchMap, setSwitchMap ] = useState<Array<[string,boolean]>>(userPrefs.switch_map);
+
+
 
     const handleColorChange = (colorIndex: number, newColor: string) => {
         setColors((prevColors) => {
@@ -426,7 +479,8 @@ const SettingsPage: React.FC = () => {
             textColor2: colors[4],
             logo: logo,
             table_map: columnNames,
-            column_order: columnOrder
+            column_order: columnOrder,
+            switch_map: switchMap,
         });
     };
 
@@ -434,9 +488,10 @@ const SettingsPage: React.FC = () => {
         setinformationMessage(newMessage);
     }
 
-    const handleColumnNamesChangeAndOrder = (newNames: Array<[string, string]>, newOrder: string[]) => {
+    const handleColumnNamesChangeAndOrder = (newNames: Array<[string, string]>, newOrder: string[],newSwitchMap: Array<[string,boolean]>) => {
         setColumnNames(newNames);
         setColumnOrder(newOrder);
+        setSwitchMap(newSwitchMap);
     }
 
     const pageSwitch = () => {
