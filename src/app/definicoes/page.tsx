@@ -213,9 +213,11 @@ const TableContent: React.FC < ( {updateColumnNamesAndOrder: (newNames: Array<[s
         });
     });
 
-    for(var i = 0;i < userPrefs.switch_map.length;i++){
-        const switchValue = userPrefs.switch_map[i][1];
-        initialElementsState[i].switchValue = switchValue;
+    if (userPrefs.switch_map) {
+        for(var i = 0; i < userPrefs.switch_map.length; i++){
+            const switchValue = userPrefs.switch_map[i][1];
+            initialElementsState[i].switchValue = switchValue;
+        }
     }
 
     let [elementsState, setElementsState] = useState(initialElementsState);
