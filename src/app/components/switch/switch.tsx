@@ -4,15 +4,12 @@ import { useState } from 'react';
 
 
 interface SwitchProps {
-    id: string;
+    id: number;
+    switchState: boolean;
+    handleToggle : () => void;
 }
 
-const Switch: React.FC<SwitchProps> = ({ id }) => {
-    const [switchState, setSwitchState] = useState<boolean>(false);
-
-    const handleToggle: React.ChangeEventHandler<HTMLInputElement> = () => {
-        setSwitchState(!switchState);
-    };
+const Switch: React.FC<SwitchProps> = ({ id, switchState, handleToggle }) => {
 
     return (
         <label className={styles.switch}>
