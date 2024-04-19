@@ -48,17 +48,17 @@ const defaultPrefs: UserPrefs = {
         "EndDriverId1",
     ],
     switch_map: [
-      ["DutyStartTime",false],
-      ["DutyEndTimeSeconds",false],
-      ["IsDriverPresent",false],
-      ["VehicleNr",false],
-      ["VehicleLicensePlate",false],
-      ["DailyRosterDate",false],
-      ["DutyName",false],
-      ["DutyEndTime",false],
-      ["DutyEndNode",false],
-      ["EndLines",false],
-      ["EndDriverId1",false]
+      ["DutyStartTime",true],
+      ["DutyEndTimeSeconds",true],
+      ["IsDriverPresent",true],
+      ["VehicleNr",true],
+      ["VehicleLicensePlate",true],
+      ["DailyRosterDate",true],
+      ["DutyName",true],
+      ["DutyEndTime",true],
+      ["DutyEndNode",true],
+      ["EndLines",true],
+      ["EndDriverId1",true]
     ],
 }
 
