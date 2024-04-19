@@ -227,6 +227,27 @@
   -o-border-radius: 5px;
 }
 
+.input-field::placeholder {
+  color: var(--color-secundary-text); 
+}
+
+.info-box-container button {
+  height: 25px;
+}
+
+.info-box-container > div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; 
+  gap: 5px; 
+}
+
+.info-box-container > div > p:nth-child(2) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 
 .info-box-container {
   width: 30%;
@@ -258,13 +279,7 @@
 }
 
 .info-box-container input[type="text"] {
-  width: 100%; 
-  padding: 10px; 
-  box-sizing: border-box; 
-  background-color: var(--color-primary-background);
-}
-
-
-.info-box-container button {
-  right: 0; 
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
 }

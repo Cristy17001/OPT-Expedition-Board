@@ -48,6 +48,6 @@
   transition: filter 0.3s ease; /* Adding transition for smoother effect */
 }
 
-.btn_container > *:hover {
+.btn_container > button:hover, .btn_container > span:hover, .btn_container > a:hover {
   filter: brightness(80%); /* Adjust brightness for desired lighter color effect */
 }

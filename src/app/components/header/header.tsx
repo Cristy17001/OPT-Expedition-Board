@@ -11,9 +11,10 @@ type Props = {
     title: string;
     logo: string;
     prefstyles: React.CSSProperties;
+    handleSubmit?: () => void;
 };
 
-export default function HeaderComponent({ type, title, logo, prefstyles }: Props) {
+export default function HeaderComponent({ type, title, logo, prefstyles, handleSubmit}: Props) {
 
     return (
         <header className={styles.header} style={prefstyles}>
@@ -22,7 +23,7 @@ export default function HeaderComponent({ type, title, logo, prefstyles }: Props
             </Link>
             <h1 className={styles.title}>{title}</h1>
             <div className={styles.btn_container}>
-                {type === 'settings' && <BackButton />}
+                {type === 'settings' && <BackButton handleSubmit={handleSubmit} />}
                 {(type === 'entradas' && (
                     <Link href="/saidas">
                         <SwitchTable />
