@@ -120,6 +120,7 @@ table {
 }
 
 .arrowDown-svg * {
+  stroke: var(--color-primary-text) !important;
   fill: var(--color-primary-text) !important;
 }
 
