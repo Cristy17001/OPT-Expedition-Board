@@ -12,9 +12,10 @@ type Props = {
     logo: string;
     prefstyles: React.CSSProperties;
     handleSubmit?: () => void;
+    handleChange?: () => boolean;
 };
 
-export default function HeaderComponent({ type, title, logo, prefstyles, handleSubmit}: Props) {
+export default function HeaderComponent({ type, title, logo, prefstyles, handleSubmit, handleChange}: Props) {
 
     return (
         <header className={styles.header} style={prefstyles}>
@@ -23,7 +24,7 @@ export default function HeaderComponent({ type, title, logo, prefstyles, handleS
             </Link>
             <h1 className={styles.title}>{title}</h1>
             <div className={styles.btn_container}>
-                {type === 'settings' && <BackButton handleSubmit={handleSubmit} />}
+                {type === 'settings' && <BackButton handleSubmit={handleSubmit} handleChange={handleChange} />}
                 {(type === 'entradas' && (
                     <Link href="/saidas">
                         <SwitchTable />

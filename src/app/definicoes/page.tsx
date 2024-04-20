@@ -391,7 +391,23 @@ const SettingsPage: React.FC = () => {
     const [informationMessage, setinformationMessage ] = useState<string>(userPrefs.message);
     const [switchMap, setSwitchMap ] = useState<Array<[string,boolean]>>(userPrefs.switch_map);
 
+    const handleChange = () => {
+        var changesMade: boolean =
+            colors[0] !== userPrefs.color1 ||
+            colors[1] !== userPrefs.color2 ||
+            colors[2] !== userPrefs.highlightColor ||
+            colors[3] !== userPrefs.textColor1 ||
+            colors[4] !== userPrefs.textColor2 ||
+            logo !== userPrefs.logo ||
+            JSON.stringify(columnNames) !== JSON.stringify(userPrefs.table_map) ||
+            JSON.stringify(columnOrder) !== JSON.stringify(userPrefs.column_order) ||
+            JSON.stringify(switchMap) !== JSON.stringify(userPrefs.switch_map);
 
+        if (changesMade) console.log('Changes detected')
+        else console.log('No changes detected');
+
+        return changesMade;
+    };
 
     const handleColorChange = (colorIndex: number, newColor: string) => {
         setColors((prevColors) => {
@@ -517,7 +533,7 @@ const SettingsPage: React.FC = () => {
 
     return (
         <main style={rootStyle as React.CSSProperties}>
-            <Header type='settings' title='Definições' logo={userPrefs.logo} prefstyles={rootStyle as React.CSSProperties} handleSubmit={handleSubmit}/>
+            <Header type='settings' title='Definições' logo={userPrefs.logo} prefstyles={rootStyle as React.CSSProperties} handleChange={handleChange} handleSubmit={handleSubmit}/>
             <form className={styles.settings_container} onSubmit={handleSubmit} style={rootStyle as React.CSSProperties}>
                 {settingsState == 'appearance' ? (
                     <>

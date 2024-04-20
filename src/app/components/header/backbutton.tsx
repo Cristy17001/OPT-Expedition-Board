@@ -7,14 +7,18 @@ import Trash from '@/app/images/svgs/save';
 
 interface BackButtonProps {
     handleSubmit?: () => void;
+    handleChange?: () => boolean;
 }
 
-export default function BackButton({ handleSubmit }: BackButtonProps): JSX.Element {
+export default function BackButton({ handleSubmit, handleChange }: BackButtonProps): JSX.Element {
     const modal = document.getElementById('sureModal') as HTMLDialogElement | null;
 
     const handleArrowClick = () => {
-        if (modal) {
+        if (modal && handleChange && handleChange()) {
             modal.showModal();
+        }
+        else {
+            window.history.back();
         }
     };
 
