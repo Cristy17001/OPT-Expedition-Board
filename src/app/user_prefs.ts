@@ -22,7 +22,7 @@ const defaultPrefs: UserPrefs = {
     textColor2: "#9390A6",
     logo: "/logo.png",
     table_map: [
-        ["DutyStartTime", "DutyStartTime"],
+        ["DutyStartTimeSeconds", "DutyStartTimeSeconds"],
         ["DutyEndTimeSeconds", "DutyEndTimeSeconds"],
         ["IsDriverPresent", "IsDriverPresent"],
         ["VehicleNr", "VehicleNr"],
@@ -35,7 +35,7 @@ const defaultPrefs: UserPrefs = {
         ["EndDriverId1", "EndDriverId1"],
     ],
     column_order: [
-        "DutyStartTime",
+        "DutyStartTimeSeconds",
         "DutyEndTimeSeconds",
         "IsDriverPresent",
         "VehicleNr",
@@ -48,7 +48,7 @@ const defaultPrefs: UserPrefs = {
         "EndDriverId1",
     ],
     switch_map: [
-      ["DutyStartTime",true],
+      ["DutyStartTimeSeconds",true],
       ["DutyEndTimeSeconds",true],
       ["IsDriverPresent",true],
       ["VehicleNr",true],
