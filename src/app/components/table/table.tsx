@@ -21,32 +21,12 @@ const DrawRow: React.FC<DrawRowProps> = ({ row, index, isLate }) => {
   return (
     <tr key={index} className={isLate ? styles.late : undefined}>
       {userPrefs.column_order.map((column, index) => {
-        switch (column) {
-          case "DutyStartTimeSeconds":
-            return userPrefs.switch_map[0][1] && row.DutyStartTimeSeconds && <td key={index}>{new Date(row.DutyStartTimeSeconds * 1000).toISOString().substring(11, 16)}</td>;
-          case "DutyEndTimeSeconds":
-            return userPrefs.switch_map[1][1] && row.DutyEndTimeSeconds && <td key={index}>{new Date(row.DutyEndTimeSeconds * 1000).toISOString().substring(11, 16)}</td>;
-          case "IsDriverPresent":
-            return userPrefs.switch_map[2][1] && row.IsDriverPresent && <td key={index}>{row.IsDriverPresent}</td>;
-          case "VehicleNr":
-            return userPrefs.switch_map[3][1] && row.VehicleNr && <td key={index}>{row.VehicleNr}</td>;
-          case "VehicleLicensePlate":
-            return userPrefs.switch_map[4][1] && row.VehicleLicensePlate && <td key={index}>{row.VehicleLicensePlate}</td>;
-          case "DailyRosterDate":
-            return userPrefs.switch_map[5][1] && row.DailyRosterDate && <td key={index}>{row.DailyRosterDate}</td>;
-          case "DutyName":
-            return userPrefs.switch_map[6][1] && row.DutyName && <td key={index}>{row.DutyName}</td>;
-          case "DutyEndTime":
-            return userPrefs.switch_map[7][1] && row.DutyEndTime && <td key={index}>{row.DutyEndTime}</td>;
-          case "DutyEndNode":
-            return userPrefs.switch_map[8][1] && row.DutyEndNode && <td key={index}>{row.DutyEndNode}</td>;
-          case "EndLines":
-            return userPrefs.switch_map[9][1] && row.EndLines && <td key={index}>{row.EndLines}</td>;
-          case "EndDriverId1":
-            return userPrefs.switch_map[10][1] && row.EndDriverId1 && <td key={index}>{row.EndDriverId1}</td>;
-          default:
-            return null;
+        const columnValue = row[column];
+        const shouldRender = userPrefs.switch_map[index]?.[1] && columnValue;
+        if(column == "DutyStartTimeSeconds" || column == "DutyEndTimeSeconds") {
+          return shouldRender ? <td key={index}>{new Date(columnValue * 1000).toISOString().substring(11, 16)}</td> : null;
         }
+        return shouldRender ? <td key={index}>{columnValue}</td> : null;
       })}
     </tr>
   );
