@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../table/table.module.css'
+import useUserPrefs, { UserPrefs } from '@/app/user_prefs';
 
 
 interface TableProps {
@@ -27,24 +28,30 @@ function DrawRow(row: any, index: number, isLate: boolean) {
   );
 }
 
+function DrawHeader(result: any[]) {
+  return(
+      <thead>
+        <tr>
+          {result[0] && result[0].DutyStartTimeSeconds && <th>{useUserPrefs().userPrefs.table_map[0][1]}</th>}
+          {result[0] && result[0].DutyEndTimeSeconds && <th>{useUserPrefs().userPrefs.table_map[1][1]}</th>}
+          {result[0] && result[0].IsDriverPresent && <th>{useUserPrefs().userPrefs.table_map[2][1]}</th>}
+          {result[0] && result[0].VehicleNr && <th>{useUserPrefs().userPrefs.table_map[3][1]}</th>}
+          {result[0] && result[0].VehicleLicensePlate && <th>{useUserPrefs().userPrefs.table_map[4][1]}</th>}
+          {result[0] && result[0].DailyRosterDate && <th>{useUserPrefs().userPrefs.table_map[5][1]}</th>}
+          {result[0] && result[0].DutyName && <th>{useUserPrefs().userPrefs.table_map[6][1]}</th>}
+          {result[0] && result[0].DutyEndTime && <th>{useUserPrefs().userPrefs.table_map[7][1]}</th>}
+          {result[0] && result[0].DutyEndNode && <th>{useUserPrefs().userPrefs.table_map[8][1]}</th>}
+          {result[0] && result[0].EndLines && <th>{useUserPrefs().userPrefs.table_map[9][1]}</th>}
+          {result[0] && result[0].EndDriverId1 && <th>{useUserPrefs().userPrefs.table_map[10][1]}</th>}
+        </tr>
+      </thead>
+  )
+}
+
 const TableComponent: React.FC<TableProps> = ({type, result, secondsPassed, secondsPassed2 }) => (
     <div className={styles.table_container}>
           <table className={styles.table}>
-            <thead>
-              <tr>
-                {result[0] && result[0].DutyStartTimeSeconds && <th>DutyStartTime</th>}
-                {result[0] && result[0].DutyEndTimeSeconds && <th>DutyEndTimeSeconds</th>}
-                {result[0] && result[0].IsDriverPresent && <th>IsDriverPresent</th>}
-                {result[0] && result[0].VehicleNr && <th>VehicleNr</th>}
-                {result[0] && result[0].VehicleLicensePlate && <th>VehicleLicensePlate</th>}
-                {result[0] && result[0].DailyRosterDate && <th>DailyRosterDate</th>}
-                {result[0] && result[0].DutyName && <th>DutyName</th>}
-                {result[0] && result[0].DutyEndTime && <th>DutyEndTime</th>}
-                {result[0] && result[0].DutyEndNode && <th>DutyEndNode</th>}
-                {result[0] && result[0].EndLines && <th>EndLines</th>}
-                {result[0] && result[0].EndDriverId1 && <th>EndDriverId1</th>}
-              </tr>
-            </thead>
+            {DrawHeader(result)}
             <tbody>
                 {(result as Array<any>).map((row, index) => {
                   if ((type == "entradas" && row.DutyEndTimeSeconds && row.DutyEndTimeSeconds > secondsPassed) || (type == "saidas" && row.DutyStartTimeSeconds && row.DutyStartTimeSeconds > secondsPassed)) {
