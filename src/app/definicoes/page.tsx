@@ -431,6 +431,9 @@ const SettingsPage: React.FC = () => {
             textColor1: colors[3],
             textColor2: colors[4],
             logo: logo,
+            table_map: columnNames,
+            column_order: columnOrder,
+            switch_map: switchMap,
         };
 
         const json = JSON.stringify(data, null, 2);
@@ -463,6 +466,9 @@ const SettingsPage: React.FC = () => {
                     data.textColor2,
                 ]);
                 setLogo(data.logo);
+                setColumnNames(data.table_map);
+                setColumnOrder(data.column_order);
+                setSwitchMap(data.switch_map);
               }
             };
             reader.onerror = () => {
