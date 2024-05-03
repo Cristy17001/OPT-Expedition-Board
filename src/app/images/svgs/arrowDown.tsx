@@ -6,7 +6,7 @@ export default function ArrowDown() {
         className="arrowDown-svg"
         style={{ width: "24px", height: "24px" }}
     >
-    <path d="M12 20L12 4M12 20L6 14M12 20L18 14" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M12 20L12 4M12 20L6 14M12 20L18 14" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
     </svg>
   );
 }
