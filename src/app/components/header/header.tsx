@@ -2,9 +2,11 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './header.module.css';
+import HomeButton from './homebutton';
 import BackButton from './backbutton';
 import SwitchTable from '../../images/svgs/switch_table';
 import Settings from '../../images/svgs/settings';
+import Home from '@/app/page';
 
 type Props = {
     type: string;
@@ -19,9 +21,7 @@ export default function HeaderComponent({ type, title, logo, prefstyles, handleS
 
     return (
         <header className={styles.header} style={prefstyles}>
-            <Link href="/">
-                <Image src={logo} alt="logo" width={100} height={100} />
-            </Link>
+            <HomeButton logo={logo} handleSubmit={handleSubmit} handleChange={handleChange} />
             <h1 className={styles.title}>{title}</h1>
             <div className={styles.btn_container}>
                 {type === 'settings' && <BackButton handleSubmit={handleSubmit} handleChange={handleChange} />}
