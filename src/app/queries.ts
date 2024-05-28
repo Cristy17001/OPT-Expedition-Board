@@ -1,5 +1,6 @@
 'use server';
 import { PrismaClient } from "@prisma/client";
+import { get } from "http";
 
 const prisma = new PrismaClient();
 
@@ -99,5 +100,10 @@ export async function getSaidas() {
       order by foo.DutyStartTimeSeconds
     `;
   return JSON.parse(JSON.stringify(data));
+}
+
+export async function getStations(){
+  const data = await getSaidas();
+  return new Set(data.map((item: any) => item.DutyStartNode));
 }
 
