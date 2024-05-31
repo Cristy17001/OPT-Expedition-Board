@@ -1,0 +1,142 @@
+\documentclass{article}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage{setspace}
+\setstretch{1.25}
+\usepackage{titlesec}
+\newcommand{\indexsection}[1]{\section{#1}\index{#1}}
+\newcommand{\indexsubsection}[1]{\subsection{#1}\index{#1@\thesection~#1}}
+\usepackage{pgfgantt}
+\usepackage{graphicx}
+
+\usepackage{imakeidx}
+\makeindex[columns=1, title=Contents, intoc]
+\begin{document}
+\begin{center}
+
+\title{\includegraphics[width=0.7\textwidth]{images/feup.png}\break\textbf{\LARGE Concession and Development of a Dispatch Board for Public Transport Operators Based on Web Technologies}}
+
+
+\author{\textbf{António Ferreira} \\ \textbf{Cristiano Rocha} \\ \textbf{José Ferreira} \\ \textbf{Pedro Magalhães}}
+
+\maketitle
+
+Bachelor of Informatics and Computer Engineering \\
+\vspace{1cm}
+
+\textbf{U.Porto Tutor:} Teresa Galvão \\
+\textbf{Proponent:} Thiago Sobral
+\end{center}
+\newpage
+
+\section{Introduction}
+\index{Introduction}
+
+This report aims to provide an overview of our project that involved the implementation of a system for a dispatch board for public transport operators.
+
+\subsection{Background}
+\index{Background}
+
+The project was carried out within the OPT facilities (Otimização e Planeamento de Transportes S.A). We were accompanied by our tutor from OPT, Thiago Sobral, who guided us through the entire work and helped us with everything we needed.
+
+\subsection{Objectives and Expected Results}
+\index{Objectives and Expected Results}
+The main motivation behind this project was the need to upgrade the already existing software used to display the dispatch board to a programming language that could be more easily managed, maintaining the existing features, and database integration. 
+
+The existing software was considered outdated and hard to deploy since it ran natively on the devices, every update and bugfix required a manual software update of all the machines that needed it. 
+
+The development of this dispatch board was based on an existing program, our job was to upgrade it by:
+\begin{itemize}
+    \item adapting it to a web-based language, so that it is easier to expand and debug, taking advantage of the best and most recent tools of web-dev;
+    \item adding customizations and “quality of life” features to improve the overall usability of the product.
+\end{itemize}
+
+\subsection{Report Structure}
+\index{Report Structure}
+This report will have the following structure:
+\begin{itemize}
+    \item     \textbf{Introduction:} Brief description of the initial background, motivation and context behind the project and the expected results.
+    \item     \textbf{Methodology and Development Process:} Description of the methodologies and main activities that were carried out in this project, including the methodology that was used, the intervenients and their roles/responsibilities, and the main activities that were developed during the project.
+    \item     \textbf{Solution Development:} The requirements and restrictions of the final product and the architecture and technologies used.
+    \item     \textbf{Conclusion:} Conclusion of the report with a summary of what we as a group achieved with this project and what we learned.
+\end{itemize}
+
+\section{Methodology and Development Process}
+\index{Methodology and Development Process}
+
+\subsection{Methodology}
+\index{Methodology}
+To ensure consistent progress and receive regular feedback, our group established a weekly meeting schedule with our OPT tutor. These meetings allowed us to review our work, discuss any challenges, and make necessary adjustments based on the feedback received.
+
+For version control and collaboration, we utilized GitHub. We created a repository where we committed our code, which greatly enhanced our communication and organization. This platform allowed us to track changes, manage different versions of our project, and work simultaneously without conflicts.
+
+Our online meetings were conducted through a Discord group we created specifically for this project. We utilized both text and voice chat features to communicate in real-time while working on the project. Additionally, we included our OPT tutor in the Discord group so he could monitor our progress and provide feedback directly within this collaborative environment.
+
+For coding, we chose Visual Studio Code as our primary editor. This tool offered an array of extensions and features that facilitated our development process, making it easier to write, debug, and collaborate on our code efficiently.
+
+\subsection{Stakeholders and roles}
+\index{Stakeholders and roles}
+Several people were involved in the project, each with specific roles and responsibilities. The stakeholders and their roles are as follows:
+\begin{itemize}
+    \item Project Team(4 members):
+    \begin{itemize}
+        \item António Ferreira: Frontend Developer
+        \item Cristiano Rocha: Frontend Developer
+        \item José Ferreira: Frontend Developer
+        \item Pedro Magalhães: Backend Developer
+    \end{itemize}
+    \item Project Coordinators:
+    \begin{itemize}
+        \item Professor and advisor Thiago Sobral from OPT: Responsible for advising and mentoring us, providing expertise and guidance.
+        \item Professor and supervisor Maria Teresa Galvão Dias from FEUP: Oversees the project and provides guidance and feedback.
+        \item Professor and Director of Capstone Project (Projeto Integrador) Nuno Flores: Conductor of Projeto Integrador.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Activities Developed}
+During the project’s duration, several activities took place, such as planning, coding and team meetings.
+
+\begin{itemize}
+    \item \textbf{Planning:} We started by analyzing the existing software and defining the requirements for the new dispatch board. We also discussed the technologies to be used and the architecture of the system.
+    \item \textbf{Development:} We divided the project into frontend and backend tasks. The frontend team focused on the user interface and experience, while the backend team worked on the server-side logic and database integration.
+    \item \textbf{Testing and Feedback Collection:} We conducted extensive testing to ensure the system’s functionality and performance. We also collected feedback from users to identify any issues or areas for improvement.
+    \item \textbf{Deployment:} We deployed the system on a test server to evaluate its performance and stability. We also prepared the system for production deployment.
+    \item \textbf{Documentation:} We documented the system’s architecture, design, and implementation details.
+\end{itemize}
+
+Here's a Gantt chart showing the project's timeline:
+
+\begin{ganttchart}[
+    hgrid,
+    vgrid,
+    x unit=0.5cm,
+    title/.style={fill=gray!30, draw=none},
+    title label font=\footnotesize,
+    bar/.style={fill=blue!30, draw=none},
+    bar height=0.7,
+    bar label font=\footnotesize,
+    group/.style={fill=green!30, draw=none},
+    group right shift=0,
+    group top shift=0.7,
+    group height=.3,
+    group peaks width={0.2},
+    milestone/.style={fill=red!50, draw=none},
+    milestone height=0.7
+]{1}{16}
+    \gantttitle{2024}{16} \\
+    \gantttitle{March}{4} 
+    \gantttitle{April}{4} 
+    \gantttitle{May}{4} 
+    \gantttitle{June}{4} \\
+    \ganttgroup{Planning}{1}{4} \\
+    \ganttbar{Requirement Analysis}{1}{2} \\
+    \ganttlinkedbar{System Design}{3}{4} \ganttnewline
+    \ganttmilestone{Design Review}{4} \ganttnewline
+    \ganttbar{Implementation}{5}{11} \\
+    \ganttlinkedbar{Testing}{12}{14} \\
+    \ganttlinkedmilestone{Deployment}{14} \ganttnewline
+    \ganttbar{Documentation}{12}{14}
+\end{ganttchart}
+
+\printindex
+\end{document}
