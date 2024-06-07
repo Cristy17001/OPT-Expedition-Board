@@ -15,12 +15,12 @@ interface HomeButtonProps {
 export default function HomeButton({ logo, handleSubmit, handleChange }: HomeButtonProps): JSX.Element {
     const modal = document.getElementById('sureModal') as HTMLDialogElement | null;
 
-    const handleArrowClick = () => {
+    const handleHomeClick = () => {
         if (modal && handleChange && handleChange()) {
             modal.showModal();
         }
         else {
-            window.history.back();
+            window.location.href = '/'
         }
     };
 
@@ -52,7 +52,7 @@ export default function HomeButton({ logo, handleSubmit, handleChange }: HomeBut
 
     return (
         <>
-            <span onClick={handleArrowClick} style={{ cursor: "pointer" }}>
+            <span onClick={handleHomeClick} style={{ cursor: "pointer" }}>
                 <Image src={logo} alt="logo" width={100} height={100} />
             </span>
             <dialog id='sureModal' className={styles.modal} onClick={(e) => handleModalClick(e)}>
