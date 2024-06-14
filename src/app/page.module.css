@@ -1,3 +1,7 @@
+.title {
+    font-size: 3rem;
+}
+
 .landing {
     display: flex;
     align-items: center;
@@ -13,7 +17,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 75%;
+    width: 80%;
     aspect-ratio: 16/8;
 }
 
@@ -30,15 +34,16 @@
 
 .btn_nav {
     background-color: black;
-    width: 15rem;
+    width: 11rem;
     min-width: fit-content;
-    height: 6rem;
+    aspect-ratio: 16/7;
     color: #fff;
     padding: 0.5rem 1rem;
     margin: 0.5rem;
     border-radius: 10px;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-family: inherit;
+    font-weight: 500;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
@@ -71,4 +76,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* Selection of station */
+.station_container {
+    margin-top: 1rem;
+}
+
+.select_station {
+    background-color: black;
+    color: #f3f3f3;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    margin-top: 1rem;
 }

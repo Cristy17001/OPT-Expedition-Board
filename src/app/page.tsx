@@ -4,7 +4,6 @@ import Link from 'next/link';
 import useUserPrefs from './user_prefs';
 import { getStations } from './queries';
 import { useEffect, useState } from 'react';
-import { get } from 'http';
 
 const StationSelection : React.FC = () => {
   const {userPrefs, updateUserPrefs } = useUserPrefs();
@@ -20,13 +19,14 @@ const StationSelection : React.FC = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <p style={{ fontSize: '1rem' }}>Loading...</p>;
   }
 
   return (
     <select
     id="station"
     name="station"
+    className={styles.select_station}
     value={userPrefs.station}
     onChange={(e) => updateUserPrefs({ ...userPrefs, station: e.target.value })}
   >
@@ -45,7 +45,7 @@ export default function Home() {
   return (
     <main className={styles.landing}>
       <div className={styles.card}>
-        <h1>Selecione uma opção:</h1>
+        <h1 className={styles.title}>Selecione uma opção:</h1>
         <div className={styles.btn_container}>
           <Link href="/entradas"><button className= {styles.btn_nav}>
               Entradas
@@ -59,11 +59,12 @@ export default function Home() {
               Definições
             </button>
           </Link>
-          <label htmlFor="station" className={styles.label}>Selecione a estação:</label>
+        </div>
+        <div className={styles.station_container}>
+          <h4>Selecione uma estação:</h4>
           <StationSelection/>
         </div>
       </div>
     </main>
   );
-
 }
