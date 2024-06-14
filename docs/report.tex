@@ -91,17 +91,34 @@ Several people were involved in the project, each with specific roles and respon
         \item Professor and supervisor Maria Teresa Galvão Dias from FEUP: Oversees the project and provides guidance and feedback.
         \item Professor and Director of Capstone Project (Projeto Integrador) Nuno Flores: Conductor of Projeto Integrador.
     \end{itemize}
+    \item Project Users:
+    \begin{itemize}
+        \item Transport Operators: The primary users of the dispatch board system.
+    \end{itemize}
 \end{itemize}
 
 \subsection{Activities Developed}
 During the project’s duration, several activities took place, such as planning, coding and team meetings.
 
 \begin{itemize}
-    \item \textbf{Planning:} We started by analyzing the existing software and defining the requirements for the new dispatch board. We also discussed the technologies to be used and the architecture of the system.
-    \item \textbf{Development:} We divided the project into frontend and backend tasks. The frontend team focused on the user interface and experience, while the backend team worked on the server-side logic and database integration.
-    \item \textbf{Testing and Feedback Collection:} We conducted extensive testing to ensure the system’s functionality and performance. We also collected feedback from users to identify any issues or areas for improvement.
-    \item \textbf{Deployment:} We deployed the system on a test server to evaluate its performance and stability. We also prepared the system for production deployment.
-    \item \textbf{Documentation:} We documented the system’s architecture, design, and implementation details.
+    \item \textbf{Planning:}
+    \begin{itemize}
+        \item     The initial phase involved determining the technologies to be used. In a meeting with our OPT coordinator, we decided on Node.js and Prisma for the backend, and React with TypeScript for the frontend.
+        \item     We also discussed the project's requirements and constraints, such as the need for real-time updates and the importance of maintaining the existing features.
+        \item     After the initial planning, we began the requirement analysis, which involved understanding the existing system and identifying the features that needed to be implemented in the new dispatch board. We consulted with our OPT coordinator to ensure that the new system met the required specifications.
+    \end{itemize}
+    \item \textbf{Development:}
+    \begin{itemize}
+        \item     The development phase began with setting up the project structure and creating the initial files. We were provided a database from one of the existing dispatch board systems, which we used to test the backend. We were also provided the queries used to retrieve the data from the database.
+        \item     We then proceeded to implement the backend, focusing on the database connection and API endpoints. We used Prisma to interact with the database and Next.js to create the API routes.
+        \item     Another important aspect was the implementation of a way to customize the dispatch board, allowing users to change the colors and layout and the logo according to their preferences. We decided to use a JSON file to store these customizations, so that the users could export and import their settings to other devices.
+        \item     The frontend development followed, with the creation of the user interface and integration with the backend. We used React with TypeScript to build the frontend, focusing on the real-time updates and customization features. There was a focus on creating a simple and intuitive interface that would be easy to use by the transport operators.
+    \end{itemize}
+    \item \textbf{Testing:}
+    \begin{itemize}
+        \item We conducted several rounds of testing to ensure that the system was functioning correctly and that all features were working as expected. We tested the real-time updates and customization options to verify that they were working properly.
+        \item We also conducted user testing with the transport operators to gather feedback on the system's usability and identify any issues that needed to be addressed.
+    \end{itemize}
 \end{itemize}
 
 Here's a Gantt chart showing the project's timeline:
@@ -124,9 +141,9 @@ Here's a Gantt chart showing the project's timeline:
     milestone height=0.7
 ]{1}{16}
     \gantttitle{2024}{16} \\
-    \gantttitle{March}{4} 
-    \gantttitle{April}{4} 
-    \gantttitle{May}{4} 
+    \gantttitle{March}{4}
+    \gantttitle{April}{4}
+    \gantttitle{May}{4}
     \gantttitle{June}{4} \\
     \ganttgroup{Planning}{1}{4} \\
     \ganttbar{Requirement Analysis}{1}{2} \\
@@ -137,6 +154,24 @@ Here's a Gantt chart showing the project's timeline:
     \ganttlinkedmilestone{Deployment}{14} \ganttnewline
     \ganttbar{Documentation}{12}{14}
 \end{ganttchart}
+
+\section{Solution Development}
+\index{Solution Development}
+
+\subsection{Requirements}
+\index{Requirements}
+The main requirements for the dispatch board system were as follows:
+\begin{itemize}
+    \item     \textbf{Keep the existing features:} The system should maintain the existing features of the dispatch board, such as displaying the buses'/trains' schedules.
+    \item     \textbf{Customization:} The system should allow users to customize the dispatch board according to their preferences, such as changing the colors, logo and layout(display the columns that they consider useful and hide the ones that are considered useless for that company, also switch the order of the columns).
+    \item     \textbf{User-friendly interface:} The system should have a simple and intuitive interface that is easy to use by the transport operators.
+    \item     \textbf{Database integration:} The system should be able to connect to a database to retrieve the necessary information about the buses and schedules.
+    \item     \textbf{Modular architecture:} The system should be modular, allowing for easy expansion and maintenance. It should also be possible for many transportation companies to use the same system, with each one having its own customizations and schedules.
+\end{itemize}
+
+\subsection{Architecture and Technologies}
+\index{Architecture and Technologies}
+
 
 \printindex
 \end{document}
