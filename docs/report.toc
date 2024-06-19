@@ -1,0 +1,24 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}Introduction}{2}{}%
+\contentsline {subsection}{\numberline {1.1}Background}{2}{}%
+\contentsline {subsection}{\numberline {1.2}Objectives and Expected Results}{2}{}%
+\contentsline {subsection}{\numberline {1.3}Report Structure}{2}{}%
+\contentsline {section}{\numberline {2}Methodology and Development Process}{2}{}%
+\contentsline {subsection}{\numberline {2.1}Methodology}{2}{}%
+\contentsline {subsection}{\numberline {2.2}Stakeholders and roles}{3}{}%
+\contentsline {subsection}{\numberline {2.3}Activities Developed}{3}{}%
+\contentsline {section}{\numberline {3}Solution Development}{5}{}%
+\contentsline {subsection}{\numberline {3.1}Requirements}{5}{}%
+\contentsline {subsection}{\numberline {3.2}Architecture and Technologies}{6}{}%
+\contentsline {subsubsection}{\numberline {3.2.1}Technology choice and reasoning}{6}{}%
+\contentsline {subsubsection}{\numberline {3.2.2}Architecture}{7}{}%
+\contentsline {subsubsection}{\numberline {3.2.3}Difficulties encountered and their resolution}{8}{}%
+\contentsline {subsection}{\numberline {3.3}Developed Solution}{8}{}%
+\contentsline {subsubsection}{\numberline {3.3.1}Table of entries}{8}{}%
+\contentsline {subsubsection}{\numberline {3.3.2}Table of exits}{9}{}%
+\contentsline {subsubsection}{\numberline {3.3.3}Settings page}{9}{}%
+\contentsline {subsection}{\numberline {3.4}Validation}{10}{}%
+\contentsline {section}{\numberline {4}Conclusões}{11}{}%
+\contentsline {subsection}{\numberline {4.1}Resultados alcançados}{11}{}%
+\contentsline {subsection}{\numberline {4.2}Lições aprendidas}{11}{}%
+\contentsline {subsection}{\numberline {4.3}Trabalho futuro}{11}{}%

@@ -4,11 +4,12 @@
 \usepackage{setspace}
 \setstretch{1.25}
 \usepackage{titlesec}
+\usepackage{indentfirst}
 \newcommand{\indexsection}[1]{\section{#1}\index{#1}}
 \newcommand{\indexsubsection}[1]{\subsection{#1}\index{#1@\thesection~#1}}
 \usepackage{pgfgantt}
 \usepackage{graphicx}
-\usepackage[portuguese]{babel}
+\usepackage[english]{babel}
 \usepackage{url}
 \usepackage{imakeidx}
 \graphicspath{ {./images/} }
@@ -19,7 +20,7 @@
 \begin{titlepage}
     \begin{center}
         \vspace*{1cm}
-    {\fontsize{17}{16}\selectfont \textbf{Título do projeto / estágio}}
+    {\fontsize{17}{16}\selectfont \textbf{Design and development of a dispatch board for public transport operators based on web technologies (PE43)}}
 
         \vspace{0.5cm}
         Capstone Project Final Report
@@ -44,13 +45,7 @@
         \textbf{U.Porto Tutor:} Teresa Galvão \\
         \textbf{Proponent:} Thiago Sobral \\
 
-    Bachelor of Informatics and Computer Engineering \\
-    \vspace{1cm}
-
-    \textbf{U.Porto Tutor:} Teresa Galvão \\
-    \textbf{Proponent:} Thiago SobralThis page serves as a powerful tool for configuring and optimizing data presentation, enhancing usability and efficiency in managing transport operations. By providing flexible customization options, it supports diverse user requirements and preferences.
-
-    \vspace{0.4cm}
+    \vspace{1.4cm}
         Date: 2024-06-21
 
     \end{center}
@@ -203,7 +198,7 @@
             \item Constraints:
                 \begin{itemize}
                     \item \textbf{Web-app based:} The system should tings from a JSON file.be developed as a web application, so that it can be accessed from any device with a web browser.
-                    \item \textbf{Keep the existing features:} The system should maintain the existing features of the dispatch board, such as displaying the buses'/trains' schedules.
+                    \item \textbf{Keep the existing features:} The system should maintain the existing features of the dispatch board, such as displaying the 'buses/trains' schedules.
                     \item \textbf{Real-time updates:} The system should provide real-time updates, ensuring that the transport operators have access to the most up-to-date information.
                 \end{itemize}
             \item Assumptions:
@@ -216,10 +211,54 @@
                 \item The system depends on the database to retrieve the necessary information about the schedules.
             \end{itemize}
         \end{itemize}
-        \subsection{Arquitetura e tecnologias}
+        \subsection{Architecture and Technologies}
 
-        Arquitetura e tecnologias utilizadas e respetiva justificação, diagramas técnicos elabordos, dificuldades técnicas encontradas e sua resolução, etc.
+        \subsubsection{Technology choice and reasoning}
+        Before embarking on the development of the dispatch board system, careful consideration was given to defining the optimal architecture and technologies. The selection of these components was crucial to ensure scalability, reliability, and ease of maintenance, while aligning with the project requirements and existing systems.
+        With the freedom to choose the technologies, extensive research and discussions were conducted to make informed decisions. After thorough evaluation, the following technologies were deemed most suitable for the project:
+        \begin{itemize}
+                \item \textbf{Web Framework:}
+                \begin{itemize}
+                    \item \textbf{Description:} Next.js is a popular web framework for building modern and responsive user interfaces. It is built on top of React, a JavaScript library for building user interfaces, and provides additional features and optimizations specifically designed for server-side rendering and static site generation.
+                    \item \textbf{Reasoning:} Next.js was chosen for its flexibility in rendering strategies, performance optimizations, and ease of development. It offers a modern and fast user interface, making it a perfect fit for this project.
+                \end{itemize}
 
+                \item \textbf{Frontend:}
+                \begin{itemize}
+                    \item \textbf{Technology:} React with TypeScript was chosen for the frontend development. TypeScript is a superset of JavaScript that adds static typing to the language, providing enhanced code quality and improved developer productivity. React is a powerful library for building user interfaces, offering a component-based architecture that simplifies the development process.
+                    \item \textbf{Reasoning:} React's component-based architecture simplifies the development process and enhances code quality. TypeScript adds static typing to JavaScript, providing improved code quality and developer productivity.
+                \end{itemize}
+
+                \item \textbf{Backend:}
+                \begin{itemize}
+                    \item \textbf{Description:} We utilized an existing SQL Server database for the project, which contained the necessary information about the buses and schedules.
+                    \item \textbf{Reasoning:} The SQL Server database provided by OPT was a suitable choice for the project as it already contained the necessary information about the buses and schedules. Leveraging this existing database allowed us to focus on developing the frontend and backend components without the need to create a new database from scratch.
+                \end{itemize}
+
+                \item \textbf{ORM (Object-Relational Mapping):}
+                \begin{itemize}
+                    \item \textbf{Description:} Prisma is an advanced ORM that simplifies database interactions by providing a type-safe and intuitive API. It supports multiple databases, including PostgreSQL, SQL Server, MySQL, and SQLite, making it a versatile and efficient choice for the project.
+                    \item \textbf{Reasoning:} Prisma was selected for simplified database interactions and data manipulation. It is easy to utilize in Next.js and offers a seamless solution for the project's data handling needs.
+                \end{itemize}
+        \end{itemize}
+
+
+        \subsubsection{Architecture}
+        The architecture of the dispatch board system was designed to be easy to maintain, easy to use, and efficient. It consists of three main components: the frontend, backend, and database. These components work together to provide a seamless user experience for transport operators, ensuring real-time updates and customization options. To represent the architecture, we created a layer diagram that illustrates the interaction between the components.
+
+        \begin{figure}[!ht]
+            \centering
+            \includegraphics[width=1\textwidth]{architecture_diagram}
+            \caption{Layer diagram of the dispatch board system architecture}
+            \label{fig:architecture_diagram}
+        \end{figure}
+
+        \subsubsection{Difficulties encountered and their resolution}
+        At the start of the project, we encountered difficulties with the initial setup. We initially considered creating a Docker container to deploy the project and the database in a local environment, ensuring consistency across team members. However, after conducting research and some trial and error, we determined that this would introduce unnecessary complexity.
+
+        Fortunately, OPT provided us with a pre-existing database, eliminating the need to create one from scratch and simulate data. However, we faced the challenge of communicating with the database from both inside and outside of OPT. There were two different methods of connecting to the database, requiring manual changes to the .env file.
+
+        To address this issue, we developed a console executable file that automates the switching between environments, simplifying the process for seamless communication.
         \subsection{Developed Solution}
 
         \subsubsection{Table of entries}
@@ -229,10 +268,9 @@
         The table dynamically displays all transport schedules from the current time until the end of the day, with real-time updates ensuring accuracy and reliability. Users are provided with clear visual cues, such as a red highlight for any delayed transport schedules, facilitating efficient and effective transport management. This system not only enhances operational efficiency but also significantly improves the user experience for all stakeholders involved.
         At the bottom of the page, there is an area dedicated to displaying the most recently updated information by the application user. This feature enables users to promptly report incidents such as road accidents, ensuring timely dissemination of critical information.
 
-            \vfill
-        \includegraphics[width=1\textwidth]{table_of_entries}
+        \vspace{1cm}
+        \includegraphics[width=0.95\textwidth]{table_of_entries}
 
-            \vfill
 
         \subsubsection{Table of exits}
 
@@ -240,9 +278,8 @@
         Similar to its counterpart, users can access the settings page to customize the application's appearance and functionality according to their preferences. The table of exits presents updated transport schedules from the current time until the end of the day, ensuring real-time accuracy. Visual indicators promptly highlight any delays or disruptions in service, facilitating efficient transport management and enhancing user experience.
         At the bottom of the page, users also have an area to provide updates, such as reporting road incidents, ensuring comprehensive and timely information dissemination.
 
-            \vfill
-        \includegraphics[width=1\textwidth]{table_of_exits}
-            \vfill
+        \vspace{1cm}
+        \includegraphics[width=0.95\textwidth]{table_of_exits}
 
         \subsubsection{Settings page}
 
@@ -250,19 +287,18 @@
         Users can upload a company logo effortlessly using a dedicated upload button. For configuration management, the page includes export/import functionality for saving and reapplying settings as a JSON file. A preview section provides a live demonstration of layout changes, ensuring users can visualize and confirm adjustments to entry and exit tables before finalizing.
         This comprehensive approach ensures a personalized and intuitive experience, empowering users to tailor the application's appearance and functionality to their exact specifications.
 
-            \vfill
-        \includegraphics[width=1\textwidth]{aparencia}
-            \vfill
+        \vspace{1cm}
+        \includegraphics[width=0.95\textwidth]{aparencia}
+        \vspace{1cm}
 
         The second settings page focuses on fine-tuning table display and content preferences. Users have granular control over column visibility, allowing them to show or hide specific columns as needed. Additionally, columns can be renamed to align with specific data or organizational needs.
         Display order customization empowers users to arrange columns in a preferred sequence, optimizing data presentation. Furthermore, users can modify the information displayed at the bottom of entry and exit tables, ensuring relevance and clarity.
         This page serves as a powerful tool for configuring and optimizing data presentation, enhancing usability and efficiency in managing transport operations. By providing flexible customization options, it supports diverse user requirements and preferences.
-        
 
-            \vfill
-        \includegraphics[width=1\textwidth]{tabelas}
-            \vfill
-        
+
+        \vspace{1cm}
+        \includegraphics[width=0.95\textwidth]{tabelas}
+
         \subsection{Validation}
 
         To ensure our project aligned with the requirements set by OPT, we sought guidance from our project manager, who provided weekly feedback for improvements. Our application was designed for larger screens, so testing it on the TVs at OPT headquarters was crucial. This allowed us to better gauge the dimensions of each compartment and validate our approach.
