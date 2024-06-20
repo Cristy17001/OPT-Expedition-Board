@@ -4,12 +4,11 @@
 \usepackage{setspace}
 \setstretch{1.25}
 \usepackage{titlesec}
-\usepackage{indentfirst}
 \newcommand{\indexsection}[1]{\section{#1}\index{#1}}
 \newcommand{\indexsubsection}[1]{\subsection{#1}\index{#1@\thesection~#1}}
 \usepackage{pgfgantt}
 \usepackage{graphicx}
-\usepackage[english]{babel}
+\usepackage[portuguese]{babel}
 \usepackage{url}
 \usepackage{imakeidx}
 \graphicspath{ {./images/} }
@@ -20,7 +19,7 @@
 \begin{titlepage}
     \begin{center}
         \vspace*{1cm}
-    {\fontsize{17}{16}\selectfont \textbf{Design and development of a dispatch board for public transport operators based on web technologies (PE43)}}
+    {\fontsize{17}{16}\selectfont \textbf{Título do projeto / estágio}}
 
         \vspace{0.5cm}
         Capstone Project Final Report
@@ -45,7 +44,13 @@
         \textbf{U.Porto Tutor:} Teresa Galvão \\
         \textbf{Proponent:} Thiago Sobral \\
 
-    \vspace{1.4cm}
+    Bachelor of Informatics and Computer Engineering \\
+    \vspace{1cm}
+
+    \textbf{U.Porto Tutor:} Teresa Galvão \\
+    \textbf{Proponent:} Thiago Sobral \\
+
+    \vspace{0.4cm}
         Date: 2024-06-21
 
     \end{center}
@@ -137,10 +142,14 @@
             \end{itemize}
         \end{itemize}
 
-        Here's a Gantt chart showing the project's timeline, as it can be seen, the project was divided into four main phases: Planning, Requirement Analysis, Implementation, and Testing.
+        Here's a Gantt chart showing the project's timeline, as it can be seen, the project was divided into 3 main phases: Planning, Implementation, Testing and Documentation, but we added a few more tasks to better represent the activities that were developed.
+        
         After the initial planning, we began the requirement analysis, which involved understanding the existing system and identifying the features that needed to be implemented in the new dispatch board. We consulted with our OPT coordinator to ensure that the new system met the required specifications.
+        
         The development phase began with setting up the project structure and creating the initial files. We were provided a database from one of the existing dispatch board systems, which we used to test the backend. We were also provided the queries used to retrieve the data from the database.
+        
         We then proceeded to implement the backend, focusing on the database connection and API endpoints. We used Prisma to interact with the database and Next.js to create the API routes.
+        
         Another important aspect was the implementation of a way to customize the dispatch board, allowing users to change the colors and layout and the logo according to their preferences. We decided to store the user settings on the local storage, so that the users could export and import their settings to other devices.
 
         \begin{ganttchart}[
@@ -198,7 +207,7 @@
             \item Constraints:
                 \begin{itemize}
                     \item \textbf{Web-app based:} The system should tings from a JSON file.be developed as a web application, so that it can be accessed from any device with a web browser.
-                    \item \textbf{Keep the existing features:} The system should maintain the existing features of the dispatch board, such as displaying the 'buses/trains' schedules.
+                    \item \textbf{Keep the existing features:} The system should maintain the existing features of the dispatch board, such as displaying the buses'/trains' schedules.
                     \item \textbf{Real-time updates:} The system should provide real-time updates, ensuring that the transport operators have access to the most up-to-date information.
                 \end{itemize}
             \item Assumptions:
@@ -268,9 +277,10 @@
         The table dynamically displays all transport schedules from the current time until the end of the day, with real-time updates ensuring accuracy and reliability. Users are provided with clear visual cues, such as a red highlight for any delayed transport schedules, facilitating efficient and effective transport management. This system not only enhances operational efficiency but also significantly improves the user experience for all stakeholders involved.
         At the bottom of the page, there is an area dedicated to displaying the most recently updated information by the application user. This feature enables users to promptly report incidents such as road accidents, ensuring timely dissemination of critical information.
 
-        \vspace{1cm}
-        \includegraphics[width=0.95\textwidth]{table_of_entries}
+            \vfill
+        \includegraphics[width=1\textwidth]{table_of_entries}
 
+            \vfill
 
         \subsubsection{Table of exits}
 
@@ -278,8 +288,9 @@
         Similar to its counterpart, users can access the settings page to customize the application's appearance and functionality according to their preferences. The table of exits presents updated transport schedules from the current time until the end of the day, ensuring real-time accuracy. Visual indicators promptly highlight any delays or disruptions in service, facilitating efficient transport management and enhancing user experience.
         At the bottom of the page, users also have an area to provide updates, such as reporting road incidents, ensuring comprehensive and timely information dissemination.
 
-        \vspace{1cm}
-        \includegraphics[width=0.95\textwidth]{table_of_exits}
+            \vfill
+        \includegraphics[width=1\textwidth]{table_of_exits}
+            \vfill
 
         \subsubsection{Settings page}
 
@@ -287,35 +298,68 @@
         Users can upload a company logo effortlessly using a dedicated upload button. For configuration management, the page includes export/import functionality for saving and reapplying settings as a JSON file. A preview section provides a live demonstration of layout changes, ensuring users can visualize and confirm adjustments to entry and exit tables before finalizing.
         This comprehensive approach ensures a personalized and intuitive experience, empowering users to tailor the application's appearance and functionality to their exact specifications.
 
-        \vspace{1cm}
-        \includegraphics[width=0.95\textwidth]{aparencia}
-        \vspace{1cm}
+            \vfill
+        \includegraphics[width=1\textwidth]{aparencia}
+            \vfill
 
         The second settings page focuses on fine-tuning table display and content preferences. Users have granular control over column visibility, allowing them to show or hide specific columns as needed. Additionally, columns can be renamed to align with specific data or organizational needs.
         Display order customization empowers users to arrange columns in a preferred sequence, optimizing data presentation. Furthermore, users can modify the information displayed at the bottom of entry and exit tables, ensuring relevance and clarity.
         This page serves as a powerful tool for configuring and optimizing data presentation, enhancing usability and efficiency in managing transport operations. By providing flexible customization options, it supports diverse user requirements and preferences.
+        
 
-
-        \vspace{1cm}
-        \includegraphics[width=0.95\textwidth]{tabelas}
-
+            \vfill
+        \includegraphics[width=1\textwidth]{tabelas}
+            \vfill
+        
         \subsection{Validation}
 
         To ensure our project aligned with the requirements set by OPT, we sought guidance from our project manager, who provided weekly feedback for improvements. Our application was designed for larger screens, so testing it on the TVs at OPT headquarters was crucial. This allowed us to better gauge the dimensions of each compartment and validate our approach.
 
-        \section{Conclusões}
+        \section{Conclusion}
 
 
-        \subsection{Resultados alcançados}
-         Sumariar os resultados alcançados e contribuições (em relação aos objetivos).
+        \subsection{Achieved Results}
+        This project aimed to develop a modern dispatch board for public transport operators using web technologies. Our primary goal was to replace the outdated native software with a more user-friendly, web-based solution. 
 
-         No caso de trabalho em grupo, clarificar as contribuições individuais, em termos qualitativos e quantitativos (percentagem).
-        \subsection{Lições aprendidas}
-         Refletir sobre as lições aprendidas (tendo em conta os objetivos de aprendizagem).
+        Key achievements include:
 
-        \subsection{Trabalho futuro}
+        \begin{itemize}
+            \item \textbf{Web-Based Platform:} Migrated the dispatch board to a web-based language, enhancing expandability, debugging, and maintenance.
+            \item \textbf{Customization:} Introduced extensive customization options for colors, layouts, and logos, with easy export/import functionality.
+            \item \textbf{User Interface:} Developed a simple and intuitive interface using React with TypeScript and Next.js, ensuring ease of use.
+            \item \textbf{Real-Time Updates:} Implemented real-time updates, ensuring transport operators have the most current information.
+        \end{itemize}
 
-         Ideias de melhorias e trabalho futuro.
+        Challenges such as project setup and database communication were effectively addressed, leading to a streamlined development process. The final product, including tables for entries and exits and a comprehensive settings page, provides a robust, flexible tool for transport operators. The dispatch board dynamically displays schedules, highlights delays, and allows extensive customization, improving operational efficiency and user experience.
+
+
+        \textbf{No caso de trabalho em grupo, clarificar as contribuições individuais, em termos qualitativos e quantitativos (percentagem).}
+         \subsection{Lessons Learned}
+
+         Throughout this project, several important lessons were learned:
+         
+         \begin{itemize}
+             \item \textbf{Effective Communication:} Regular meetings and open communication channels, such as Discord and GitHub, were crucial for progress and problem-solving and communicating with the OPT proponent.
+             \item \textbf{Team Collaboration:} Working collaboratively, leveraging each member's strengths, and maintaining clear roles and responsibilities were key to the project's success.
+             \item \textbf{User-Centered Design:} Prioritizing the end-users' needs, through intuitive interfaces and customization options, significantly enhanced the final product's usability and acceptance. This was especially important for transport operators who may not be tech-savvy.
+             \item \textbf{Technical Proficiency:} Gained hands-on experience with modern web development tools and practices, particularly in React, TypeScript, and Next.js, which are relatively new technologies and were not covered in the academic curriculum.
+         \end{itemize}
+         
+
+         \subsection{Possible Future Improvements and Further Work}
+
+         While the project has successfully met its objectives, there are several areas for future improvement and further development:
+         
+         \begin{itemize}
+             \item \textbf{Enhanced Analytics:} Integrating advanced analytics to provide deeper insights into operational efficiency and performance metrics.
+             \item \textbf{Mobile Compatibility:} Developing a mobile-friendly version of the dispatch board to enhance accessibility for operators on the go.
+             \item \textbf{AI Integration:} Leveraging artificial intelligence for predictive analytics and automated decision-making to optimize scheduling and dispatching.
+             \item \textbf{User Feedback Integration:} Continuously gathering user feedback to inform iterative improvements and feature enhancements.
+             \item \textbf{Interoperability:} Enhancing interoperability with other systems and platforms used by transport operators to create a more cohesive ecosystem.
+         \end{itemize}
+         
+         In conclusion, the project successfully met its objectives, delivering a modern, customizable dispatch board system. The skills and knowledge gained during this project, including teamwork and technical proficiency, have been invaluable. The final product stands as a testament to our collective effort, providing a practical solution for public transport operators.        
+
 
         \bibliographystyle{plain}
         \bibliography{refs} % Entries are in the refs.bib file
