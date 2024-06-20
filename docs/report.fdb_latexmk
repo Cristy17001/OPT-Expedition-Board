@@ -1,5 +1,5 @@
 # Fdb version 4
-["bibtex report"] 0 "report.aux" "report.bbl" "report" 1718903276.84062 0
+["bibtex report"] 0 "report.aux" "report.bbl" "report" 1718911360.89663 0
   "C:/Users/user/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/plain.bst" 1291864736 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
   "refs.bib" 0 -1 0 ""
   "report.aux" 0 -1 0 "pdflatex"
@@ -7,13 +7,13 @@
   "report.bbl"
   "report.blg"
   (rewritten before read)
-["makeindex report.idx"] 1718903035.42048 "report.idx" "report.ind" "report" 1718903276.84009 0
-  "report.idx" 1718903274 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex report.idx"] 1718911325.22953 "report.idx" "report.ind" "report" 1718911360.8961 0
+  "report.idx" 1718911356 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "report.ilg"
   "report.ind"
   (rewritten before read)
-["pdflatex"] 1718903273.13977 "c:/Users/user/Desktop/Rodolfo/Programação/OPT-Expedition-Board/docs/report.tex" "report.pdf" "report" 1718903276.8414 0
+["pdflatex"] 1718911355.25415 "c:/Users/user/Desktop/Rodolfo/Programação/OPT-Expedition-Board/docs/report.tex" "report.pdf" "report" 1718911360.89769 0
   "C:/Users/user/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1718899003 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/user/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1718899008 11548 f9c61b00fe42dabf15e3ede6b39ffc0e ""
   "C:/Users/user/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1718898959 24263596 480f78b890edcafb45ca9d3c9e761106 ""
@@ -138,7 +138,7 @@
   "C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "C:/Users/user/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "c:/Users/user/Desktop/Rodolfo/Programação/OPT-Expedition-Board/docs/report.tex" 1718903270 32220 6bcffdd6857f6c84ce24c772d4a3066f ""
+  "c:/Users/user/Desktop/Rodolfo/Programação/OPT-Expedition-Board/docs/report.tex" 1718911353 32591 22b4d3148a8c67779bc1bd0e4bf13299 ""
   "images/UPORTO_fundotransparente.png" 1718896594 10051 7fbe65ee05f25a7ec6027b24b21f5d2b ""
   "images/aparencia.png" 1718896594 82075 b247ff1a320d68d66bccfd0e3c5ae203 ""
   "images/architecture_diagram.png" 1718896594 50558 ec7d6fe3ae24307e373047aba117a2df ""
@@ -150,11 +150,12 @@
   "images/table_of_exits.png" 1718896594 128635 bac0ce87427f8758502a2f7d8cd7c966 ""
   "images/table_of_exits_stcp1.png" 1718902933 91850 44e32cc2d6f14a46023180f5104a9945 ""
   "images/table_of_exits_stcp2.png" 1718902966 86241 d6d5f304b2a6361d9d6f02288ff349ad ""
-  "report.aux" 1718903275 3265 8ddb4fe522d820b7645d91342d6b720f "pdflatex"
+  "images/validation_eg.png" 1718911265 102770 431bea9e775336e75b1d6e915c26b010 ""
+  "report.aux" 1718911359 3265 68fa81907737237df979d5f4de0ed780 "pdflatex"
   "report.bbl" 0 -1 0 "bibtex report"
-  "report.ind" 1718903035 0 d41d8cd98f00b204e9800998ecf8427e "makeindex report.idx"
-  "report.tex" 1718903270 32220 6bcffdd6857f6c84ce24c772d4a3066f ""
-  "report.toc" 1718903275 1850 90c6de3c7bd434b9f2329fbcc954bff1 "pdflatex"
+  "report.ind" 1718911325 0 d41d8cd98f00b204e9800998ecf8427e "makeindex report.idx"
+  "report.tex" 1718911353 32591 22b4d3148a8c67779bc1bd0e4bf13299 ""
+  "report.toc" 1718911359 1850 1088e9621236aea40398bd18e7e3cdff "pdflatex"
   (generated)
   "report.aux"
   "report.idx"
