@@ -1,4 +1,4 @@
-\babel@toc {english}{}\relax 
+\babel@toc {portuguese}{}\relax 
 \contentsline {section}{\numberline {1}Introduction}{2}{}%
 \contentsline {subsection}{\numberline {1.1}Background}{2}{}%
 \contentsline {subsection}{\numberline {1.2}Objectives and Expected Results}{2}{}%
@@ -14,11 +14,13 @@
 \contentsline {subsubsection}{\numberline {3.2.2}Architecture}{7}{}%
 \contentsline {subsubsection}{\numberline {3.2.3}Difficulties encountered and their resolution}{8}{}%
 \contentsline {subsection}{\numberline {3.3}Developed Solution}{8}{}%
-\contentsline {subsubsection}{\numberline {3.3.1}Table of entries}{8}{}%
-\contentsline {subsubsection}{\numberline {3.3.2}Table of exits}{9}{}%
-\contentsline {subsubsection}{\numberline {3.3.3}Settings page}{9}{}%
-\contentsline {subsection}{\numberline {3.4}Validation}{10}{}%
-\contentsline {section}{\numberline {4}Conclusões}{11}{}%
-\contentsline {subsection}{\numberline {4.1}Resultados alcançados}{11}{}%
-\contentsline {subsection}{\numberline {4.2}Lições aprendidas}{11}{}%
-\contentsline {subsection}{\numberline {4.3}Trabalho futuro}{11}{}%
+\contentsline {subsubsection}{\numberline {3.3.1}Home page}{8}{}%
+\contentsline {subsubsection}{\numberline {3.3.2}Table of entries}{9}{}%
+\contentsline {subsubsection}{\numberline {3.3.3}Table of exits}{10}{}%
+\contentsline {subsubsection}{\numberline {3.3.4}Settings page}{11}{}%
+\contentsline {subsection}{\numberline {3.4}Customization examples}{13}{}%
+\contentsline {subsection}{\numberline {3.5}Validation}{14}{}%
+\contentsline {section}{\numberline {4}Conclusion}{15}{}%
+\contentsline {subsection}{\numberline {4.1}Achieved Results}{15}{}%
+\contentsline {subsection}{\numberline {4.2}Lessons Learned}{15}{}%
+\contentsline {subsection}{\numberline {4.3}Possible Future Improvements and Further Work}{15}{}%
