@@ -236,7 +236,10 @@
         \subsection{Architecture and Technologies}
 
         \subsubsection{Technology choice and reasoning}
-        Before embarking on the development of the dispatch board system, careful consideration was given to defining the optimal architecture and technologies. The selection of these components was crucial to ensure scalability, reliability, and ease of maintenance, while aligning with the project requirements and existing systems.
+        Before embarking on the development of the dispatch board system, careful consideration was given to defining the optimal architecture and technologies. 
+        
+        The selection of these components was crucial to ensure scalability, reliability, and ease of maintenance, while aligning with the project requirements and existing systems.
+        
         With the freedom to choose the technologies, extensive research and discussions were conducted to make informed decisions. After thorough evaluation, the following technologies were deemed most suitable for the project:
         \begin{itemize}
                 \item \textbf{Web Framework:}
@@ -266,7 +269,13 @@
 
 
         \subsubsection{Architecture}
-        The architecture of the dispatch board system was designed to be easy to maintain, easy to use, and efficient. It consists of three main components: the frontend, backend, and database. These components work together to provide a seamless user experience for transport operators, ensuring real-time updates and customization options. To represent the architecture, we created a layer diagram that illustrates the interaction between the components.
+        The architecture of the dispatch board system was designed to be easy to maintain, easy to use, and efficient. 
+        
+        It consists of three main components: the frontend, backend, and database. 
+        
+        These components work together to provide a seamless user experience for transport operators, ensuring real-time updates and customization options. 
+        
+        To represent the architecture, we created a layer diagram that illustrates the interaction between the components.
 
         \begin{figure}[h]
             \centering
@@ -297,9 +306,14 @@
 
         \subsubsection{Table of entries and exits}
 
-        We developed a comprehensive table of entries, encompassing all the necessary information for transport operators. Leveraging the existing table model used by OPT, we undertook a meticulous redesign to enhance its modernity, appeal, and user-friendliness. This revamped table features a header displaying the logo of the company utilizing the application, along with intuitive options for toggling between the table of entries and the table of exits.
+        We developed a comprehensive table of entries, encompassing all the necessary information for transport operators. 
+        
+        Leveraging the existing table model used by OPT, we undertook a meticulous redesign to enhance its modernity, appeal, and user-friendliness. This revamped table features a header displaying the logo of the company utilizing the application, along with intuitive options for toggling between the table of entries and the table of exits.
+        
         Additionally, users can easily navigate to the settings page, where they have access to a variety of customization options. These settings allow users to tailor the application's appearance and functionalities according to their preferences, including the ability to enable or disable specific features.
+        
         The table dynamically displays all transport schedules from the current time until the end of the day, with real-time updates ensuring accuracy and reliability. Users are provided with clear visual cues, such as a red highlight for any delayed transport schedules, facilitating efficient and effective transport management. This system not only enhances operational efficiency but also significantly improves the user experience for all stakeholders involved.
+       
         At the bottom of the page, there is an area dedicated to displaying the most recently updated information by the application user. This feature enables users to promptly report incidents such as road accidents, ensuring timely dissemination of critical information.
 
         \begin{figure}[htbp]
@@ -319,11 +333,18 @@
 
         \subsubsection{Settings page}
 
-        Our settings page offers extensive customization options tailored to enhance user interaction. A sleek color selection bar allows precise configuration of highlighting, primary and secondary backgrounds, as well as primary and secondary text colors. Each option triggers a color picker for seamless color selection and adjustment.
-        Users can upload a company logo effortlessly using a dedicated upload button. For configuration management, the page includes export/import functionality for saving and reapplying settings as a JSON file. A preview section provides a live demonstration of layout changes, ensuring users can visualize and confirm adjustments to entry and exit tables before finalizing.
+        Our settings page offers extensive customization options tailored to enhance user interaction. A sleek color selection bar allows precise configuration of highlighting, primary and secondary backgrounds, as well as primary and secondary text colors. 
+        
+        Each option triggers a color picker for seamless color selection and adjustment.
+        Users can upload a company logo effortlessly using a dedicated upload button. For configuration management, the page includes export/import functionality for saving and reapplying settings as a JSON file. 
+        
+        A preview section provides a live demonstration of layout changes, ensuring users can visualize and confirm adjustments to entry and exit tables before finalizing.
         This comprehensive approach ensures a personalized and intuitive experience, empowering users to tailor the application's appearance and functionality to their exact specifications.
+        
         The second settings page focuses on fine-tuning table display and content preferences. Users have granular control over column visibility, allowing them to show or hide specific columns as needed. Additionally, columns can be renamed to align with specific data or organizational needs.
-        Display order customization empowers users to arrange columns in a preferred sequence, optimizing data presentation. Furthermore, users can modify the information displayed at the bottom of entry and exit tables, ensuring relevance and clarity.
+        Display order customization empowers users to arrange columns in a preferred sequence, optimizing data presentation. 
+        
+        Furthermore, users can modify the information displayed at the bottom of entry and exit tables, ensuring relevance and clarity.
         This page serves as a powerful tool for configuring and optimizing data presentation, enhancing usability and efficiency in managing transport operations. By providing flexible customization options, it supports diverse user requirements and preferences.
 
         \vfill
@@ -355,7 +376,7 @@
 
         \begin{figure}[H]
             \centering
-            \includegraphics[width=0.95\textwidth]{table_of_exits_stcp1}
+            \includegraphics[width=0.95\textwidth]{table_of_exits_cp}
             \caption{Example of customization}
             \label{fig:table_of_exits_stcp1_}
         \end{figure}
@@ -366,15 +387,10 @@
 
         \subsection{Validation}
 
-        To ensure our project aligned with OPT's requirements, we sought guidance from our project manager, who provided weekly feedback for improvements. Our application was designed for larger screens, making testing on the TVs at OPT headquarters crucial. This allowed us to accurately gauge the dimensions of each compartment and validate our approach. Since our application will be used by various companies, we tested possible configurations for different clients, such as STCP and CP, as illustrated. Additionally, we scheduled a test at STCP headquarters to obtain real-time feedback from users, further enhancing our application.
+        To ensure our project aligned with OPT's requirements, we sought guidance from our project manager, who provided weekly feedback for improvements. Our application was designed for larger screens, making testing on the TVs at OPT headquarters crucial. This allowed us to accurately gauge the dimensions of each compartment and validate our approach. 
+        
+        Since our application will be used by various companies, we tested possible configurations for different clients, such as STCP and CP, as illustrated. Additionally, we scheduled a test at STCP headquarters to obtain real-time feedback from users, further enhancing our application.
 
-        \vfill
-        \begin{figure}[H]
-            \centering
-            \includegraphics[width=1\textwidth]{validation_eg}
-            \caption{Example of validation process}
-            \label{fig:validation_example}
-        \end{figure}
 
         \section{Conclusion}
 
