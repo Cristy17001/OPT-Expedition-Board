@@ -9,7 +9,7 @@
 \usepackage{pgfgantt}
 \usepackage{float}
 \usepackage{graphicx}
-\usepackage[portuguese]{babel}
+\usepackage[english]{babel}
 \usepackage{url}
 \usepackage{indentfirst}
 \usepackage{subcaption}
@@ -81,7 +81,7 @@
             \item adding customizations and “quality of life” features to improve the overall usability of the product.
         \end{itemize}
 
-        Here is an example of the old dispatch board, it was a native application that ran on the machines of the transport operators, it was hard to maintain and expand, and it was not user-friendly. It was also not responsive and that is why the printscreen looks like it is cut off.
+        Here is an example (Figure \ref{fig:old_dispatch_board}) of the old dispatch board, it was a native application that ran on the machines of the transport operators, it was hard to maintain and expand, and it was not user-friendly. It was also not responsive and that is why the printscreen looks like it is cut off.
         
         \vfill
         \begin{figure}[!ht]
@@ -158,8 +158,8 @@
             \end{itemize}
         \end{itemize}
 
-        Here's a Gantt chart showing the project's timeline, as it can be seen, the project was divided into 3 main phases: Planning, Implementation, Testing and Documentation, but we added a few more tasks to better represent the activities that were developed.
-
+        Here's a Gantt chart (Figure \ref{fig:chart}) showing the project's timeline, as it can be seen, the project was divided into 3 main phases: Planning, Implementation, Testing and Documentation, but we added a few more tasks to better represent the activities that were developed.
+        
         After the initial planning, we began the requirement analysis, which involved understanding the existing system and identifying the features that needed to be implemented in the new dispatch board. We consulted with our OPT coordinator to ensure that the new system met the required specifications.
 
         The development phase began with setting up the project structure and creating the initial files. We were provided a database from one of the existing dispatch board systems, which we used to test the backend. We were also provided the queries used to retrieve the data from the database.
@@ -288,8 +288,8 @@
         It consists of three main components: the frontend, backend, and database. 
 
         These components work together to provide a seamless user experience for transport operators, ensuring real-time updates and customization options. 
-
-        To represent the architecture, we created a layer diagram that illustrates the interaction between the components.
+        
+        To represent the architecture, we created a layer diagram that illustrates the interaction between the components (Figure \ref{fig:architecture_diagram}).
 
         \begin{figure}[h]
             \centering
@@ -321,13 +321,13 @@
 
         \subsubsection{Home page}
 
-        Our home page offers a streamlined navigation experience, presenting three key options: Table of Entries, Table of Exits, and Settings Page. Each option is represented by a dedicated button for quick access. Simply click on a button to be redirected to the corresponding page, allowing for efficient management and customization of transport operations. This intuitive interface ensures users can easily navigate to the desired section with minimal effort.
+        Our home page offers a streamlined navigation experience, presenting three key options: Table of Entries, Table of Exits, and Settings Page. Each option is represented by a dedicated button for quick access. Simply click on a button to be redirected to the corresponding page, allowing for efficient management and customization of transport operations. This intuitive interface ensures users can easily navigate to the desired section with minimal effort, as shown in the following image (Figure \ref{fig:home_page}).
 
         \vfill
         \begin{figure}[htbp]
             \centering
             \includegraphics[width=1\textwidth]{home_page}
-            \caption{Home page of the dispatch board system}
+            \caption{Home page}
             \label{fig:home_page}
         \end{figure}
 
@@ -335,7 +335,7 @@
 
         We developed a comprehensive table of entries, encompassing all the necessary information for transport operators. 
         
-        Leveraging the existing table model used by OPT, we undertook a meticulous redesign to enhance its modernity, appeal, and user-friendliness. This revamped table features a header displaying the logo of the company utilizing the application, along with intuitive options for toggling between the table of entries and the table of exits.
+        Leveraging the existing table model used by OPT, we undertook a meticulous redesign to enhance its modernity, appeal, and user-friendliness. This revamped table features a header displaying the logo of the company utilizing the application, along with intuitive options for toggling between the table of entries (Figure \ref{fig:table_of_entries}) and the table of exits (Figure \ref{fig:table_of_exits}).
         
         Additionally, users can easily navigate to the settings page, where they have access to a variety of customization options. These settings allow users to tailor the application's appearance and functionalities according to their preferences, including the ability to enable or disable specific features.
         
@@ -346,7 +346,7 @@
         \begin{figure}[htbp]
             \centering
             \includegraphics[width=1\textwidth]{table_of_entries}
-            \caption{Table of entries in the dispatch board system}
+            \caption{Table of entries}
             \label{fig:table_of_entries}
         \end{figure}
         \vfill
@@ -354,13 +354,13 @@
         \begin{figure}[htbp]
             \centering
             \includegraphics[width=1\textwidth]{table_of_exits}
-            \caption{Table of exits in the dispatch board system}
+            \caption{Table of exits}
             \label{fig:table_of_exits}
         \end{figure}
 
         \subsubsection{Settings page}
 
-        Our settings page offers extensive customization options tailored to enhance user interaction. A sleek color selection bar allows precise configuration of highlighting, primary and secondary backgrounds, as well as primary and secondary text colors. 
+        Our appeareance settings page (Figure \ref{fig:settings_appearance}) offers extensive customization options tailored to enhance user interaction. A sleek color selection bar allows precise configuration of highlighting, primary and secondary backgrounds, as well as primary and secondary text colors. 
         
         Each option triggers a color picker for seamless color selection and adjustment.
         Users can upload a company logo effortlessly using a dedicated upload button. For configuration management, the page includes export/import functionality for saving and reapplying settings as a JSON file. 
@@ -368,7 +368,7 @@
         A preview section provides a live demonstration of layout changes, ensuring users can visualize and confirm adjustments to entry and exit tables before finalizing.
         This comprehensive approach ensures a personalized and intuitive experience, empowering users to tailor the application's appearance and functionality to their exact specifications.
         
-        The second settings page focuses on fine-tuning table display and content preferences. Users have granular control over column visibility, allowing them to show or hide specific columns as needed. Additionally, columns can be renamed to align with specific data or organizational needs.
+        The second settings page (Figure \ref{fig:settings_tables}) focuses on fine-tuning table display and content preferences. Users have granular control over column visibility, allowing them to show or hide specific columns as needed. Additionally, columns can be renamed to align with specific data or organizational needs.
         Display order customization empowers users to arrange columns in a preferred sequence, optimizing data presentation. 
         
         Furthermore, users can modify the information displayed at the bottom of entry and exit tables, ensuring relevance and clarity.
@@ -378,7 +378,7 @@
         \begin{figure}[htbp!]
             \centering
             \includegraphics[width=1\textwidth]{aparencia}
-            \caption{Settings page for customizing the appearance of the dispatch board system}
+            \caption{Settings page for customizing the appearance}
             \label{fig:settings_appearance}
         \end{figure}
         \vfill
@@ -386,26 +386,26 @@
         \begin{figure}[htbp]
             \centering
             \includegraphics[width=1\textwidth]{tabelas}
-            \caption{Settings page for customizing the tables in the dispatch board system}
+            \caption{Settings page for customizing the tables}
             \label{fig:settings_tables}
         \end{figure}
 
         \subsection{Customization examples}
 
-        Here, we present various customization examples to demonstrate the flexibility and adaptability of our application. Below, you will find screenshots of the Table of Entries and Table of Exits, each showcasing different customizations applied through the Settings Page. These examples illustrate how users can modify visual elements and functional components to align with their specific requirements and branding guidelines.
+        Here, we present various customization examples to demonstrate the flexibility and adaptability of our application. Below, you will find screenshots of the Table of Entries (Figure \ref{fig:table_of_entries_stcp1}) and Table of Exits (Figure \ref{fig:table_of_exits_cp}), each showcasing different customizations applied through the Settings Page. These examples illustrate how users can modify visual elements and functional components to align with their specific requirements and branding guidelines.
         \vfill
         \begin{figure}[H]
             \centering
             \includegraphics[width=0.95\textwidth]{table_of_entries_stcp1}
             \caption{Example of customization}
-            \label{fig:table_of_exits_stcp1}
+            \label{fig:table_of_entries_stcp1}
         \end{figure}
 
         \begin{figure}[H]
             \centering
             \includegraphics[width=0.95\textwidth]{table_of_exits_cp}
             \caption{Example of customization}
-            \label{fig:table_of_exits_stcp1_}
+            \label{fig:table_of_exits_cp}
         \end{figure}
 
 
@@ -416,7 +416,7 @@
 
         To ensure our project aligned with OPT's requirements, we sought guidance from our project manager, who provided weekly feedback for improvements. Our application was designed for larger screens, making testing on the TVs at OPT headquarters crucial. This allowed us to accurately gauge the dimensions of each compartment and validate our approach. 
         
-        Since our application will be used by various companies, we tested possible configurations for different clients, such as STCP and CP, as illustrated. Additionally, we scheduled a test at STCP headquarters to obtain real-time feedback from users, further enhancing our application.
+        Since our application will be used by various companies, we tested possible configurations for different clients, such as STCP (Figure \ref{fig:table_of_entries_stcp1}) and CP(Figure \ref{fig:table_of_exits_cp}). Additionally, we scheduled a test at STCP headquarters to obtain real-time feedback from users, further enhancing our application.
 
 
         \section{Conclusion}
