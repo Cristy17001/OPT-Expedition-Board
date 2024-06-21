@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.6.17)  21 JUN 2024 12:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.6.17)  21 JUN 2024 13:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -536,7 +536,7 @@ Package caption Info: End \AtBeginDocument code.
 <./images/UPORTO_fundotransparente.png, id=4, 667.49374pt x 234.8775pt>
 File: ./images/UPORTO_fundotransparente.png Graphic file (type png)
 <use ./images/UPORTO_fundotransparente.png>
-Package pdftex.def Info: ./images/UPORTO_fundotransparente.png  used on input line 39.
+Package pdftex.def Info: ./images/UPORTO_fundotransparente.png  used on input line 40.
 (pdftex.def)             Requested size: 181.18439pt x 63.75465pt.
  [1
 
@@ -551,102 +551,107 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
  [1
 
-] [2
+]
+<./images/old_dispatch_board.png, id=17, 1926.19624pt x 1058.95625pt>
+File: ./images/old_dispatch_board.png Graphic file (type png)
+<use ./images/old_dispatch_board.png>
+Package pdftex.def Info: ./images/old_dispatch_board.png  used on input line 85.
+(pdftex.def)             Requested size: 452.9679pt x 249.01634pt.
+ [2
 
-] [3] [4] [5] [6]
-<./images/architecture_diagram.png, id=36, 1318.9275pt x 485.815pt>
+ <./images/old_dispatch_board.png>] [3] [4] [5] [6] [7]
+<./images/architecture_diagram.png, id=41, 1318.9275pt x 485.815pt>
 File: ./images/architecture_diagram.png Graphic file (type png)
 <use ./images/architecture_diagram.png>
-Package pdftex.def Info: ./images/architecture_diagram.png  used on input line 256.
+Package pdftex.def Info: ./images/architecture_diagram.png  used on input line 272.
 (pdftex.def)             Requested size: 452.9679pt x 166.84282pt.
- [7 <./images/architecture_diagram.png>]
-<./images/home_page.png, id=40, 1851.91875pt x 933.4875pt>
+<./images/home_page.png, id=42, 1851.91875pt x 933.4875pt>
 File: ./images/home_page.png Graphic file (type png)
 <use ./images/home_page.png>
-Package pdftex.def Info: ./images/home_page.png  used on input line 275.
+Package pdftex.def Info: ./images/home_page.png  used on input line 291.
 (pdftex.def)             Requested size: 452.9679pt x 228.31473pt.
- [8 <./images/home_page.png>]
-<./images/table_of_entries.png, id=45, 1856.9375pt x 933.4875pt>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[8 <./images/architecture_diagram.png>]
+<./images/table_of_entries.png, id=46, 1856.9375pt x 933.4875pt>
 File: ./images/table_of_entries.png Graphic file (type png)
 <use ./images/table_of_entries.png>
-Package pdftex.def Info: ./images/table_of_entries.png  used on input line 289.
-(pdftex.def)             Requested size: 452.9679pt x 227.70224pt.
-<./images/table_of_exits.png, id=46, 1856.9375pt x 933.4875pt>
-File: ./images/table_of_exits.png Graphic file (type png)
-<use ./images/table_of_exits.png>
-Package pdftex.def Info: ./images/table_of_exits.png  used on input line 303.
+Package pdftex.def Info: ./images/table_of_entries.png  used on input line 305.
 (pdftex.def)             Requested size: 452.9679pt x 227.70224pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[9 <./images/table_of_entries.png>]
-<./images/aparencia.png, id=51, 1856.9375pt x 933.4875pt>
+<./images/table_of_exits.png, id=47, 1856.9375pt x 933.4875pt>
+File: ./images/table_of_exits.png Graphic file (type png)
+<use ./images/table_of_exits.png>
+Package pdftex.def Info: ./images/table_of_exits.png  used on input line 319.
+(pdftex.def)             Requested size: 452.9679pt x 227.70224pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[9 <./images/home_page.png>]
+<./images/aparencia.png, id=52, 1856.9375pt x 933.4875pt>
 File: ./images/aparencia.png Graphic file (type png)
 <use ./images/aparencia.png>
-Package pdftex.def Info: ./images/aparencia.png  used on input line 317.
+Package pdftex.def Info: ./images/aparencia.png  used on input line 333.
 (pdftex.def)             Requested size: 452.9679pt x 227.70224pt.
- [10 <./images/table_of_exits.png> <./images/aparencia.png>]
-<./images/tabelas.png, id=57, 1856.9375pt x 933.4875pt>
+<./images/tabelas.png, id=53, 1856.9375pt x 933.4875pt>
 File: ./images/tabelas.png Graphic file (type png)
 <use ./images/tabelas.png>
-Package pdftex.def Info: ./images/tabelas.png  used on input line 328.
+Package pdftex.def Info: ./images/tabelas.png  used on input line 344.
 (pdftex.def)             Requested size: 452.9679pt x 227.70224pt.
-<./images/table_of_entries_stcp1.png, id=58, 1847.90375pt x 933.4875pt>
+<./images/table_of_entries_stcp1.png, id=54, 1847.90375pt x 933.4875pt>
 File: ./images/table_of_entries_stcp1.png Graphic file (type png)
 <use ./images/table_of_entries_stcp1.png>
-Package pdftex.def Info: ./images/table_of_entries_stcp1.png  used on input line 337.
+Package pdftex.def Info: ./images/table_of_entries_stcp1.png  used on input line 355.
 (pdftex.def)             Requested size: 430.31812pt x 217.37546pt.
- [11 <./images/tabelas.png>]
-<./images/table_of_entries_stcp2.png, id=63, 1847.90375pt x 933.4875pt>
+<./images/table_of_entries_stcp2.png, id=55, 1847.90375pt x 933.4875pt>
 File: ./images/table_of_entries_stcp2.png Graphic file (type png)
 <use ./images/table_of_entries_stcp2.png>
-Package pdftex.def Info: ./images/table_of_entries_stcp2.png  used on input line 339.
+Package pdftex.def Info: ./images/table_of_entries_stcp2.png  used on input line 362.
 (pdftex.def)             Requested size: 430.31812pt x 217.37546pt.
-<./images/table_of_exits_stcp1.png, id=64, 1847.90375pt x 933.4875pt>
+<./images/table_of_exits_stcp1.png, id=56, 1847.90375pt x 933.4875pt>
 File: ./images/table_of_exits_stcp1.png Graphic file (type png)
 <use ./images/table_of_exits_stcp1.png>
-Package pdftex.def Info: ./images/table_of_exits_stcp1.png  used on input line 341.
+Package pdftex.def Info: ./images/table_of_exits_stcp1.png  used on input line 370.
 (pdftex.def)             Requested size: 430.31812pt x 217.37546pt.
 File: ./images/table_of_entries_stcp2.png Graphic file (type png)
 <use ./images/table_of_entries_stcp2.png>
-Package pdftex.def Info: ./images/table_of_entries_stcp2.png  used on input line 343.
+Package pdftex.def Info: ./images/table_of_entries_stcp2.png  used on input line 378.
 (pdftex.def)             Requested size: 430.31812pt x 217.37546pt.
- [12 <./images/table_of_entries_stcp1.png> <./images/table_of_entries_stcp2.png> <./images/table_of_exits_stcp1.png>]
-<./images/table_of_exits_stcp2.png, id=72, 1847.90375pt x 933.4875pt>
-File: ./images/table_of_exits_stcp2.png Graphic file (type png)
-<use ./images/table_of_exits_stcp2.png>
-Package pdftex.def Info: ./images/table_of_exits_stcp2.png  used on input line 345.
-(pdftex.def)             Requested size: 430.31812pt x 217.37546pt.
-<./images/validation_eg.png, id=73, 1916.15875pt x 922.44624pt>
+ [10 <./images/table_of_entries.png>]
+<./images/validation_eg.png, id=61, 1916.15875pt x 922.44624pt>
 File: ./images/validation_eg.png Graphic file (type png)
 <use ./images/validation_eg.png>
-Package pdftex.def Info: ./images/validation_eg.png  used on input line 358.
+Package pdftex.def Info: ./images/validation_eg.png  used on input line 392.
 (pdftex.def)             Requested size: 452.9679pt x 218.05576pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[13 <./images/table_of_exits_stcp2.png>] [14 <./images/validation_eg.png>]
+[11 <./images/table_of_exits.png>] [12 <./images/aparencia.png> <./images/tabelas.png>] [13 <./images/table_of_entries_stcp1.png> <./images/table_of_entries_stcp2.png>] [14 <./images/table_of_exits_stcp1.png>] [15 <./images/validation_eg.png>]
 No file report.bbl.
-[15] (report.aux)
+[16] (report.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 18284 strings out of 474485
- 389849 string characters out of 5741846
+ 18289 strings out of 474485
+ 389960 string characters out of 5741846
  1942542 words of memory out of 5000000
- 40278 multiletter control sequences out of 15000+600000
+ 40283 multiletter control sequences out of 15000+600000
  561173 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  117i,7n,121p,781b,805s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Cristiano\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/Cristiano/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Cristiano/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Cristiano/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Cristiano/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Cristiano/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on report.pdf (16 pages, 881202 bytes).
+Output written on report.pdf (17 pages, 851434 bytes).
 PDF statistics:
- 111 PDF objects out of 1000 (max. 8388607)
+ 114 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  73 words of extra memory for PDF output out of 10000 (max. 10000000)
 

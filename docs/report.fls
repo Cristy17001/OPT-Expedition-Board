@@ -233,6 +233,12 @@ OUTPUT report.toc
 INPUT C:\Users\Cristiano\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
 INPUT C:\Users\Cristiano\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\Cristiano\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1000.tfm
+INPUT .\images\old_dispatch_board.png
+INPUT .\images\old_dispatch_board.png
+INPUT .\images\old_dispatch_board.png
+INPUT .\images\old_dispatch_board.png
+INPUT .\images\old_dispatch_board.png
+INPUT .\images\old_dispatch_board.png
 INPUT C:\Users\Cristiano\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr8.tfm
 INPUT C:\Users\Cristiano\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
 INPUT .\images\architecture_diagram.png
@@ -292,12 +298,6 @@ INPUT .\images\table_of_exits_stcp1.png
 INPUT .\images\table_of_entries_stcp2.png
 INPUT .\images\table_of_entries_stcp2.png
 INPUT .\images\table_of_entries_stcp2.png
-INPUT .\images\table_of_exits_stcp2.png
-INPUT .\images\table_of_exits_stcp2.png
-INPUT .\images\table_of_exits_stcp2.png
-INPUT .\images\table_of_exits_stcp2.png
-INPUT .\images\table_of_exits_stcp2.png
-INPUT .\images\table_of_exits_stcp2.png
 INPUT .\images\validation_eg.png
 INPUT .\images\validation_eg.png
 INPUT .\images\validation_eg.png

@@ -2,25 +2,25 @@
 \contentsline {section}{\numberline {1}Introduction}{2}{}%
 \contentsline {subsection}{\numberline {1.1}Background}{2}{}%
 \contentsline {subsection}{\numberline {1.2}Objectives and Expected Results}{2}{}%
-\contentsline {subsection}{\numberline {1.3}Report Structure}{2}{}%
-\contentsline {section}{\numberline {2}Methodology and Development Process}{2}{}%
-\contentsline {subsection}{\numberline {2.1}Methodology}{2}{}%
+\contentsline {subsection}{\numberline {1.3}Report Structure}{3}{}%
+\contentsline {section}{\numberline {2}Methodology and Development Process}{3}{}%
+\contentsline {subsection}{\numberline {2.1}Methodology}{3}{}%
 \contentsline {subsection}{\numberline {2.2}Stakeholders and roles}{3}{}%
-\contentsline {subsection}{\numberline {2.3}Activities Developed}{3}{}%
+\contentsline {subsection}{\numberline {2.3}Activities Developed}{4}{}%
 \contentsline {section}{\numberline {3}Solution Development}{5}{}%
 \contentsline {subsection}{\numberline {3.1}Requirements}{5}{}%
-\contentsline {subsection}{\numberline {3.2}Architecture and Technologies}{6}{}%
-\contentsline {subsubsection}{\numberline {3.2.1}Technology choice and reasoning}{6}{}%
-\contentsline {subsubsection}{\numberline {3.2.2}Architecture}{7}{}%
+\contentsline {subsection}{\numberline {3.2}Architecture and Technologies}{7}{}%
+\contentsline {subsubsection}{\numberline {3.2.1}Technology choice and reasoning}{7}{}%
+\contentsline {subsubsection}{\numberline {3.2.2}Architecture}{8}{}%
 \contentsline {subsubsection}{\numberline {3.2.3}Difficulties encountered and their resolution}{8}{}%
 \contentsline {subsection}{\numberline {3.3}Developed Solution}{8}{}%
 \contentsline {subsubsection}{\numberline {3.3.1}Home page}{8}{}%
-\contentsline {subsubsection}{\numberline {3.3.2}Table of entries}{8}{}%
+\contentsline {subsubsection}{\numberline {3.3.2}Table of entries and exits}{8}{}%
 \contentsline {subsubsection}{\numberline {3.3.3}Table of exits}{9}{}%
 \contentsline {subsubsection}{\numberline {3.3.4}Settings page}{10}{}%
-\contentsline {subsection}{\numberline {3.4}Customization examples}{11}{}%
-\contentsline {subsection}{\numberline {3.5}Validation}{13}{}%
-\contentsline {section}{\numberline {4}Conclusion}{14}{}%
-\contentsline {subsection}{\numberline {4.1}Achieved Results}{14}{}%
-\contentsline {subsection}{\numberline {4.2}Lessons Learned}{14}{}%
-\contentsline {subsection}{\numberline {4.3}Possible Future Improvements and Further Work}{15}{}%
+\contentsline {subsection}{\numberline {3.4}Customization examples}{10}{}%
+\contentsline {subsection}{\numberline {3.5}Validation}{11}{}%
+\contentsline {section}{\numberline {4}Conclusion}{11}{}%
+\contentsline {subsection}{\numberline {4.1}Achieved Results}{11}{}%
+\contentsline {subsection}{\numberline {4.2}Lessons Learned}{15}{}%
+\contentsline {subsection}{\numberline {4.3}Possible Future Improvements and Further Work}{16}{}%
