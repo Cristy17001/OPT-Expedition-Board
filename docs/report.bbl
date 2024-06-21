@@ -1,0 +1,35 @@
+\begin{thebibliography}{1}
+
+\bibitem{react}
+Facebook.
+\newblock React website.
+\newblock \url{https://reactjs.org}, 2024.
+\newblock Accessed: June 21, 2024.
+
+\bibitem{typescript}
+Microsoft.
+\newblock Typescript website.
+\newblock \url{https://www.typescriptlang.org}, 2024.
+\newblock Accessed: June 21, 2024.
+
+\bibitem{prisma-medium}
+Iben Oneal.
+\newblock Why you should consider prisma.io.
+\newblock
+  \url{https://medium.com/@iben.oneal/why-you-should-consider-prisma-io-a5d963f68c4e},
+  2022.
+\newblock Accessed: June 21, 2024.
+
+\bibitem{prisma}
+Prisma.
+\newblock Prisma website.
+\newblock \url{https://www.prisma.io}, 2024.
+\newblock Accessed: June 21, 2024.
+
+\bibitem{nextjs}
+Vercel.
+\newblock Next.js website.
+\newblock \url{https://nextjs.org}, 2024.
+\newblock Accessed: June 21, 2024.
+
+\end{thebibliography}

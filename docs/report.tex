@@ -13,6 +13,8 @@
 \usepackage{url}
 \usepackage{indentfirst}
 \usepackage{subcaption}
+\usepackage{hyperref}
+
 
 \usepackage{imakeidx}
 \graphicspath{ {./images/} }
@@ -166,7 +168,7 @@
 
         Another important aspect was the implementation of a way to customize the dispatch board, allowing users to change the colors and layout and the logo according to their preferences. We decided to store the user settings on the local storage, so that the users could export and import their settings to other devices.
 
-        \begin{figure}[h!]
+        \begin{figure}[h]
             \centering
             \begin{ganttchart}[
                 hgrid,
@@ -202,7 +204,7 @@
             \caption{Chart}
             \label{fig:chart}
         \end{figure}
-        
+
 
 \section{Solution Development}
 
@@ -244,9 +246,9 @@
 
         \subsubsection{Technology choice and reasoning}
         Before embarking on the development of the dispatch board system, careful consideration was given to defining the optimal architecture and technologies. 
-        
+
         The selection of these components was crucial to ensure scalability, reliability, and ease of maintenance, while aligning with the project requirements and existing systems.
-        
+
         With the freedom to choose the technologies, extensive research and discussions were conducted to make informed decisions. After thorough evaluation, the following technologies were deemed most suitable for the project:
         \begin{itemize}
                 \item \textbf{Web Framework:}
@@ -264,7 +266,7 @@
                 \item \textbf{Backend:}
                 \begin{itemize}
                     \item \textbf{Description:} We utilized an existing SQL Server database for the project, which contained the necessary information about the buses and schedules.
-                    \item \textbf{Reasoning:} The SQL Server database provided by OPT was a suitable choice for the project as it already contained the necessary information about the buses and schedules. Leveraging this existing database allowed us to focus on developing the frontend and backend components without the need to create a new database from scratch.
+                    \item \textbf{Reasoning:} The SQL Server database provided by OPT already contains real-world data about buses and schedules. Leveraging this existing database allowed us to focus on developing the frontend and backend components without the need to create a new database from scratch. This ensures that the system is built on real-world data and can accurately simulate the scheduling and dispatching processes.
                 \end{itemize}
 
                 \item \textbf{ORM (Object-Relational Mapping):}
@@ -272,16 +274,21 @@
                     \item \textbf{Description:} Prisma is an advanced ORM that simplifies database interactions by providing a type-safe and intuitive API. It supports multiple databases, including PostgreSQL, SQL Server, MySQL, and SQLite, making it a versatile and efficient choice for the project.
                     \item \textbf{Reasoning:} Prisma was selected for simplified database interactions and data manipulation. It is easy to utilize in Next.js and offers a seamless solution for the project's data handling needs.
                 \end{itemize}
+                \item \textbf{Design:}
+                \begin{itemize}
+                    \item \textbf{Description:} Figma is a cloud-based design and prototyping tool that allows teams to collaborate on creating user interfaces and interactive designs.
+                    \item \textbf{Reasoning:} We used Figma to allow us to create a low fidelity prototype of the application, which helped us to visualize the final product and make design decisions before starting the development process.
+                \end{itemize}
         \end{itemize}
 
 
         \subsubsection{Architecture}
         The architecture of the dispatch board system was designed to be easy to maintain, easy to use, and efficient. 
-        
+
         It consists of three main components: the frontend, backend, and database. 
-        
+
         These components work together to provide a seamless user experience for transport operators, ensuring real-time updates and customization options. 
-        
+
         To represent the architecture, we created a layer diagram that illustrates the interaction between the components.
 
         \begin{figure}[h]
@@ -452,6 +459,10 @@
 
 
         \bibliographystyle{plain}
-        \bibliography{refs} % Entries are in the refs.bib file
-
+        \bibliography{refs}
+        \cite{nextjs}
+        \cite{react}
+        \cite{typescript}
+        \cite{prisma}
+        \cite{prisma-medium}
         \end{document}
