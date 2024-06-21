@@ -61,8 +61,7 @@ button {
 
 /* Remove default form styles */
 input,
-textarea,
-select {
+textarea {
   appearance: none;
   border: none;
   background: none;

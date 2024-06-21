@@ -1,6 +1,5 @@
 'use client'
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import styles from "./modal.module.css";
 import Trash from '@/app/images/svgs/save';
