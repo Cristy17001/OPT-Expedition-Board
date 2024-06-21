@@ -11,6 +11,8 @@
 \usepackage[portuguese]{babel}
 \usepackage{url}
 \usepackage{indentfirst}
+\usepackage{subcaption}
+
 \usepackage{imakeidx}
 \graphicspath{ {./images/} }
 
@@ -249,7 +251,7 @@
         \subsubsection{Architecture}
         The architecture of the dispatch board system was designed to be easy to maintain, easy to use, and efficient. It consists of three main components: the frontend, backend, and database. These components work together to provide a seamless user experience for transport operators, ensuring real-time updates and customization options. To represent the architecture, we created a layer diagram that illustrates the interaction between the components.
 
-        \begin{figure}[!ht]
+        \begin{figure}[h]
             \centering
             \includegraphics[width=1\textwidth]{architecture_diagram}
             \caption{Layer diagram of the dispatch board system architecture}
@@ -268,9 +270,12 @@
 
         Our home page offers a streamlined navigation experience, presenting three key options: Table of Entries, Table of Exits, and Settings Page. Each option is represented by a dedicated button for quick access. Simply click on a button to be redirected to the corresponding page, allowing for efficient management and customization of transport operations. This intuitive interface ensures users can easily navigate to the desired section with minimal effort.
 
-            \vfill
-        \includegraphics[width=1\textwidth]{home_page}
-            \vfill
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=1\textwidth]{home_page}
+            \caption{Home page of the dispatch board system}
+            \label{fig:home_page}
+        \end{figure}
 
         \subsubsection{Table of entries}
 
@@ -279,10 +284,12 @@
         The table dynamically displays all transport schedules from the current time until the end of the day, with real-time updates ensuring accuracy and reliability. Users are provided with clear visual cues, such as a red highlight for any delayed transport schedules, facilitating efficient and effective transport management. This system not only enhances operational efficiency but also significantly improves the user experience for all stakeholders involved.
         At the bottom of the page, there is an area dedicated to displaying the most recently updated information by the application user. This feature enables users to promptly report incidents such as road accidents, ensuring timely dissemination of critical information.
 
-            \vfill
-        \includegraphics[width=1\textwidth]{table_of_entries}
-
-            \vfill
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=1\textwidth]{table_of_entries}
+            \caption{Table of entries in the dispatch board system}
+            \label{fig:table_of_entries}
+        \end{figure}
 
         \subsubsection{Table of exits}
 
@@ -290,9 +297,14 @@
         Similar to its counterpart, users can access the settings page to customize the application's appearance and functionality according to their preferences. The table of exits presents updated transport schedules from the current time until the end of the day, ensuring real-time accuracy. Visual indicators promptly highlight any delays or disruptions in service, facilitating efficient transport management and enhancing user experience.
         At the bottom of the page, users also have an area to provide updates, such as reporting road incidents, ensuring comprehensive and timely information dissemination.
 
-            \vfill
-        \includegraphics[width=1\textwidth]{table_of_exits}
-            \vfill
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=1\textwidth]{table_of_exits}
+            \caption{Table of exits in the dispatch board system}
+            \label{fig:table_of_exits}
+        \end{figure}
+        \vfill
 
         \subsubsection{Settings page}
 
@@ -300,52 +312,53 @@
         Users can upload a company logo effortlessly using a dedicated upload button. For configuration management, the page includes export/import functionality for saving and reapplying settings as a JSON file. A preview section provides a live demonstration of layout changes, ensuring users can visualize and confirm adjustments to entry and exit tables before finalizing.
         This comprehensive approach ensures a personalized and intuitive experience, empowering users to tailor the application's appearance and functionality to their exact specifications.
 
-
-
-            \vfill
-        \includegraphics[width=1\textwidth]{aparencia}
-            \vfill
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=1\textwidth]{aparencia}
+            \caption{Settings page for customizing the appearance of the dispatch board system}
+            \label{fig:settings_appearance}
+        \end{figure}
 
         The second settings page focuses on fine-tuning table display and content preferences. Users have granular control over column visibility, allowing them to show or hide specific columns as needed. Additionally, columns can be renamed to align with specific data or organizational needs.
         Display order customization empowers users to arrange columns in a preferred sequence, optimizing data presentation. Furthermore, users can modify the information displayed at the bottom of entry and exit tables, ensuring relevance and clarity.
         This page serves as a powerful tool for configuring and optimizing data presentation, enhancing usability and efficiency in managing transport operations. By providing flexible customization options, it supports diverse user requirements and preferences.
-        
 
-            \vfill
-        \includegraphics[width=1\textwidth]{tabelas}
-            \vfill
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=1\textwidth]{tabelas}
+            \caption{Settings page for customizing the tables in the dispatch board system}
+            \label{fig:settings_tables}
+        \end{figure}
 
         \subsection{Customization examples}
 
         Here, we present various customization examples to demonstrate the flexibility and adaptability of our application. Below, you will find screenshots of the Table of Entries and Table of Exits, each showcasing different customizations applied through the Settings Page. These examples illustrate how users can modify visual elements and functional components to align with their specific requirements and branding guidelines.
 
-            \vfill
-        \includegraphics[width=1\textwidth]{table_of_entries_stcp1}
-            \vfill
+        \includegraphics[width=0.95\textwidth]{table_of_entries_stcp1}
+        \vfill
+        \includegraphics[width=0.95\textwidth]{table_of_entries_stcp2}
+        \vfill
+        \includegraphics[width=0.95\textwidth]{table_of_exits_stcp1}
+        \vfill
+        \includegraphics[width=0.95\textwidth]{table_of_entries_stcp2}
+        \vfill
+        \includegraphics[width=0.95\textwidth]{table_of_exits_stcp2}
+        \vfill
 
-            \vfill
-        \includegraphics[width=1\textwidth]{table_of_exits_stcp1}
-            \vfill
-
-            \vfill
-        \includegraphics[width=1\textwidth]{table_of_entries_stcp2}
-            \vfill
-
-            \vfill
-        \includegraphics[width=1\textwidth]{table_of_exits_stcp2}
-            \vfill
 
         In these examples, I incorporated the STCP logo and color scheme to enhance the visual appeal. 
         Additionally, I removed certain columns from the tables to create a cleaner layout, ensuring the information is more accessible and easier to read for users.
 
-        
         \subsection{Validation}
 
         To ensure our project aligned with OPT's requirements, we sought guidance from our project manager, who provided weekly feedback for improvements. Our application was designed for larger screens, making testing on the TVs at OPT headquarters crucial. This allowed us to accurately gauge the dimensions of each compartment and validate our approach. Since our application will be used by various companies, we tested possible configurations for different clients, such as STCP and CP, as illustrated. Additionally, we scheduled a test at STCP headquarters to obtain real-time feedback from users, further enhancing our application.
 
-            \vfill
-        \includegraphics[width=1\textwidth]{validation_eg}
-            \vfill
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=1\textwidth]{validation_eg}
+            \caption{Example of validation process}
+            \label{fig:validation_example}
+        \end{figure}
 
         \section{Conclusion}
 
@@ -369,19 +382,19 @@
          \subsection{Lessons Learned}
 
          Throughout this project, several important lessons were learned:
-         
+
          \begin{itemize}
              \item \textbf{Effective Communication:} Regular meetings and open communication channels, such as Discord and GitHub, were crucial for progress and problem-solving and communicating with the OPT proponent.
              \item \textbf{Team Collaboration:} Working collaboratively, leveraging each member's strengths, and maintaining clear roles and responsibilities were key to the project's success.
              \item \textbf{User-Centered Design:} Prioritizing the end-users' needs, through intuitive interfaces and customization options, significantly enhanced the final product's usability and acceptance. This was especially important for transport operators who may not be tech-savvy.
              \item \textbf{Technical Proficiency:} Gained hands-on experience with modern web development tools and practices, particularly in React, TypeScript, and Next.js, which are relatively new technologies and were not covered in the academic curriculum.
          \end{itemize}
-         
+
 
          \subsection{Possible Future Improvements and Further Work}
 
          While the project has successfully met its objectives, there are several areas for future improvement and further development:
-         
+
          \begin{itemize}
              \item \textbf{Enhanced Analytics:} Integrating advanced analytics to provide deeper insights into operational efficiency and performance metrics.
              \item \textbf{Mobile Compatibility:} Developing a mobile-friendly version of the dispatch board to enhance accessibility for operators on the go.
@@ -389,7 +402,7 @@
              \item \textbf{User Feedback Integration:} Continuously gathering user feedback to inform iterative improvements and feature enhancements.
              \item \textbf{Interoperability:} Enhancing interoperability with other systems and platforms used by transport operators to create a more cohesive ecosystem.
          \end{itemize}
-         
+
          In conclusion, the project successfully met its objectives, delivering a modern, customizable dispatch board system. The skills and knowledge gained during this project, including teamwork and technical proficiency, have been invaluable. The final product stands as a testament to our collective effort, providing a practical solution for public transport operators.        
 
 

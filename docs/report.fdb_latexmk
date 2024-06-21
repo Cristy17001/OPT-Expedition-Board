@@ -1,5 +1,5 @@
 # Fdb version 4
-["bibtex report"] 0 "report.aux" "report.bbl" "report" 1718915801.53201 0
+["bibtex report"] 0 "report.aux" "report.bbl" "report" 1718969117.51438 0
   "C:/Users/Cristiano/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/plain.bst" 1291864736 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
   "refs.bib" 0 -1 0 ""
   "report.aux" 0 -1 0 "pdflatex"
@@ -7,14 +7,14 @@
   "report.bbl"
   "report.blg"
   (rewritten before read)
-["makeindex report.idx"] 1718911325.22953 "report.idx" "report.ind" "report" 1718915801.5306 0
-  "report.idx" 1718915798 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex report.idx"] 1718969072.96872 "report.idx" "report.ind" "report" 1718969117.51338 0
+  "report.idx" 1718969114 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "report.ilg"
   "report.ind"
   (rewritten before read)
-["pdflatex"] 1718915797.47206 "c:/Users/Cristiano/Desktop/Faculdade/Projeto Integrador/Opt.ExpeditionBoard.Nextjs/opt_expedition_board/docs/report.tex" "report.pdf" "report" 1718915801.53305 0
-  "C:/Users/Cristiano/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1718639929 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
+["pdflatex"] 1718969113.28419 "c:/Users/Cristiano/Desktop/Faculdade/Projeto Integrador/Opt.ExpeditionBoard.Nextjs/opt_expedition_board/docs/report.tex" "report.pdf" "report" 1718969117.5153 0
+  "C:/Users/Cristiano/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1718968175 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/Cristiano/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1718639476 11548 430a607515461e548233634ce41bd9a4 ""
   "C:/Users/Cristiano/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1718639448 24226975 bf3fab2f0ca86db078fe8dbc1c247e42 ""
   "C:/Users/Cristiano/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/tcrm1000.tfm" 993062508 1436 c7f957a372ef2fbe93c0982f96625e12 ""
@@ -107,6 +107,9 @@
   "C:/Users/Cristiano/AppData/Local/Programs/MiKTeX/tex/latex/babel-portuges/portuguese.ldf" 1626079182 6599 898431e984e4e8b6d8aa6cdcb036f8db ""
   "C:/Users/Cristiano/AppData/Local/Programs/MiKTeX/tex/latex/base/article.cls" 1705273579 20144 147463a6a579f4597269ef9565205cfe ""
   "C:/Users/Cristiano/AppData/Local/Programs/MiKTeX/tex/latex/base/size10.clo" 1705273578 8448 dbc0dbf4156c0bb9ba01a1c685d3bad0 ""
+  "C:/Users/Cristiano/AppData/Local/Programs/MiKTeX/tex/latex/caption/caption.sty" 1696169587 56128 c2ccf1a29d78c33bc553880402e4fb9a ""
+  "C:/Users/Cristiano/AppData/Local/Programs/MiKTeX/tex/latex/caption/caption3.sty" 1696169587 72619 ee90b6612147680fd73c3b1406a74245 ""
+  "C:/Users/Cristiano/AppData/Local/Programs/MiKTeX/tex/latex/caption/subcaption.sty" 1696169587 12494 0c0cdb824278a4d51cefeb2e79901315 ""
   "C:/Users/Cristiano/AppData/Local/Programs/MiKTeX/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1623003186 13886 d1306dcf79a944f6988e688c1785f9ce ""
   "C:/Users/Cristiano/AppData/Local/Programs/MiKTeX/tex/latex/geometry/geometry.cfg" 1578053545 1104 7ac475a4e3466b0b43e138e9356bda83 ""
   "C:/Users/Cristiano/AppData/Local/Programs/MiKTeX/tex/latex/geometry/geometry.sty" 1578053545 42759 9cf6c5257b1bc7af01a58859749dd37a ""
@@ -139,24 +142,24 @@
   "C:/Users/Cristiano/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/Cristiano/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "C:/Users/Cristiano/AppData/Local/Programs/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1656236919 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "c:/Users/Cristiano/Desktop/Faculdade/Projeto Integrador/Opt.ExpeditionBoard.Nextjs/opt_expedition_board/docs/report.tex" 1718915796 32914 7be7b0e8af3fa49bb6b67c0445c154bb ""
-  "images/UPORTO_fundotransparente.png" 1718638597 10051 7fbe65ee05f25a7ec6027b24b21f5d2b ""
-  "images/aparencia.png" 1718638597 82075 b247ff1a320d68d66bccfd0e3c5ae203 ""
-  "images/architecture_diagram.png" 1718811376 50558 ec7d6fe3ae24307e373047aba117a2df ""
-  "images/home_page.png" 1718915485 31494 146bd915e5b2662d3395bfa7918b997a ""
-  "images/tabelas.png" 1718638597 78090 522e17b2611bed24c54c2f2f27835d1a ""
-  "images/table_of_entries.png" 1718638597 158439 cfa0ff4c174166289035957337357b25 ""
-  "images/table_of_entries_stcp1.png" 1718915485 123473 fff551729bb6766f8cbd9d5ae0de74b1 ""
-  "images/table_of_entries_stcp2.png" 1718915485 114775 e5071656ff28b7382be10c66aca2596d ""
-  "images/table_of_exits.png" 1718638597 128635 bac0ce87427f8758502a2f7d8cd7c966 ""
-  "images/table_of_exits_stcp1.png" 1718915485 91850 44e32cc2d6f14a46023180f5104a9945 ""
-  "images/table_of_exits_stcp2.png" 1718915485 86241 d6d5f304b2a6361d9d6f02288ff349ad ""
-  "images/validation_eg.png" 1718915485 102770 431bea9e775336e75b1d6e915c26b010 ""
-  "report.aux" 1718915800 3265 68fa81907737237df979d5f4de0ed780 "pdflatex"
+  "c:/Users/Cristiano/Desktop/Faculdade/Projeto Integrador/Opt.ExpeditionBoard.Nextjs/opt_expedition_board/docs/report.tex" 1718969109 33805 2a83f27dca917210628329dd3937aeb9 ""
+  "images/UPORTO_fundotransparente.png" 1718965476 10051 7fbe65ee05f25a7ec6027b24b21f5d2b ""
+  "images/aparencia.png" 1718965476 82075 b247ff1a320d68d66bccfd0e3c5ae203 ""
+  "images/architecture_diagram.png" 1718965476 50558 ec7d6fe3ae24307e373047aba117a2df ""
+  "images/home_page.png" 1718965476 31494 146bd915e5b2662d3395bfa7918b997a ""
+  "images/tabelas.png" 1718965476 78090 522e17b2611bed24c54c2f2f27835d1a ""
+  "images/table_of_entries.png" 1718965476 158439 cfa0ff4c174166289035957337357b25 ""
+  "images/table_of_entries_stcp1.png" 1718965476 123473 fff551729bb6766f8cbd9d5ae0de74b1 ""
+  "images/table_of_entries_stcp2.png" 1718965476 114775 e5071656ff28b7382be10c66aca2596d ""
+  "images/table_of_exits.png" 1718965476 128635 bac0ce87427f8758502a2f7d8cd7c966 ""
+  "images/table_of_exits_stcp1.png" 1718965476 91850 44e32cc2d6f14a46023180f5104a9945 ""
+  "images/table_of_exits_stcp2.png" 1718965476 86241 d6d5f304b2a6361d9d6f02288ff349ad ""
+  "images/validation_eg.png" 1718965476 102770 431bea9e775336e75b1d6e915c26b010 ""
+  "report.aux" 1718969116 4597 9f73613daf56b61962a0c5471ac79ad5 "pdflatex"
   "report.bbl" 0 -1 0 "bibtex report"
-  "report.ind" 1718816314 0 d41d8cd98f00b204e9800998ecf8427e "makeindex report.idx"
-  "report.tex" 1718915796 32914 7be7b0e8af3fa49bb6b67c0445c154bb ""
-  "report.toc" 1718915800 1850 1088e9621236aea40398bd18e7e3cdff "pdflatex"
+  "report.ind" 1718969073 0 d41d8cd98f00b204e9800998ecf8427e "makeindex report.idx"
+  "report.tex" 1718969109 33805 2a83f27dca917210628329dd3937aeb9 ""
+  "report.toc" 1718969116 1849 c80c8d79c0fcc8e0399f9d5851239890 "pdflatex"
   (generated)
   "report.aux"
   "report.idx"
