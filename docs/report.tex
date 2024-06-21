@@ -20,6 +20,7 @@
 \begin{titlepage}
     \begin{center}
         \vspace*{1cm}
+
     {\fontsize{17}{16}\selectfont \textbf{Design and development of a dispatch board for public transport operators based on web technologies (PE43)}}
 
         \vspace{0.5cm}
@@ -66,13 +67,24 @@
 
     \subsection{Objectives and Expected Results}
         The main motivation behind this project was the need to upgrade the already existing software used to display the dispatch board to a programming language that could be more easily managed, maintaining the existing features, and database integration.
+        
         The existing software was considered outdated and hard to deploy since it ran natively on the devices, every update and bugfix required a manual software update of all the machines that needed it.
+
         The development of this dispatch board was based on an existing program, our job was to upgrade it by:
         \begin{itemize}
             \item adapting it to a web-based language, so that it is easier to expand and debug, taking advantage of the best and most recent tools of web-dev;
             \item adding customizations and “quality of life” features to improve the overall usability of the product.
         \end{itemize}
 
+        Here is an example of the old dispatch board, it was a native application that ran on the machines of the transport operators, it was hard to maintain and expand, and it was not user-friendly. It was also not responsive and that is why the printscreen looks like it is cut off.
+        
+        \begin{figure}[!ht]
+            \centering
+            \includegraphics[width=1\textwidth]{old_dispatch_board}
+            \caption{Old dispatch board}
+            \label{fig:old_dispatch_board}
+        \end{figure}
+        
     \subsection{Report Structure}
         This report will have the following structure:
         \begin{itemize}
@@ -85,9 +97,13 @@
 \section{Methodology and Development Process}
 
     \subsection{Methodology}
+        
         To ensure consistent progress and receive regular feedback, our group established a weekly meeting schedule with our OPT tutor. These meetings allowed us to review our work, discuss any challenges, and make necessary adjustments based on the feedback received.
+        
         For version control and collaboration, we utilized GitHub. We created a repository where we committed our code, which greatly enhanced our communication and organization. This platform allowed us to track changes, manage different versions of our project, and work simultaneously without conflicts.
+        
         Our online meetings were conducted through a Discord group we created specifically for this project. We utilized both text and voice chat features to communicate in real-time while working on the project. Additionally, we included our OPT tutor in the Discord group so he could monitor our progress and provide feedback directly within this collaborative environment.
+        
         For coding, we chose Visual Studio Code as our primary editor. This tool offered an array of extensions and features that facilitated our development process, making it easier to write, debug, and collaborate on our code efficiently.
 
     \subsection{Stakeholders and roles}
@@ -359,7 +375,14 @@
         Challenges such as project setup and database communication were effectively addressed, leading to a streamlined development process. The final product, including tables for entries and exits and a comprehensive settings page, provides a robust, flexible tool for transport operators. The dispatch board dynamically displays schedules, highlights delays, and allows extensive customization, improving operational efficiency and user experience.
 
 
-        \textbf{No caso de trabalho em grupo, clarificar as contribuições individuais, em termos qualitativos e quantitativos (percentagem).}
+        \textbf{Group Contributions:}
+        Every member of the group contributed well to the project's success, with each member taking on specific roles and responsibilities. The breakdown of contributions is as follows:
+        \begin{itemize}
+            \item António Ferreira: 25\%
+            \item Cristiano Rocha: 25\%
+            \item José Ferreira: 25\%
+            \item Pedro Magalhães: 25\%
+        \end{itemize}
          \subsection{Lessons Learned}
 
          Throughout this project, several important lessons were learned:
@@ -377,11 +400,10 @@
          While the project has successfully met its objectives, there are several areas for future improvement and further development:
          
          \begin{itemize}
-             \item \textbf{Enhanced Analytics:} Integrating advanced analytics to provide deeper insights into operational efficiency and performance metrics.
-             \item \textbf{Mobile Compatibility:} Developing a mobile-friendly version of the dispatch board to enhance accessibility for operators on the go.
-             \item \textbf{AI Integration:} Leveraging artificial intelligence for predictive analytics and automated decision-making to optimize scheduling and dispatching.
-             \item \textbf{User Feedback Integration:} Continuously gathering user feedback to inform iterative improvements and feature enhancements.
-             \item \textbf{Interoperability:} Enhancing interoperability with other systems and platforms used by transport operators to create a more cohesive ecosystem.
+             \item \textbf {Support for Smaller Devices:} Enhancing the application's responsiveness to support smaller devices like tablets and smartphones, ensuring a consistent user experience across all screen sizes. This was not a priority for this project, but it could be a valuable addition in the future.
+             \item \textbf{Further Customization Options:} Expanding customization features to include additional settings and preferences for transport operators like font size, column width, finer color adjustments, etc.
+             \item \textbf{User Feedback Integration:} Continuously gathering user feedback to inform iterative improvements and feature enhancements, through a feedback mechanism within the application.
+             \item \textbf{Interoperability:} Enhancing interoperability with other systems and platforms used by transport operators to create a more cohesive ecosystem. For example, integrating a small app on the drivers' smartphones to receive notifications and updates and a way to communicate with the dispatch board if they are running late or on time.
          \end{itemize}
          
          In conclusion, the project successfully met its objectives, delivering a modern, customizable dispatch board system. The skills and knowledge gained during this project, including teamwork and technical proficiency, have been invaluable. The final product stands as a testament to our collective effort, providing a practical solution for public transport operators.        
