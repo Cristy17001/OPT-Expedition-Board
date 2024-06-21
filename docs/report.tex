@@ -9,7 +9,7 @@
 \usepackage{pgfgantt}
 \usepackage{float}
 \usepackage{graphicx}
-\usepackage[portuguese]{babel}
+\usepackage[english]{babel}
 \usepackage{url}
 \usepackage{indentfirst}
 \usepackage{subcaption}
@@ -38,8 +38,7 @@
         \textbf{José Ferreira} \\
         \textbf{Pedro Magalhães} \\
 
-                \vfill
-
+        \vfill
         \includegraphics[width=0.4\textwidth]{UPORTO_fundotransparente}
 
 
@@ -72,7 +71,7 @@
 
     \subsection{Objectives and Expected Results}
         The main motivation behind this project was the need to upgrade the already existing software used to display the dispatch board to a programming language that could be more easily managed, maintaining the existing features, and database integration.
-        
+
         The existing software was considered outdated and hard to deploy since it ran natively on the devices, every update and bugfix required a manual software update of all the machines that needed it.
 
         The development of this dispatch board was based on an existing program, our job was to upgrade it by:
@@ -82,7 +81,7 @@
         \end{itemize}
 
         Here is an example of the old dispatch board, it was a native application that ran on the machines of the transport operators, it was hard to maintain and expand, and it was not user-friendly. It was also not responsive and that is why the printscreen looks like it is cut off.
-        
+
         \vfill
         \begin{figure}[!ht]
             \centering
@@ -90,7 +89,7 @@
             \caption{Old dispatch board}
             \label{fig:old_dispatch_board}
         \end{figure}
-        
+
     \subsection{Report Structure}
         This report will have the following structure:
         \begin{itemize}
@@ -103,13 +102,13 @@
 \section{Methodology and Development Process}
 
     \subsection{Methodology}
-        
+
         To ensure consistent progress and receive regular feedback, our group established a weekly meeting schedule with our OPT tutor. These meetings allowed us to review our work, discuss any challenges, and make necessary adjustments based on the feedback received.
-        
+
         For version control and collaboration, we utilized GitHub. We created a repository where we committed our code, which greatly enhanced our communication and organization. This platform allowed us to track changes, manage different versions of our project, and work simultaneously without conflicts.
-        
+
         Our online meetings were conducted through a Discord group we created specifically for this project. We utilized both text and voice chat features to communicate in real-time while working on the project. Additionally, we included our OPT tutor in the Discord group so he could monitor our progress and provide feedback directly within this collaborative environment.
-        
+
         For coding, we chose Visual Studio Code as our primary editor. This tool offered an array of extensions and features that facilitated our development process, making it easier to write, debug, and collaborate on our code efficiently.
 
     \subsection{Stakeholders and roles}
@@ -317,7 +316,7 @@
             \caption{Wireframes of the dispatch board system}
             \label{fig:wireframes}
         \end{figure}
-        
+
 
         \subsubsection{Home page}
 
@@ -334,13 +333,13 @@
         \subsubsection{Table of entries and exits}
 
         We developed a comprehensive table of entries, encompassing all the necessary information for transport operators. 
-        
+
         Leveraging the existing table model used by OPT, we undertook a meticulous redesign to enhance its modernity, appeal, and user-friendliness. This revamped table features a header displaying the logo of the company utilizing the application, along with intuitive options for toggling between the table of entries and the table of exits.
-        
+
         Additionally, users can easily navigate to the settings page, where they have access to a variety of customization options. These settings allow users to tailor the application's appearance and functionalities according to their preferences, including the ability to enable or disable specific features.
-        
+
         The table dynamically displays all transport schedules from the current time until the end of the day, with real-time updates ensuring accuracy and reliability. Users are provided with clear visual cues, such as a red highlight for any delayed transport schedules, facilitating efficient and effective transport management. This system not only enhances operational efficiency but also significantly improves the user experience for all stakeholders involved.
-       
+
         At the bottom of the page, there is an area dedicated to displaying the most recently updated information by the application user. This feature enables users to promptly report incidents such as road accidents, ensuring timely dissemination of critical information.
 
         \begin{figure}[htbp]
@@ -361,16 +360,16 @@
         \subsubsection{Settings page}
 
         Our settings page offers extensive customization options tailored to enhance user interaction. A sleek color selection bar allows precise configuration of highlighting, primary and secondary backgrounds, as well as primary and secondary text colors. 
-        
+
         Each option triggers a color picker for seamless color selection and adjustment.
         Users can upload a company logo effortlessly using a dedicated upload button. For configuration management, the page includes export/import functionality for saving and reapplying settings as a JSON file. 
-        
+
         A preview section provides a live demonstration of layout changes, ensuring users can visualize and confirm adjustments to entry and exit tables before finalizing.
         This comprehensive approach ensures a personalized and intuitive experience, empowering users to tailor the application's appearance and functionality to their exact specifications.
-        
+
         The second settings page focuses on fine-tuning table display and content preferences. Users have granular control over column visibility, allowing them to show or hide specific columns as needed. Additionally, columns can be renamed to align with specific data or organizational needs.
         Display order customization empowers users to arrange columns in a preferred sequence, optimizing data presentation. 
-        
+
         Furthermore, users can modify the information displayed at the bottom of entry and exit tables, ensuring relevance and clarity.
         This page serves as a powerful tool for configuring and optimizing data presentation, enhancing usability and efficiency in managing transport operations. By providing flexible customization options, it supports diverse user requirements and preferences.
 
@@ -415,7 +414,7 @@
         \subsection{Validation}
 
         To ensure our project aligned with OPT's requirements, we sought guidance from our project manager, who provided weekly feedback for improvements. Our application was designed for larger screens, making testing on the TVs at OPT headquarters crucial. This allowed us to accurately gauge the dimensions of each compartment and validate our approach. 
-        
+
         Since our application will be used by various companies, we tested possible configurations for different clients, such as STCP and CP, as illustrated. Additionally, we scheduled a test at STCP headquarters to obtain real-time feedback from users, further enhancing our application.
 
 
@@ -469,7 +468,7 @@
          \end{itemize}
 
          In our opinion, the project was a very necessary improvement for the dispatch board system, as the old system was outdated and hard to maintain. The new system is much more user-friendly and customizable, providing a better experience for transport operators. In the development we deliberately chose to use Next.js and Prisma since they are modern and efficient technologies that we did not have the opportunity to work with during our academic curriculum. 
-         
+
          In addition, we valued the experience to work in a real-world project, with a real client and real requirements, which was very enriching for our professional development. The way the OPT employees received us into their team was very welcoming and we felt like we were part of the team, which made the project even more enjoyable.
 
          In conclusion, the project successfully met its objectives, delivering a modern, customizable dispatch board system. The skills and knowledge gained during this project, including teamwork and technical proficiency, have been invaluable. The final product stands as a testament to our collective effort, providing a practical solution for public transport operators.        
@@ -482,4 +481,5 @@
         \cite{typescript}
         \cite{prisma}
         \cite{prisma-medium}
+        \cite{nextjs-react-showdown}
         \end{document}
