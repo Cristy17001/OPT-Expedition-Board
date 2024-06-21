@@ -40,3 +40,15 @@ next-env.d.ts
 /.vscode/
 run.bat
 run.sh
+
+# docs
+/docs/*.aux
+/docs/*.log
+/docs/*.fdb_latexmk
+/docs/*.fls
+/docs/*.synctex.gz
+/docs/*.toc
+/docs/*.idx
+/docs/*.ind
+/docs/*.ilg
+
