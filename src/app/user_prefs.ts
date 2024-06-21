@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { getStartNodes } from "./queries";
 
 export type UserPrefs = {
     message: string;
@@ -11,6 +12,7 @@ export type UserPrefs = {
     table_map: Array<[string, string]>;
     column_order: string[];
     switch_map: Array<[string,boolean]>;
+    station: string;
 }
 
 const defaultPrefs: UserPrefs = {
@@ -31,6 +33,7 @@ const defaultPrefs: UserPrefs = {
         ["DutyName", "DutyName"],
         ["DutyEndTime", "DutyEndTime"],
         ["DutyEndNode", "DutyEndNode"],
+        ["DutyStartNode", "DutyStartNode"],
         ["EndLines", "EndLines"],
         ["EndDriverId1", "EndDriverId1"],
     ],
@@ -44,6 +47,7 @@ const defaultPrefs: UserPrefs = {
         "DutyName",
         "DutyEndTime",
         "DutyEndNode",
+        "DutyStartNode",
         "EndLines",
         "EndDriverId1",
     ],
@@ -57,9 +61,11 @@ const defaultPrefs: UserPrefs = {
       ["DutyName",true],
       ["DutyEndTime",true],
       ["DutyEndNode",true],
+      ["DutyStartNode",true],
       ["EndLines",true],
       ["EndDriverId1",true]
     ],
+    station:"",
 }
 
 const getLocalPrefs = (key: string): UserPrefs => {
@@ -78,6 +84,7 @@ const useUserPrefs = () => {
     const key = `userPrefs`;
 
     const [userPrefs, setUserPrefs] = useState<UserPrefs>(getLocalPrefs(key));
+    const [stations, setStations] = useState<string[]>([]);
 
     useEffect(() => {
       const currentPrefs = getLocalPrefs(key);
@@ -95,7 +102,7 @@ const useUserPrefs = () => {
       setUserPrefs(updatedPrefs);
     };
 
-    return { userPrefs, updateUserPrefs };
+    return { userPrefs, updateUserPrefs, stations };
   };
 
 export default useUserPrefs;

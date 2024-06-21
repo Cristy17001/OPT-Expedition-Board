@@ -18,7 +18,7 @@ interface DrawRowProps {
 
 const DrawRow: React.FC<DrawRowProps> = ({ row, index, isLate }) => {
   const { userPrefs } = useUserPrefs();
-  return (
+  return (row.DutyEndNode == userPrefs.station) || (row.DutyStartNode == userPrefs.station) ?
     <tr key={index} className={isLate ? styles.late : undefined}>
       {userPrefs.column_order.map((column, index) => {
         const columnValue = row[column];
@@ -29,7 +29,7 @@ const DrawRow: React.FC<DrawRowProps> = ({ row, index, isLate }) => {
         return shouldRender ? <td key={index}>{columnValue}</td> : null;
       })}
     </tr>
-  );
+  : null;
 };
 
 interface DrawHeaderProps {
