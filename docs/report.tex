@@ -165,37 +165,43 @@
         
         Another important aspect was the implementation of a way to customize the dispatch board, allowing users to change the colors and layout and the logo according to their preferences. We decided to store the user settings on the local storage, so that the users could export and import their settings to other devices.
 
-        \begin{ganttchart}[
-            hgrid,
-            vgrid,
-            x unit=0.5cm,
-            title/.style={fill=gray!30, draw=none},
-            title label font=\footnotesize,
-            bar/.style={fill=blue!30, draw=none},
-            bar height=0.7,
-            bar label font=\footnotesize,
-            group/.style={fill=green!30, draw=none},
-            group right shift=0,
-            group top shift=0.7,
-            group height=.3,
-            group peaks width={0.2},
-            milestone/.style={fill=red!50, draw=none},
-            milestone height=0.7
-        ]{1}{16}
-            \gantttitle{2024}{16} \\
-            \gantttitle{March}{4}
-            \gantttitle{April}{4}
-            \gantttitle{May}{4}
-            \gantttitle{June}{4} \\
-            \ganttgroup{Planning}{1}{4} \\
-            \ganttbar{Requirement Analysis}{1}{2} \\
-            \ganttlinkedbar{System Design}{3}{4} \ganttnewline
-            \ganttmilestone{Design Review}{4} \ganttnewline
-            \ganttbar{Implementation}{5}{11} \\
-            \ganttlinkedbar{Testing}{12}{14} \\
-            \ganttlinkedmilestone{Deployment}{14} \ganttnewline
-            \ganttbar{Documentation}{12}{14}
-        \end{ganttchart}
+        \begin{figure}[h!]
+            \centering
+            \begin{ganttchart}[
+                hgrid,
+                vgrid,
+                x unit=0.5cm,
+                title/.style={fill=gray!30, draw=none},
+                title label font=\footnotesize,
+                bar/.style={fill=blue!30, draw=none},
+                bar height=0.7,
+                bar label font=\footnotesize,
+                group/.style={fill=green!30, draw=none},
+                group right shift=0,
+                group top shift=0.7,
+                group height=.3,
+                group peaks width={0.2},
+                milestone/.style={fill=red!50, draw=none},
+                milestone height=0.7
+            ]{1}{16}
+                \gantttitle{2024}{16} \\
+                \gantttitle{March}{4}
+                \gantttitle{April}{4}
+                \gantttitle{May}{4}
+                \gantttitle{June}{4} \\
+                \ganttgroup{Planning}{1}{4} \\
+                \ganttbar{Requirement Analysis}{1}{2} \\
+                \ganttlinkedbar{System Design}{3}{4} \ganttnewline
+                \ganttmilestone{Design Review}{4} \ganttnewline
+                \ganttbar{Implementation}{5}{11} \\
+                \ganttlinkedbar{Testing}{12}{14} \\
+                \ganttlinkedmilestone{Deployment}{14} \ganttnewline
+                \ganttbar{Documentation}{12}{14}
+            \end{ganttchart}
+            \caption{Chart}
+            \label{fig:chart}
+        \end{figure}
+        
 
 \section{Solution Development}
 
