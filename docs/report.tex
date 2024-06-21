@@ -7,6 +7,7 @@
 \newcommand{\indexsection}[1]{\section{#1}\index{#1}}
 \newcommand{\indexsubsection}[1]{\subsection{#1}\index{#1@\thesection~#1}}
 \usepackage{pgfgantt}
+\usepackage{float}
 \usepackage{graphicx}
 \usepackage[portuguese]{babel}
 \usepackage{url}
@@ -286,7 +287,8 @@
 
         Our home page offers a streamlined navigation experience, presenting three key options: Table of Entries, Table of Exits, and Settings Page. Each option is represented by a dedicated button for quick access. Simply click on a button to be redirected to the corresponding page, allowing for efficient management and customization of transport operations. This intuitive interface ensures users can easily navigate to the desired section with minimal effort.
 
-        \begin{figure}[h]
+        \vfill
+        \begin{figure}[htbp]
             \centering
             \includegraphics[width=1\textwidth]{home_page}
             \caption{Home page of the dispatch board system}
@@ -300,44 +302,38 @@
         The table dynamically displays all transport schedules from the current time until the end of the day, with real-time updates ensuring accuracy and reliability. Users are provided with clear visual cues, such as a red highlight for any delayed transport schedules, facilitating efficient and effective transport management. This system not only enhances operational efficiency but also significantly improves the user experience for all stakeholders involved.
         At the bottom of the page, there is an area dedicated to displaying the most recently updated information by the application user. This feature enables users to promptly report incidents such as road accidents, ensuring timely dissemination of critical information.
 
-        \begin{figure}[h]
+        \begin{figure}[htbp]
             \centering
             \includegraphics[width=1\textwidth]{table_of_entries}
             \caption{Table of entries in the dispatch board system}
             \label{fig:table_of_entries}
         \end{figure}
+        \vfill
 
-        \subsubsection{Table of exits}
-
-        We have developed a table of exits with essential information tailored for transport operators. Modeled closely after the table of entries utilized by OPT, we have streamlined its layout while maintaining its modern and intuitive design. This revised table includes a header featuring the company logo of the application user, offering seamless navigation between the table of exits and the table of entries.
-        Similar to its counterpart, users can access the settings page to customize the application's appearance and functionality according to their preferences. The table of exits presents updated transport schedules from the current time until the end of the day, ensuring real-time accuracy. Visual indicators promptly highlight any delays or disruptions in service, facilitating efficient transport management and enhancing user experience.
-        At the bottom of the page, users also have an area to provide updates, such as reporting road incidents, ensuring comprehensive and timely information dissemination.
-
-
-        \begin{figure}[h]
+        \begin{figure}[htbp]
             \centering
             \includegraphics[width=1\textwidth]{table_of_exits}
             \caption{Table of exits in the dispatch board system}
             \label{fig:table_of_exits}
         \end{figure}
-        \vfill
 
         \subsubsection{Settings page}
 
         Our settings page offers extensive customization options tailored to enhance user interaction. A sleek color selection bar allows precise configuration of highlighting, primary and secondary backgrounds, as well as primary and secondary text colors. Each option triggers a color picker for seamless color selection and adjustment.
         Users can upload a company logo effortlessly using a dedicated upload button. For configuration management, the page includes export/import functionality for saving and reapplying settings as a JSON file. A preview section provides a live demonstration of layout changes, ensuring users can visualize and confirm adjustments to entry and exit tables before finalizing.
         This comprehensive approach ensures a personalized and intuitive experience, empowering users to tailor the application's appearance and functionality to their exact specifications.
+        The second settings page focuses on fine-tuning table display and content preferences. Users have granular control over column visibility, allowing them to show or hide specific columns as needed. Additionally, columns can be renamed to align with specific data or organizational needs.
+        Display order customization empowers users to arrange columns in a preferred sequence, optimizing data presentation. Furthermore, users can modify the information displayed at the bottom of entry and exit tables, ensuring relevance and clarity.
+        This page serves as a powerful tool for configuring and optimizing data presentation, enhancing usability and efficiency in managing transport operations. By providing flexible customization options, it supports diverse user requirements and preferences.
 
-        \begin{figure}[htbp]
+        \vfill
+        \begin{figure}[htbp!]
             \centering
             \includegraphics[width=1\textwidth]{aparencia}
             \caption{Settings page for customizing the appearance of the dispatch board system}
             \label{fig:settings_appearance}
         \end{figure}
-
-        The second settings page focuses on fine-tuning table display and content preferences. Users have granular control over column visibility, allowing them to show or hide specific columns as needed. Additionally, columns can be renamed to align with specific data or organizational needs.
-        Display order customization empowers users to arrange columns in a preferred sequence, optimizing data presentation. Furthermore, users can modify the information displayed at the bottom of entry and exit tables, ensuring relevance and clarity.
-        This page serves as a powerful tool for configuring and optimizing data presentation, enhancing usability and efficiency in managing transport operations. By providing flexible customization options, it supports diverse user requirements and preferences.
+        \vfill
 
         \begin{figure}[htbp]
             \centering
@@ -349,36 +345,21 @@
         \subsection{Customization examples}
 
         Here, we present various customization examples to demonstrate the flexibility and adaptability of our application. Below, you will find screenshots of the Table of Entries and Table of Exits, each showcasing different customizations applied through the Settings Page. These examples illustrate how users can modify visual elements and functional components to align with their specific requirements and branding guidelines.
-
-        \begin{figure}[htbp]
+        \vfill
+        \begin{figure}[H]
             \centering
             \includegraphics[width=0.95\textwidth]{table_of_entries_stcp1}
-            \caption{Table of entries for STCP (Example 1)}
-            \label{fig:table_of_entries_stcp1}
-        \end{figure}
-
-        \begin{figure}[htbp]
-            \centering
-            \includegraphics[width=0.95\textwidth]{table_of_entries_stcp2}
-            \caption{Table of entries for STCP (Example 2)}
-            \label{fig:table_of_entries_stcp2}
-        \end{figure}
-
-
-        \begin{figure}[htbp]
-            \centering
-            \includegraphics[width=0.95\textwidth]{table_of_exits_stcp1}
-            \caption{Table of exits for STCP (Example 1)}
+            \caption{Example of customization}
             \label{fig:table_of_exits_stcp1}
         \end{figure}
 
-
-        \begin{figure}[htbp]
+        \begin{figure}[H]
             \centering
-            \includegraphics[width=0.95\textwidth]{table_of_entries_stcp2}
-            \caption{Table of entries for STCP (Example 2)}
-            \label{fig:table_of_entries_stcp2_}
+            \includegraphics[width=0.95\textwidth]{table_of_exits_stcp1}
+            \caption{Example of customization}
+            \label{fig:table_of_exits_stcp1_}
         \end{figure}
+
 
         In these examples, I incorporated the STCP logo and color scheme to enhance the visual appeal.
         Additionally, I removed certain columns from the tables to create a cleaner layout, ensuring the information is more accessible and easier to read for users.
@@ -387,7 +368,8 @@
 
         To ensure our project aligned with OPT's requirements, we sought guidance from our project manager, who provided weekly feedback for improvements. Our application was designed for larger screens, making testing on the TVs at OPT headquarters crucial. This allowed us to accurately gauge the dimensions of each compartment and validate our approach. Since our application will be used by various companies, we tested possible configurations for different clients, such as STCP and CP, as illustrated. Additionally, we scheduled a test at STCP headquarters to obtain real-time feedback from users, further enhancing our application.
 
-        \begin{figure}[h]
+        \vfill
+        \begin{figure}[H]
             \centering
             \includegraphics[width=1\textwidth]{validation_eg}
             \caption{Example of validation process}
