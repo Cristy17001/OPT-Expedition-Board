@@ -15,12 +15,11 @@
 \contentsline {subsubsection}{\numberline {3.2.3}Difficulties encountered and their resolution}{8}{}%
 \contentsline {subsection}{\numberline {3.3}Developed Solution}{8}{}%
 \contentsline {subsubsection}{\numberline {3.3.1}Home page}{8}{}%
-\contentsline {subsubsection}{\numberline {3.3.2}Table of entries}{9}{}%
-\contentsline {subsubsection}{\numberline {3.3.3}Table of exits}{10}{}%
-\contentsline {subsubsection}{\numberline {3.3.4}Settings page}{11}{}%
-\contentsline {subsection}{\numberline {3.4}Customization examples}{13}{}%
-\contentsline {subsection}{\numberline {3.5}Validation}{15}{}%
-\contentsline {section}{\numberline {4}Conclusion}{16}{}%
-\contentsline {subsection}{\numberline {4.1}Achieved Results}{16}{}%
-\contentsline {subsection}{\numberline {4.2}Lessons Learned}{16}{}%
-\contentsline {subsection}{\numberline {4.3}Possible Future Improvements and Further Work}{16}{}%
+\contentsline {subsubsection}{\numberline {3.3.2}Table of entries and exits}{9}{}%
+\contentsline {subsubsection}{\numberline {3.3.3}Settings page}{10}{}%
+\contentsline {subsection}{\numberline {3.4}Customization examples}{12}{}%
+\contentsline {subsection}{\numberline {3.5}Validation}{14}{}%
+\contentsline {section}{\numberline {4}Conclusion}{15}{}%
+\contentsline {subsection}{\numberline {4.1}Achieved Results}{15}{}%
+\contentsline {subsection}{\numberline {4.2}Lessons Learned}{15}{}%
+\contentsline {subsection}{\numberline {4.3}Possible Future Improvements and Further Work}{15}{}%
