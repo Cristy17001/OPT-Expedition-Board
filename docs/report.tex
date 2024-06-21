@@ -14,6 +14,7 @@
 \usepackage{indentfirst}
 \usepackage{subcaption}
 \usepackage{hyperref}
+\usepackage{cite}
 
 
 \usepackage{imakeidx}
@@ -471,10 +472,5 @@
 
         \bibliographystyle{plain}
         \bibliography{refs}
-        \cite{nextjs}
-        \cite{react}
-        \cite{typescript}
-        \cite{prisma}
-        \cite{prisma-medium}
-        \cite{nextjs-react-showdown}
-        \end{document}
+        \nocite{*}
+\end{document}
